@@ -1,7 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('model/save', function () {
+    $user = new User();
+
+    $user->email = "email";
+    $user->password = "dat";
+    $aa = Auth::attempt(["email" =>"email", "password"=>"dat"]);
+
+   return response($aa);
+
 });
