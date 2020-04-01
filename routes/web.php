@@ -31,3 +31,9 @@ Route::get('model/save', function () {
    return response($aa);
 
 });
+Route::get('/layout', function () {
+    return view('Layout.layout');
+});
+Route::get('/users', 'UserController@GetAllUser');
+Route::get('/adduser', 'UserController@GetAllUser');
+Route::post('add', 'UserController@DoAddUser')->name('add');
