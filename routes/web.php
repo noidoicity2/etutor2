@@ -37,3 +37,4 @@ Route::get('/layout', function () {
 Route::get('/users', 'UserController@GetAllUser');
 Route::get('/adduser', 'UserController@GetAllUser');
 Route::post('add', 'UserController@DoAddUser')->name('add');
+Route::get('allusers', 'UserController@GetAllUser')->name('allusers');

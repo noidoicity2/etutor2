@@ -16,7 +16,7 @@ class UserController extends Controller
     function GetAllUser(Request $request)
     {
         $user = User::all();
-        return view('User.addUser', ['users' => $user]);
+        return view('User.allUser', ['users' => $user]);
     }
 
     function GetAllTutors(Request $request)
@@ -33,7 +33,7 @@ class UserController extends Controller
     {
 
         $user = new User();
-        try {
+
             $file = $request->file('image');
 //        $dt = Carbon::parse($request->dob);
 //        $dt->toDateTimeString();
@@ -46,10 +46,6 @@ class UserController extends Controller
             $user->save();
 
             return back()->with('message', 'add successfully');
-        } catch (Exception $e) {
-            return back()->with('message', $e->getMessage());
-        }
-
 
     }
 
