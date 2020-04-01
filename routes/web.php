@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\User;
+use App\Model\role;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,3 +39,7 @@ Route::get('/users', 'UserController@GetAllUser');
 Route::get('/adduser', 'UserController@GetAllUser');
 Route::post('add', 'UserController@DoAddUser')->name('add');
 Route::get('allusers', 'UserController@GetAllUser')->name('allusers');
+Route::get('allRole', function (){
+    $users = role::find(1)->users;
+    return json_decode($users);
+});

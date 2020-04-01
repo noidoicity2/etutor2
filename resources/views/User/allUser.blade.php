@@ -48,12 +48,20 @@
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1"
-                                                aria-label="Engine version: activate to sort column ascending">Engine
-                                                Status
+                                                aria-label="Engine version: activate to sort column ascending">Email
+
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 Role
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                                                Created at
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                                                action
                                             </th>
                                         </tr>
                                         </thead>
@@ -71,8 +79,27 @@
                                                         Female
                                                     @endif
                                                 </td>
-                                                <td>{{$user->dob}}</td>
-                                                <td>{{$user->role_id}}</td>
+                                                <td>{{substr($user->email,0,15)}}</td>
+                                                <td>{{$user->role->name}}</td>
+                                                <td>{{$user->created_at}}</td>
+                                                <td class="project-actions text-right">
+                                                    <a class="btn btn-primary btn-sm" href="#">
+                                                        <i class="fas fa-folder">
+                                                        </i>
+                                                        View
+                                                    </a>
+                                                    <a class="btn btn-info btn-sm" href="#">
+                                                        <i class="fas fa-pencil-alt">
+                                                        </i>
+                                                        Edit
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash">
+                                                        </i>
+                                                        Delete
+                                                    </a>
+
+                                                </td>
                                             </tr>
                                         @endforeach
 
@@ -110,9 +137,11 @@
     <!-- page script -->
     <script>
         $(function () {
-            $("#example1").DataTable({
+            $("#example1").removeAttr('width').DataTable({
                 "responsive": true,
                 "autoWidth": false,
+
+
             });
             // $('#example2').DataTable({
             //     "paging": true,
