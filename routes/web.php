@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Model\User;
 use App\Model\role;
@@ -48,17 +49,27 @@ Route::get('allReg', 'TutorRegistrationController@GetAllRegistration');
 
 Route::get('/dummy', function () {
     $count = 0;
+//    ini_set('max_execution_time', 0);
+    set_time_limit(0);
+    ini_set('memory_limit', '-1');
 
-    for($i =10 ; $i<100000 ;$i++) {
-    $name= 'datdepzai '.$i;
-    $email = 'datmail'.$i;
+
+    DB::disableQueryLog();
+    $data = [];
+    for($i =0 ; $i<20000000 ;$i++) {
+    $name= '2datdepza1aia2a '.$i;
+    $email = '2amaaila'.$i;
     $pass = 'dat';
     $user = new User();
     $user->name = $name;
     $user->password = $pass;
     $user->email = $email;
-    $user->save();
+    array_push($data, $user);
+//    $user->save();
 
     }
-    return view('Layout.layout');
+
+    $a = sizeof($data);
+
+    return $a;
 });
