@@ -40,24 +40,24 @@
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="Browser: activate to sort column ascending">
-                                                Name
+                                                Tutor
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="Platform(s): activate to sort column ascending">
-                                                Gender
+                                                Student
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1"
-                                                aria-label="Engine version: activate to sort column ascending">Email
+                                                aria-label="Engine version: activate to sort column ascending">Creator
 
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Role
+                                                Created date
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Created at
+                                                Status
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
@@ -67,21 +67,16 @@
                                         </thead>
                                         <tbody>
 
-                                        @foreach($users as $user)
+                                        @foreach($regs as $reg)
                                             <tr role="row" class="odd">
-                                                <td tabindex="0" class="sorting_1">{{$user->id}}</td>
-                                                <td>{{$user->name}}</td>
+                                                <td tabindex="0" class="sorting_1">{{$reg->id}}</td>
+                                                <td>{{$reg->tutor->name}}</td>
                                                 <td>
-                                                    @if($user->gender==1)
-                                                        Male
-
-                                                    @else($user->gender==0)
-                                                        Female
-                                                    @endif
+                                                   {{ $reg->student->name}}
                                                 </td>
-                                                <td>{{substr($user->email,0,15)}}</td>
-                                                <td>{{$user->role->name}}</td>
-                                                <td>{{$user->created_at}}</td>
+                                                <td>{{$reg->createdby->name}}</td>
+                                                <td>{{$reg->created_at}}</td>
+                                                <td>{{$reg->status_id}}</td>
                                                 <td class="project-actions text-right">
                                                     <a class="btn btn-primary btn-sm" href="#">
                                                         <i class="fas fa-folder">

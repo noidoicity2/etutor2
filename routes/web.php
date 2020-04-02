@@ -43,7 +43,4 @@ Route::get('allRole', function (){
     $users = role::find(1)->users;
     return json_decode($users);
 });
-Route::get('allReg', function () {
-    $user = User::with(['tutorRegistrationByStudent','tutorRegistrationByTutor'])->get();
-    return json_decode($user);
-});
+Route::get('allReg', 'TutorRegistrationController@GetAllRegistration');
