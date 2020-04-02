@@ -44,6 +44,6 @@ Route::get('allRole', function (){
     return json_decode($users);
 });
 Route::get('allReg', function () {
-    $user = User::find(26)->tutorRegistrationByStudent;
+    $user = User::with(['tutorRegistrationByStudent','tutorRegistrationByTutor'])->get();
     return json_decode($user);
 });
