@@ -15,13 +15,15 @@ class UserController extends Controller
     //
     function GetAllUser(Request $request)
     {
-        $user = User::all();
+        $user = User::with(['role'])->get();
+//        $user = User::all();
         return view('User.allUser', ['users' => $user]);
     }
 
     function GetAllTutors(Request $request)
     {
-
+        $user = User::where('role_id',3)->get();
+        return view('User.allUser', ['users' => $user]);
     }
 
     function GetAllStudent(Request $request)

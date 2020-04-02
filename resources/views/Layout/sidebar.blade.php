@@ -33,15 +33,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link active">
+                            <a href="/allReg" class="nav-link {{Request::is('allReg') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Registration</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
+                            <a href="/users" class="nav-link {{Request::is('users') ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard v2</p>
+                                <p>All user</p>
                             </a>
                         </li>
                         <li class="nav-item">

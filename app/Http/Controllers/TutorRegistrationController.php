@@ -9,7 +9,7 @@ class TutorRegistrationController extends Controller
 {
     //
     public function GetAllRegistration() {
-        $regs = TutorRegistration::all();
+        $regs = TutorRegistration::with(['tutor','student'])->get();
         return  view('TutorRegistration.allregs',['regs'=>$regs]);
     }
 }

@@ -36,6 +36,7 @@ Route::get('/layout', function () {
     return view('Layout.layout');
 });
 Route::get('/users', 'UserController@GetAllUser');
+Route::get('/tutors', 'UserController@GetAllTutors');
 Route::get('/adduser', 'UserController@GetAllUser');
 Route::post('add', 'UserController@DoAddUser')->name('add');
 Route::get('allusers', 'UserController@GetAllUser')->name('allusers');
@@ -44,3 +45,20 @@ Route::get('allRole', function (){
     return json_decode($users);
 });
 Route::get('allReg', 'TutorRegistrationController@GetAllRegistration');
+
+Route::get('/dummy', function () {
+    $count = 0;
+
+    for($i =10 ; $i<100000 ;$i++) {
+    $name= 'datdepzai '.$i;
+    $email = 'datmail'.$i;
+    $pass = 'dat';
+    $user = new User();
+    $user->name = $name;
+    $user->password = $pass;
+    $user->email = $email;
+    $user->save();
+
+    }
+    return view('Layout.layout');
+});
