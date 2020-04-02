@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\User;
+use App\Model\User;
 use App\Model\role;
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +42,8 @@ Route::get('allusers', 'UserController@GetAllUser')->name('allusers');
 Route::get('allRole', function (){
     $users = role::find(1)->users;
     return json_decode($users);
+});
+Route::get('allReg', function () {
+    $user = User::find(26)->tutorRegistrationByStudent;
+    return json_decode($user);
 });

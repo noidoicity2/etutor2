@@ -11,7 +11,7 @@ class User extends Authenticatable
     //
     use Notifiable;
 
-    protected $table='users';
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'gender', 'dob','email', 'password', 'image',  'created_by' , 'created_at' , 'updated_by', 'updated_at' ,'password' , 'status_id' , 'active' , 'role_id' , 'remember_token'
+        'name', 'gender', 'dob', 'email', 'password', 'image', 'created_by', 'created_at', 'updated_by', 'updated_at', 'password', 'status_id', 'active', 'role_id', 'remember_token'
     ];
 
     /**
@@ -32,13 +32,17 @@ class User extends Authenticatable
     ];
 
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    public function role() {
-        return $this->belongsTo('App\Model\role', 'role_id' ,'id');
-}
+    public function role()
+    {
+        return $this->belongsTo('App\Model\role', 'role_id', 'id');
+    }
+
+    public function  tutorRegistrationByTutor() {
+        return $this->hasMany('App\Model\TutorRegistration', 'tutor_id', 'id');
+    }
+
+    public function  tutorRegistrationByStudent() {
+        return $this->hasMany('App\Model\TutorRegistration', 'student_id', 'id');
+    }
 
 }
