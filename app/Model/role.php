@@ -4,6 +4,9 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static find(int $int)
+ */
 class role extends Model
 {
     //
