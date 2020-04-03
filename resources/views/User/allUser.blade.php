@@ -106,6 +106,10 @@
                                         </tbody>
 
                                     </table>
+
+                                    {{ $users->links() }}
+
+
                                 </div>
                             </div>
 
@@ -139,8 +143,9 @@
         $(function () {
             $("#example1").removeAttr('width').DataTable({
                 "responsive": true,
-                "autoWidth": false,
-
+                "autoWidth": true,
+                "searching": true,
+                "paging": false,
 
             });
             // $('#example2').DataTable({

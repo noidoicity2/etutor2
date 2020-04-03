@@ -21,7 +21,7 @@ class UserController extends Controller
 
     function GetAllUser(Request $request)
     {
-        $user = User::with(['role'])->get();
+        $user = User::with(['role'])->paginate(50);
 //        $user = User::all();
         return view('User.allUser', ['users' => $user]);
     }
