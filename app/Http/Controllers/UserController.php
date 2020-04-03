@@ -13,6 +13,12 @@ use function GuzzleHttp\Psr7\get_message_body_summary;
 class UserController extends Controller
 {
     //
+    function __construct()
+    {
+        set_time_limit(0);
+        ini_set('memory_limit', '-1');
+    }
+
     function GetAllUser(Request $request)
     {
         $user = User::with(['role'])->get();
