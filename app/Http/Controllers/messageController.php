@@ -13,9 +13,13 @@ class messageController extends Controller
     }
 
     public function getAllMessage() {
-        $message = Message::all();
-        return json_encode($message);
+        $message = Message::where('to_user',21)->orderBy('created_at','desc')->limit(10)->get();
+        return view('Message.allMessage',['messages' => $message]);
     }
+//    public function getAllMessage() {
+//        $message = Message::paginate(15);
+//        return view('Message.allMessage',['messages' => $message]);
+//    }
 
 
 }

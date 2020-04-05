@@ -175,28 +175,7 @@
                 </div>
                 <!--/.direct-chat-messages-->
 
-                <!-- Contacts are loaded here -->
-                <div class="direct-chat-contacts">
-                    <ul class="contacts-list">
-                        <li>
-                            <a href="#">
-                                <img class="contacts-list-img" src="../dist/img/user1-128x128.jpg">
 
-                                <div class="contacts-list-info">
-                          <span class="contacts-list-name">
-                            Count Dracula
-                            <small class="contacts-list-date float-right">2/28/2015</small>
-                          </span>
-                                    <span class="contacts-list-msg">How have you been? I was...</span>
-                                </div>
-                                <!-- /.contacts-list-info -->
-                            </a>
-                        </li>
-                        <!-- End Contact Item -->
-                    </ul>
-                    <!-- /.contatcts-list -->
-                </div>
-                <!-- /.direct-chat-pane -->
             </div>
             <!-- /.card-body -->
             <div class="card-footer" style="display: block;">

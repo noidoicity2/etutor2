@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Model\User;
 use App\Model\role;
+use App\Model\Message;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,9 +30,9 @@ Route::get('model/save', function () {
 
     $user->email = "email";
     $user->password = "dat";
-    $aa = Auth::attempt(["email" =>"email", "password"=>"dat"]);
+    $aa = Auth::attempt(["email" => "email", "password" => "dat"]);
 
-   return response($aa);
+    return response($aa);
 
 });
 Route::get('/layout', function () {
@@ -41,7 +43,7 @@ Route::get('/tutors', 'UserController@GetAllTutors');
 Route::get('/adduser', 'UserController@GetAllUser');
 Route::post('add', 'UserController@DoAddUser')->name('add');
 Route::get('allusers', 'UserController@GetAllUser')->name('allusers');
-Route::get('allRole', function (){
+Route::get('allRole', function () {
     $users = role::find(1)->users;
     return json_decode($users);
 });
@@ -56,15 +58,15 @@ Route::get('/dummy', function () {
 
     DB::disableQueryLog();
     $data = [];
-    for($i =0 ; $i<20000000 ;$i++) {
-    $name= '2datdepza1aia2a '.$i;
-    $email = '2amaaila'.$i;
-    $pass = 'dat';
-    $user = new User();
-    $user->name = $name;
-    $user->password = $pass;
-    $user->email = $email;
-    array_push($data, $user);
+    for ($i = 0; $i < 20000000; $i++) {
+        $name = '2datdepza1aia2a ' . $i;
+        $email = '2amaaila' . $i;
+        $pass = 'dat';
+        $user = new User();
+        $user->name = $name;
+        $user->password = $pass;
+        $user->email = $email;
+        array_push($data, $user);
 //    $user->save();
 
     }
@@ -72,4 +74,24 @@ Route::get('/dummy', function () {
     $a = sizeof($data);
 
     return $a;
+});
+Route::get('allMessages', 'messageController@getAllMessage');
+Route::get('dumpMessage', function () {
+    DB::disableQueryLog();
+    ini_set('memory_limit', '-1');
+    for ($i = 0; $i < 1000000; $i++) {
+
+        $message = new Message();
+        $message->from_user = rand(20000, 200000);
+        $message->to_user = rand(20000, 200000);
+        $message->status_id = 4;
+        $message->chat_message = 'message rep' . $i;
+        $message->save();
+
+
+    }
+    return json_encode(['success' => true, 'dm' => true]);
+});
+Route::get('delMessage', function () {
+    Message::where('id', '>' , '100000')->delete();
 });
