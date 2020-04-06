@@ -36,16 +36,11 @@ Route::get('model/save', function () {
 Route::get('/layout', function () {
     return view('Layout.layout');
 });
-Route::get('/users', 'UserController@GetAllUser');
-Route::get('/tutors', 'UserController@GetAllTutors');
-Route::get('/adduser', 'UserController@GetAllUser');
-Route::post('add', 'UserController@DoAddUser')->name('add');
-Route::get('allusers', 'UserController@GetAllUser')->name('allusers');
+
 Route::get('allRole', function () {
     $users = role::find(1)->users;
     return json_decode($users);
 });
-Route::get('allReg', 'TutorRegistrationController@GetAllRegistration');
 
 Route::get('/dummy', function () {
     $count = 0;
@@ -146,7 +141,19 @@ Route::get('getAuthUser', function () {
     return json_encode($user);
 });
 Route::get('assignedstudent', 'TutorRegistrationController@getAssignedStudent');
+
+//Doan nay de update het password thanh 'dat' dang ma hoa
 Route::get('updateAllPass', function () {
     User::query()->update(['password' => bcrypt('dat')]);
+
+});
+Route::group(['middleware' => ['checkAdminLogin']], function () {
+    Route::get('/', 'UserController@GetAllUser');
+    Route::get('/users', 'UserController@GetAllUser');
+    Route::get('/tutors', 'UserController@GetAllTutors');
+    Route::get('/adduser', 'UserController@GetAllUser');
+    Route::post('add', 'UserController@DoAddUser')->name('add');
+    Route::get('allusers', 'UserController@GetAllUser')->name('allusers');
+    Route::get('allReg', 'TutorRegistrationController@GetAllRegistration');
 
 });
