@@ -143,3 +143,8 @@ Route::get('getmessage', 'messageController@getChatHistory');
 Route::get('login', 'UserController@login')->name('login');
 Route::post('postlogin', 'UserController@CheckLogin');
 Route::get('logout', 'UserController@logout');
+Route::get('getAuthUser', function () {
+    $user = Auth::user();
+    return json_encode($user);
+});
+Route::get('assignedstudent', 'TutorRegistrationController@getAssignedStudent');

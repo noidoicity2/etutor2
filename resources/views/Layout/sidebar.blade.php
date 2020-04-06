@@ -92,7 +92,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/mailbox/mailbox.html" class="nav-link">
+                            <a href="/assignedstudent" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>student list</p>
                             </a>
