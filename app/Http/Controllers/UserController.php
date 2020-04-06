@@ -48,7 +48,9 @@ class UserController extends Controller
 
             $user->name = $request->get('name');
             $user->email = $request->get('email');
+        if (isset($request->dob)) {
             $user->dob = $request->dob;
+        }
             $user->password = bcrypt($request->get('password'));
             $user->image = $file->getClientOriginalName();
             $user->save();
@@ -61,4 +63,13 @@ class UserController extends Controller
     {
 
     }
+    function Login(Request $request)
+    {
+
+    }
+    function Logout(Request $request)
+    {
+
+    }
+
 }

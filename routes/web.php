@@ -57,41 +57,86 @@ Route::get('/dummy', function () {
 
 
     DB::disableQueryLog();
-    $data = [];
+
     for ($i = 0; $i < 20000000; $i++) {
         $name = '2datdepza1aia2a ' . $i;
-        $email = '2amaaila' . $i;
-        $pass = 'dat';
+        $email = 'anhtdadeozaiqua' . $i.'@gmail.com';
+        $pass = bcrypt('dat');
         $user = new User();
         $user->name = $name;
         $user->password = $pass;
         $user->email = $email;
-        array_push($data, $user);
-//    $user->save();
+
+        $user->save();
 
     }
 
-    $a = sizeof($data);
 
-    return $a;
+
+    return 'hello';
+});
+
+Route::get('/dummy2', function () {
+    $count = 0;
+//    ini_set('max_execution_time', 0);
+    set_time_limit(0);
+    ini_set('memory_limit', '-1');
+
+
+    DB::disableQueryLog();
+
+    for ($i = 0; $i < 20000000; $i++) {
+        $name = '2datdepza1aia2a ' . $i;
+        $email = 'sMRsatDatamaaila' . $i.'@gmail.com';
+        $pass = bcrypt('dat');
+        $user = new User();
+        $user->name = $name;
+        $user->password = $pass;
+        $user->email = $email;
+
+        $user->save();
+
+    }
+
+
+
+    return 'hello';
 });
 Route::get('allMessages', 'messageController@getAllMessage');
 Route::get('dumpMessage', function () {
     DB::disableQueryLog();
     ini_set('memory_limit', '-1');
-    for ($i = 0; $i < 1000000; $i++) {
+
 
         $message = new Message();
-        $message->from_user = rand(20000, 200000);
-        $message->to_user = rand(20000, 200000);
-        $message->status_id = 4;
-        $message->chat_message = 'message rep' . $i;
+        $message->from_user = 21;
+        $message->to_user = 17;
+        $message->status_id = 1;
+        $message->chat_message = 'message a' ;
         $message->save();
 
 
-    }
+
+    return json_encode(['success' => true, 'dm' => true]);
+});
+Route::get('dumpMessage2', function () {
+    DB::disableQueryLog();
+    ini_set('memory_limit', '-1');
+
+
+    $message = new Message();
+    $message->from_user = 17;
+    $message->to_user = 21;
+    $message->status_id = 1;
+    $message->chat_message = 'message rep' ;
+    $message->save();
+
+
+
     return json_encode(['success' => true, 'dm' => true]);
 });
 Route::get('delMessage', function () {
     Message::where('id', '>' , '100000')->delete();
 });
+
+Route::get('getmessage', 'messageController@getChatHistory');
