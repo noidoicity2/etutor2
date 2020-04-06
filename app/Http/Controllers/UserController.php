@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Request\LoginRequest;
 use App\Model\User;
 
 use http\Exception;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
 use function GuzzleHttp\Psr7\get_message_body_summary;
 
 class UserController extends Controller
@@ -65,6 +67,25 @@ class UserController extends Controller
     }
     function Login(Request $request)
     {
+        if(Auth::user())
+            return redirect('allusers');
+        return view('Login.login');
+
+    }
+    function CheckLogin(LoginRequest $request)
+    {
+        $login = [
+            'email' => $request->email,
+            'password' => $request->password,
+
+
+        ];
+        if (Auth::attempt($login)) {
+            return redirect('allusers');
+        } else {
+            return redirect()->back()->with('status', 'Email hoặc Password không chính xác');
+        }
+
 
     }
     function Logout(Request $request)

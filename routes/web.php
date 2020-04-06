@@ -140,3 +140,5 @@ Route::get('delMessage', function () {
 });
 
 Route::get('getmessage', 'messageController@getChatHistory');
+Route::get('login', 'UserController@login');
+Route::post('postlogin', 'UserController@CheckLogin');
