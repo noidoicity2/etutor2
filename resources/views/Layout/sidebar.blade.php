@@ -94,7 +94,7 @@
                         <li class="nav-item">
                             <a href="pages/mailbox/mailbox.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Inbox</p>
+                                <p>student list</p>
                             </a>
                         </li>
                         <li class="nav-item">
