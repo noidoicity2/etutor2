@@ -1,3 +1,4 @@
+
 @extends('Layout.layout');
 @section('style')
     <!-- Font Awesome -->
@@ -36,21 +37,14 @@
                                             <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-sort="ascending"
                                                 aria-label="Rendering engine: activate to sort column descending">
-                                                ID
+                                                Student Id
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="Browser: activate to sort column ascending">
-                                                Tutor
-                                            </th>
+
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="Platform(s): activate to sort column ascending">
                                                 Student
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1"
-                                                aria-label="Engine version: activate to sort column ascending">Creator
 
-                                            </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 Created date
@@ -69,28 +63,24 @@
 
                                         @foreach($regs as $reg)
                                             <tr role="row" class="odd">
-                                                <td tabindex="0" class="sorting_1">{{$reg->id}}</td>
-                                                <td>{{$reg->tutor->name}}</td>
+                                                <td tabindex="0" class="sorting_1">{{$reg->student_id}}</td>
+
                                                 <td>
-                                                   {{ $reg->student->name}}
+                                                 {{ $reg->student->name}}
                                                 </td>
-                                                <td>
-                                                    @if (isset($reg->createdby->name))
-                                                        {{$reg->createdby->name}}
-                                                    @endif
-                                                   </td>
+
                                                 <td>{{$reg->created_at}}</td>
                                                 <td>{{$reg->status_id}}</td>
                                                 <td class="project-actions text-right">
-                                                    <a class="btn btn-primary btn-sm" href="#">
-                                                        <i class="fas fa-folder">
+                                                    <a class="btn btn-primary btn-sm" href="getmessage/id/{{$reg->student_id}}">
+                                                        <i class="fas fa-mail-bulk">
                                                         </i>
-                                                        View
+
                                                     </a>
                                                     <a class="btn btn-info btn-sm" href="#">
-                                                        <i class="fas fa-pencil-alt">
+                                                        <i class="fas fa-calendar">
                                                         </i>
-                                                        Edit
+
                                                     </a>
                                                     <a class="btn btn-danger btn-sm" href="#">
                                                         <i class="fas fa-trash">

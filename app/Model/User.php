@@ -10,6 +10,8 @@ use Illuminate\Notifications\Notifiable;
  * @property string email
  * @property string password
  * @property string name
+ * @property string|null image
+ * @property mixed dob
  * @method static where(string $string, int $int)
  */
 class User extends Authenticatable
