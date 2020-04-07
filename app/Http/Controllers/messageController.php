@@ -44,8 +44,8 @@ class messageController extends Controller
         $to_user = $request->id;
 
         $message = Message::where([['from_user',$from_user], ['to_user',$to_user] ])
-            ->orWhere([['from_user',$to_user], ['to_user',$from_user] ])->with('')
-            ->orderBy('created_at', 'desc')->limit(5)->get();
+            ->orWhere([['from_user',$to_user], ['to_user',$from_user] ])->with('sender')
+            ->orderBy('created_at', 'desc')->limit(20)->get();
 
         return json_encode($message);
     }

@@ -26,28 +26,28 @@
                 <div class="direct-chat-messages" id="messageContainer">
                     <!-- Message. Default to the left -->
 
-{{--                    @foreach ($messages as $message)--}}
-{{--                        @if($message->chat_message!='')--}}
-{{--                        <div class="direct-chat-msg @if ($message->from_user === $from_user)--}}
-{{--                            right @endif">--}}
-{{--                            <div class="direct-chat-infos clearfix">--}}
-{{--                                <span class="direct-chat-name float-left">{{$message->sender->name}}</span>--}}
-{{--                                <span class="direct-chat-timestamp float-right"> {{$message->created_at}} </span>--}}
-{{--                            </div>--}}
-{{--                            <!-- /.direct-chat-infos -->--}}
-{{--                            <img class="direct-chat-img" src="{{asset('dist/img/user1-128x128.jpg')}}"--}}
-{{--                                 alt="Message User Image">--}}
-{{--                            <!-- /.direct-chat-img -->--}}
+                    {{--                    @foreach ($messages as $message)--}}
+                    {{--                        @if($message->chat_message!='')--}}
+                    {{--                        <div class="direct-chat-msg @if ($message->from_user === $from_user)--}}
+                    {{--                            right @endif">--}}
+                    {{--                            <div class="direct-chat-infos clearfix">--}}
+                    {{--                                <span class="direct-chat-name float-left">{{$message->sender->name}}</span>--}}
+                    {{--                                <span class="direct-chat-timestamp float-right"> {{$message->created_at}} </span>--}}
+                    {{--                            </div>--}}
+                    {{--                            <!-- /.direct-chat-infos -->--}}
+                    {{--                            <img class="direct-chat-img" src="{{asset('dist/img/user1-128x128.jpg')}}"--}}
+                    {{--                                 alt="Message User Image">--}}
+                    {{--                            <!-- /.direct-chat-img -->--}}
 
 
 
-{{--                            <div class="direct-chat-text">--}}
-{{--                                {{$message->chat_message}}--}}
-{{--                            </div>--}}
-{{--                            <!-- /.direct-chat-text -->--}}
-{{--                        </div>--}}
-{{--                        @endif--}}
-{{--                    @endforeach--}}
+                    {{--                            <div class="direct-chat-text">--}}
+                    {{--                                {{$message->chat_message}}--}}
+                    {{--                            </div>--}}
+                    {{--                            <!-- /.direct-chat-text -->--}}
+                    {{--                        </div>--}}
+                    {{--                        @endif--}}
+                    {{--                    @endforeach--}}
 
 
                 </div>
@@ -81,12 +81,13 @@
 
         $(document).ready(function () {
 
-updateChatHistory();
+            updateChatHistory();
+
             function updateChatHistory() {
                 var from_user = '{{$from_user}}';
-                {{--var from_name = '{{$messages->first->sender->name}}';--}}
+                    {{--var from_name = '{{$messages->first->sender->name}}';--}}
                 var to_user = '{{$to_user}}';
-                {{--var receiver = '{{$messages->first->}}'--}}
+                    {{--var receiver = '{{$messages->first->}}'--}}
                 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                 $.ajax({
                     url: '/updatehistory',
@@ -98,25 +99,24 @@ updateChatHistory();
                     dataType: 'JSON',
 
                     success: function (data) {
+                        data.reverse();
                         var html_dat = '';
                         var cl = '';
-                        for(var i = 0 ; i< data.length ;i++){
-                            if(data[i].from_user == from_user) {
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].from_user == from_user) {
                                 cl = 'direct-chat-msg right';
-                            }
-                            else{
+                            } else {
                                 cl = 'direct-chat-msg ';
                             }
-                            html_dat += ' <div class="' +cl+  ' "> ' +
+                            html_dat += ' <div class="' + cl + ' "> ' +
                                 '                            <div class="direct-chat-infos clearfix">' +
-                                '                                <span class="direct-chat-name float-left">  ' + data[i].id + ' </span>' +
-                                '                                <span class="direct-chat-timestamp float-right">'+ data[i].created_at+ ' </span>' +
+                                '                                <span class="direct-chat-name float-left">  ' + data[i].sender.name + ' </span>' +
+                                '                                <span class="direct-chat-timestamp float-right">' + data[i].created_at + ' </span>' +
                                 '                            </div>' +
                                 '                            <!-- /.direct-chat-infos -->' +
                                 '                            <img class="direct-chat-img" src="{{asset('dist/img/user1-128x128.jpg')}}"' +
                                 '                                 alt="Message User Image">' +
                                 '                            <!-- /.direct-chat-img -->' +
-
 
 
                                 '                            <div class="direct-chat-text">' + data[i].chat_message +
@@ -126,7 +126,6 @@ updateChatHistory();
                                 '                        </div>  '
                         }
                         $('#messageContainer').html(html_dat);
-
 
 
                     }
@@ -156,11 +155,34 @@ updateChatHistory();
 
             $('#sendmsg').click(function (e) {
                 e.preventDefault();
+                var today = new Date();
+                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                var dateTime = date+' '+time;
 
                 sendMessage();
+
+                var htm = ' <div class="direct-chat-msg right "> ' +
+                    '                            <div class="direct-chat-infos clearfix">' +
+                    '                                <span class="direct-chat-name float-left">  ' + '{{\Illuminate\Support\Facades\Auth::user()->name}}' + ' </span>' +
+                    '                                <span class="direct-chat-timestamp float-right">' + dateTime + ' </span>' +
+                    '                            </div>' +
+                    '                            <!-- /.direct-chat-infos -->' +
+                    '                            <img class="direct-chat-img" src="{{asset('dist/img/user1-128x128.jpg')}}"' +
+                    '                                 alt="Message User Image">' +
+                    '                            <!-- /.direct-chat-img -->' +
+
+
+                    '                            <div class="direct-chat-text">' + $('#message').val() +
+                    '                                ' +
+                    '                            </div>' +
+                    '                            <!-- /.direct-chat-text -->' +
+                    '                        </div>  ';
+                $('#messageContainer').append(htm);
+
                 $('#message').val('');
             });
-            var a = setInterval(updateChatHistory, 5000);
+            var a = setInterval(updateChatHistory, 2000);
 
 
         });
