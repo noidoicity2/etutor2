@@ -44,10 +44,10 @@ class messageController extends Controller
         $to_user = $request->id;
 
         $message = Message::where([['from_user',$from_user], ['to_user',$to_user] ])
-            ->orWhere([['from_user',$to_user], ['to_user',$from_user] ])
-            ->orderBy('created_at', 'asc')->get();
+            ->orWhere([['from_user',$to_user], ['to_user',$from_user] ])->with('')
+            ->orderBy('created_at', 'desc')->limit(5)->get();
 
-        return $message;
+        return json_encode($message);
     }
 
     public function getAllMessage() {
