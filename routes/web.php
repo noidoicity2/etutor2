@@ -155,5 +155,6 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::post('add', 'UserController@DoAddUser')->name('add');
     Route::get('allusers', 'UserController@GetAllUser')->name('allusers');
     Route::get('allReg', 'TutorRegistrationController@GetAllRegistration');
-
+    Route::get('getmessage/id/{id}', 'messageController@getChatHistory');
+    Route::post('updatehistory', 'messageController@updateHistory');
 });

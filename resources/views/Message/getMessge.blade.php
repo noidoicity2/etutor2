@@ -22,7 +22,7 @@
             <!-- /.card-header -->
             <div class="card-body" style="display: block;">
                 <!-- Conversations are loaded here -->
-                <div class="direct-chat-messages">
+                <div class="direct-chat-messages" id="messageContainer">
                     <!-- Message. Default to the left -->
 
                     @foreach ($messages as $message)
@@ -41,43 +41,70 @@
                             </div>
                             <!-- /.direct-chat-text -->
                         </div>
-                @endforeach
+                    @endforeach
 
                 <!-- /.direct-chat-msg -->
 
-                    <!-- Message to the right -->
-                    <div class="direct-chat-msg right">
-                        <div class="direct-chat-infos clearfix">
-                            <span class="direct-chat-name float-right">Sarah Bullock</span>
-                            <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
-                        </div>
-                        <!-- /.direct-chat-infos -->
-                        <img class="direct-chat-img" src="../dist/img/user3-128x128.jpg" alt="Message User Image">
-                        <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
-                            You better believe it!
-                        </div>
-                        <!-- /.direct-chat-text -->
-                    </div>
-                    <!-- /.direct-chat-msg -->
+                    {{--                    <!-- Message to the right -->--}}
+                    {{--                    <div class="direct-chat-msg right">--}}
+                    {{--                        <div class="direct-chat-infos clearfix">--}}
+                    {{--                            <span class="direct-chat-name float-right">Sarah Bullock</span>--}}
+                    {{--                            <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>--}}
+                    {{--                        </div>--}}
+                    {{--                        <!-- /.direct-chat-infos -->--}}
+                    {{--                        <img class="direct-chat-img" src="../dist/img/user3-128x128.jpg" alt="Message User Image">--}}
+                    {{--                        <!-- /.direct-chat-img -->--}}
+                    {{--                        <div class="direct-chat-text">--}}
+                    {{--                            You better believe it!--}}
+                    {{--                        </div>--}}
+                    {{--                        <!-- /.direct-chat-text -->--}}
                 </div>
-                <!--/.direct-chat-messages-->
-
-
+                <!-- /.direct-chat-msg -->
             </div>
-            <!-- /.card-body -->
-            <div class="card-footer" style="display: block;">
-                <form action="#" method="post">
-                    <div class="input-group">
-                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                        <span class="input-group-append">
+            <!--/.direct-chat-messages-->
+
+
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer" style="display: block;">
+            <form action="#" method="post">
+                <div class="input-group">
+                    <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                    <span class="input-group-append">
                       <button type="submit" class="btn btn-success">Send</button>
                     </span>
-                    </div>
-                </form>
-            </div>
-            <!-- /.card-footer-->
+                </div>
+            </form>
         </div>
+        <!-- /.card-footer-->
+
     </section>
 
+@endsection
+@section('script')
+@parent
+
+<script !src="">
+    function getChatHistory() {
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        $.ajax({
+            url:'/updatehistory',
+            type: 'post',
+            data: {
+                id: '{{$to_user}}',
+                _token: CSRF_TOKEN,
+            },
+            dataType: 'JSON',
+            success: function (data) {
+                console.log(data);
+
+            }
+        })
+
+    }
+    $(document).ready(function(){
+        var a = setInterval(getChatHistory,5000)
+    })
+
+</script>
 @endsection

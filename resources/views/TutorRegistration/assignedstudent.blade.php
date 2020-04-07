@@ -72,7 +72,7 @@
                                                 <td>{{$reg->created_at}}</td>
                                                 <td>{{$reg->status_id}}</td>
                                                 <td class="project-actions text-right">
-                                                    <a class="btn btn-primary btn-sm" href="#">
+                                                    <a class="btn btn-primary btn-sm" href="getmessage/id/{{$reg->student_id}}">
                                                         <i class="fas fa-mail-bulk">
                                                         </i>
 
