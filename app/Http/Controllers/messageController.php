@@ -22,6 +22,23 @@ class messageController extends Controller
 
         return view('Message.getMessge',['messages'=>$message ,'from_user' => $from_user , 'to_user' => $to_user] );
     }
+    public function sendMessage(Request $request) {
+        $from_user = Auth::id();
+        $to_user = $request->id;
+        $chat_message = $request->chat_message;
+
+        $message = new Message();
+        $message->from_user = $from_user;
+        $message->to_user = $to_user;
+        $message->chat_message = $chat_message;
+        $message->status_id = 4;
+
+        $message->save();
+
+        return json_encode(['success'=>true]);
+
+
+    }
     public function updateHistory(Request $request) {
         $from_user = Auth::id();
         $to_user = $request->id;
