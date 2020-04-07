@@ -14,11 +14,6 @@ use function GuzzleHttp\Psr7\get_message_body_summary;
 
 class UserController extends Controller
 {
-<<<<<<< HEAD
-    function GetAllUser(Request $request)
-    {
-        $user = User::with(['role'])->get();
-=======
     //
     function __construct()
     {
@@ -30,7 +25,6 @@ class UserController extends Controller
     {
         $user = User::with(['role'])->paginate(25);
 //        $user = User::all();
->>>>>>> abb2a779367601890f201bc0fd4cb5df52c64bdc
         return view('User.allUser', ['users' => $user]);
     }
     function GetAllTutors(Request $request)
