@@ -18,7 +18,7 @@ class Message extends Model
     public function receiver() {
         return $this->belongsTo('App\Model\User','student_id','id');
     }
-    public function receiversg() {
+    public function receiversgit() {
         return $this->belongsTo('App\Model\Status','status_id','id');
     }
 }

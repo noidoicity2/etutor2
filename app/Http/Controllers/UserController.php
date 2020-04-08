@@ -50,7 +50,6 @@ class UserController extends Controller
             $user->image = $file->getClientOriginalName();
             $user->save();
             return back()->with('message', 'add successfully');
-
     }
 
     function DeleteUser(Request $request)
