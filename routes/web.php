@@ -139,4 +139,6 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::post('getunseenmsg', 'messageController@numOfUnseenMessge');
     Route::post('updatemsgstatus', 'messageController@updateMessageStatus');
 
+    Route::get('assigntutor','TutorRegistrationController@getAssignTutor');
+
 });

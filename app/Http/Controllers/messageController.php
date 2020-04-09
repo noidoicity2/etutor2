@@ -23,8 +23,11 @@ class messageController extends Controller
         return view('Message.getMessge',['messages'=>$message ,'from_user' => $from_user , 'to_user' => $to_user] );
     }
     public function sendMessage(Request $request) {
+
         $from_user = Auth::id();
+
         $to_user = $request->id;
+        $this->updateMessageStatus($to_user);
         $chat_message = $request->chat_message;
 
         $message = new Message();
@@ -58,9 +61,9 @@ class messageController extends Controller
         $id = Auth::id();
         return Message::where([['to_user', '=',$id],['status_id','=', 4] ])->select('id')->count();
     }
-    public function updateMessageStatus() {
+    public function updateMessageStatus($sender) {
         $id = Auth::id();
-        Message::where([['to_user', '=',$id],['status_id','=', 4] ])->update(['status_id'=>3]);
+        Message::where([['to_user', '=',$id],['status_id','=', 4] , ['from_user','=', $sender] ])->update(['status_id'=>3]);
         return json_encode(['success'=>true]);
     }
 

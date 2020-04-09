@@ -114,7 +114,10 @@
                 },
                 dataType: 'JSON',
                 success: function (data) {
-                    $('#no-unseen').html(data);
+                    if(data!== 0){
+                        $('#no-unseen').html(data);
+                    }
+
 
                 },
             });

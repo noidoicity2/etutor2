@@ -4,7 +4,7 @@
     {{--    {{json_encode($messages)}}--}}
 
     <section class="content">
-        <div class="card card-sucress cardutline direct-chat direct-chat-success">
+        <div class="card card-blue cardutline direct-chat direct-chat-success" >
             <div class="card-header">
                 <h3 class="card-title">Direct Chat</h3>
 
@@ -23,7 +23,7 @@
             <div class="card-body" style="display: block;">
 
                 <!-- Conversations are loaded here -->
-                <div class="direct-chat-messages" id="messageContainer">
+                <div class="direct-chat-messages"  id="messageContainer">
                     <!-- Message. Default to the left -->
 
                     {{--                    @foreach ($messages as $message)--}}

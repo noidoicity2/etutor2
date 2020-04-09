@@ -52,6 +52,7 @@ class UserController extends Controller
             return back()->with('message', 'add successfully');
     }
 
+
     function DeleteUser(Request $request)
     {
 
