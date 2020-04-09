@@ -45,7 +45,7 @@ class messageController extends Controller
 
         $message = Message::where([['from_user',$from_user], ['to_user',$to_user] ])
             ->orWhere([['from_user',$to_user], ['to_user',$from_user] ])->with('sender')
-            ->orderBy('created_at', 'desc')->limit(20)->get();
+            ->orderBy('created_at', 'desc')->limit(50)->get();
 
         return json_encode($message);
     }
@@ -53,6 +53,15 @@ class messageController extends Controller
     public function getAllMessage() {
         $message = Message::where('to_user',21)->orderBy('created_at','desc')->limit(10)->get();
         return view('Message.allMessage',['messages' => $message]);
+    }
+    public function numOfUnseenMessge() {
+        $id = Auth::id();
+        return Message::where([['to_user', '=',$id],['status_id','=', 4] ])->select('id')->count();
+    }
+    public function updateMessageStatus() {
+        $id = Auth::id();
+        Message::where([['to_user', '=',$id],['status_id','=', 4] ])->update(['status_id'=>3]);
+        return json_encode(['success'=>true]);
     }
 
 //    public function getAllMessage() {

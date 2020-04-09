@@ -114,6 +114,38 @@
                         </li>
                     </ul>
                 </li>
+                @if(Auth::user()->role_id ===4)
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon far fa-user"></i>
+                            <p>
+                                Your Tutor
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/assignedstudent" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Tutor list</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/mailbox/compose.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>request</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/mailbox/read-mail.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Read</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-envelope"></i>
