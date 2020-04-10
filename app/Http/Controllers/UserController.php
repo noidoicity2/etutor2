@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Request\LoginRequest;
+use App\Model\role;
 use App\Model\User;
 
 use http\Exception;
@@ -29,7 +30,7 @@ class UserController extends Controller
     }
     function GetAllTutors(Request $request)
     {
-        $user = User::where('role_id',3)->get();
+        $user = User::where('role_id',3)->with(['role'])->paginate(25);
         return view('User.allUser', ['users' => $user]);
     }
     function GetAllStudent(Request $request)
@@ -48,8 +49,14 @@ class UserController extends Controller
         }
             $user->password = bcrypt($request->get('password'));
             $user->image = $file->getClientOriginalName();
+            $user->role_id = $request->role_id;
             $user->save();
             return back()->with('message', 'add successfully');
+    }
+    function AddUser(Request $request)
+    {
+        $role = role::all();
+       return view('User.addUser', ['roles'=>$role] );
     }
 
 
