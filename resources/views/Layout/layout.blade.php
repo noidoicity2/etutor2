@@ -122,7 +122,7 @@
                 },
             });
         }
-        var updateUnseenMsg = setInterval(getNoUnseen, 5000);
+            // var updateUnseenMsg = setInterval(getNoUnseen, 5000);
 
     });
 </script>
