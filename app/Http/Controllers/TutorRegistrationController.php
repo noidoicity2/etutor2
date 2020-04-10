@@ -16,7 +16,6 @@ class TutorRegistrationController extends Controller
     function getAssignedStudent() {
         $id = Auth::id();
         $regs = TutorRegistration::where('tutor_id',$id )->with(['student'])->get();
-
         return view('TutorRegistration.assignedstudent',['regs'=>$regs]);
 
 

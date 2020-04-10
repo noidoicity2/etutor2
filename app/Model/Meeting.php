@@ -12,13 +12,13 @@ class Message extends Model
 
     ];
     public $timestamps = false;
-    public function sender() {
+    public function tutor() {
         return $this->belongsTo('App\Model\User','tutor_id','id');
     }
-    public function receiver() {
+    public function student() {
         return $this->belongsTo('App\Model\User','student_id','id');
     }
-    public function receiversgit() {
+    public function status() {
         return $this->belongsTo('App\Model\Status','status_id','id');
     }
 }
