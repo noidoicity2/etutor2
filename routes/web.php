@@ -131,8 +131,13 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::post('add', 'UserController@DoAddUser')->name('add');
     Route::get('allusers', 'UserController@GetAllUser')->name('allusers');
     Route::get('allReg', 'TutorRegistrationController@GetAllRegistration');
+//    message
     Route::get('getmessage/id/{id}', 'messageController@getChatHistory');
     Route::post('updatehistory', 'messageController@updateHistory');
     Route::post('sendmessage', 'messageController@sendMessage');
-   
+    Route::post('getunseenmsg', 'messageController@numOfUnseenMessge');
+    Route::post('updatemsgstatus', 'messageController@updateMessageStatus');
+    Route::get('assigntutor','TutorRegistrationController@getAssignTutor');
+//   meeting
+    Route::get('arangeMeeting','MeetingController@setingMeeting');
 });

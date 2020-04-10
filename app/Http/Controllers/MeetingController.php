@@ -20,6 +20,6 @@ class MeetingController extends Controller
         $meeting->created_at = $request->get('created_at');
         $meeting->status_id = $request->get('status_id');
         $meeting->save();
-        return back()->with('message', 'add successfully');
+        return view('Meeting.settingMetiings');
     }
 }

@@ -1,4 +1,5 @@
 
+
 @extends('Layout.layout');
 @section('style')
     <!-- Font Awesome -->
@@ -37,12 +38,12 @@
                                             <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-sort="ascending"
                                                 aria-label="Rendering engine: activate to sort column descending">
-                                                Student Id
+                                                Tutor Id
                                             </th>
 
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="Platform(s): activate to sort column ascending">
-                                                Student
+                                                Tutor name
                                             </th>
 
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
@@ -63,21 +64,21 @@
 
                                         @foreach($regs as $reg)
                                             <tr role="row" class="odd">
-                                                <td tabindex="0" class="sorting_1">{{$reg->student_id}}</td>
+                                                <td tabindex="0" class="sorting_1">{{$reg->tutor_id}}</td>
 
                                                 <td>
-                                                 {{ $reg->student->name}}
+                                                    {{ $reg->tutor->name}}
                                                 </td>
 
                                                 <td>{{$reg->created_at}}</td>
                                                 <td>{{$reg->status_id}}</td>
                                                 <td class="project-actions text-right">
-                                                    <a class="btn btn-primary btn-sm" href="getmessage/id/{{$reg->student_id}}">
+                                                    <a class="btn btn-primary btn-sm" href="getmessage/id/{{$reg->tutor_id}}">
                                                         <i class="fas fa-mail-bulk">
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-info btn-sm" href="arangeMeeting">
+                                                    <a class="btn btn-info btn-sm" href="#">
                                                         <i class="fas fa-calendar">
                                                         </i>
 

@@ -98,6 +98,33 @@
 {{--    <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>--}}
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dist/js/demo.js')}}"></script>
+
+
 @show
+<script >
+    $(document).ready(function () {
+
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        function getNoUnseen() {
+            $.ajax({
+                url: '/getunseenmsg',
+                type: 'post',
+                data: {
+                    _token: CSRF_TOKEN,
+                },
+                dataType: 'JSON',
+                success: function (data) {
+                    if(data!== 0){
+                        $('#no-unseen').html(data);
+                    }
+
+
+                },
+            });
+        }
+        var updateUnseenMsg = setInterval(getNoUnseen, 5000);
+
+    });
+</script>
 </body>
 </html>
