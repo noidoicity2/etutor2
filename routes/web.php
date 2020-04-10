@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\UpdateChat;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -140,5 +141,8 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::post('updatemsgstatus', 'messageController@updateMessageStatus');
 
     Route::get('assigntutor','TutorRegistrationController@getAssignTutor');
-
+    Route::get('testsk',function () {
+        event(new \App\Events\UpdateNotification(1,'2'));
+        return 'hi';
+    });
 });

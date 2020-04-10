@@ -104,6 +104,12 @@
 @show
 
 <script>
+    var pusher = new Pusher('dffd2ae08a37c8e3920f', {
+        cluster: 'ap1',
+        forceTLS: true
+    });
+    Pusher.logToConsole = true;
+
     $(document).ready(function () {
 
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
@@ -128,12 +134,9 @@
 
         // var updateUnseenMsg = setInterval(getNoUnseen, 5000);
         // Enable pusher logging - don't include this in production
-        Pusher.logToConsole = true;
 
-        var pusher = new Pusher('dffd2ae08a37c8e3920f', {
-            cluster: 'ap1',
-            forceTLS: true
-        });
+
+
 
         var channel = pusher.subscribe('update-notification-channel');
         channel.bind('notificaiton-event', function (data) {

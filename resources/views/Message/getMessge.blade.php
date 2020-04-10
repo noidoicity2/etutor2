@@ -182,7 +182,14 @@
 
                 $('#message').val('');
             });
-            var a = setInterval(updateChatHistory, 2000);
+            // var a = setInterval(updateChatHistory, 2000);
+            var channel2 = pusher.subscribe('update-chat-channel');
+            channel2.bind('chat-event', function (data) {
+                if(data.id === '{{Auth::user()->id}}') {
+                    updateChatHistory();
+                }
+
+            });
 
 
         });

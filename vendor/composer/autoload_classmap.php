@@ -25,7 +25,7 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Http\\Middleware\\checkAdminLogin' => $baseDir . '/app/Http/Middleware/checkAdminLogin.php',
     'App\\Http\\Request\\LoginRequest' => $baseDir . '/app/Http/Request/LoginRequest.php',
-    'App\\Model\\Message' => $baseDir . '/app/Model/Meeting.php',
+    'App\\Model\\Message' => $baseDir . '/app/Model/Message.php',
     'App\\Model\\TutorRegistration' => $baseDir . '/app/Model/TutorRegistration.php',
     'App\\Model\\User' => $baseDir . '/app/Model/User.php',
     'App\\Model\\role' => $baseDir . '/app/Model/role.php',

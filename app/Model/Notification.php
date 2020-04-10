@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Meeting extends Model
+class Notification extends Model
 {
     //
 }

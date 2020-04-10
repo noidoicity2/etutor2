@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UpdateChat;
+use App\Events\UpdateNotification;
 use App\Model\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,6 +39,9 @@ class messageController extends Controller
         $message->status_id = 4;
 
         $message->save();
+
+        event(new UpdateChat($to_user,'hi'));
+        event(new UpdateNotification($to_user,'hi'));
 
         return json_encode(['success'=>true]);
 
