@@ -33,6 +33,14 @@ class UserController extends Controller
         $user = User::where('role_id',3)->with(['role'])->paginate(25);
         return view('User.allUser', ['users' => $user]);
     }
+    function GetNonTutorStudent(Request $request)
+    {
+        $user = User::where('role_id',3)
+            ->leftJoin('tutor_registrations','users.id' ,'=','tutor_registrations.tutor_id')
+            ->where('student_id','=',null)->get();
+//        $user = $user->where('tutorRegistrationByTutor',null);
+        return $user;
+    }
     function GetAllStudent(Request $request)
     {
         $user = User::where('role_id',4)->get();
