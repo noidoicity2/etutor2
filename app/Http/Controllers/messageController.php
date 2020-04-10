@@ -59,7 +59,7 @@ class messageController extends Controller
     }
     public function numOfUnseenMessge() {
         $id = Auth::id();
-        return Message::where([['to_user', '=',$id],['status_id','=', 4] ])->select('id')->count();
+        return Message::where([['to_user', '=',$id],['status_id','=', 4] ])->count();
     }
     public function updateMessageStatus($sender) {
         $id = Auth::id();

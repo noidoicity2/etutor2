@@ -19,18 +19,20 @@ class UpdateNotification
      *
      * @return void
      */
-    public function __construct()
+    public $id;
+
+    public function __construct($id)
     {
-        //
+        $this->id = $id;
     }
 
-    /**
-     * Get the channels the event should broadcast on.
-     *
-     * @return \Illuminate\Broadcasting\Channel|array
-     */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return ['update-notification-channel'];
+    }
+
+    public function broadcastAs()
+    {
+        return 'notificaiton-event';
     }
 }

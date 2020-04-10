@@ -62,6 +62,7 @@
     <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+<script src="https://js.pusher.com/5.1/pusher.min.js"></script>
 @section('script')
 
     <!-- jQuery -->
@@ -77,7 +78,7 @@
     <!-- ChartJS -->
     <script src="{{asset('plugins/chart.js/Chart.min.js')}} "></script>
     <!-- Sparkline -->
-{{--    <script src="{{asset('plugins/sparklines/sparkline.js')}}"></script>--}}
+    {{--    <script src="{{asset('plugins/sparklines/sparkline.js')}}"></script>--}}
     <!-- JQVMap -->
     <script src="{{asset('plugins/jqvmap/jquery.vmap.min.js')}}"></script>
     <script src="{{asset('plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
@@ -95,16 +96,18 @@
     <!-- AdminLTE App -->
     <script src="{{asset('dist/js/adminlte.js')}}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-{{--    <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>--}}
+    {{--    <script src="{{asset('dist/js/pages/dashboard.js')}}"></script>--}}
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dist/js/demo.js')}}"></script>
 
 
 @show
-<script >
+
+<script>
     $(document).ready(function () {
 
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
         function getNoUnseen() {
             $.ajax({
                 url: '/getunseenmsg',
@@ -114,7 +117,7 @@
                 },
                 dataType: 'JSON',
                 success: function (data) {
-                    if(data!== 0){
+                    if (data !== 0) {
                         $('#no-unseen').html(data);
                     }
 
@@ -122,7 +125,23 @@
                 },
             });
         }
-            // var updateUnseenMsg = setInterval(getNoUnseen, 5000);
+
+        // var updateUnseenMsg = setInterval(getNoUnseen, 5000);
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
+
+        var pusher = new Pusher('dffd2ae08a37c8e3920f', {
+            cluster: 'ap1',
+            forceTLS: true
+        });
+
+        var channel = pusher.subscribe('update-notification-channel');
+        channel.bind('notificaiton-event', function (data) {
+            if(data.id === '{{Auth::user()->id}}') {
+                getNoUnseen();
+            }
+
+        });
 
     });
 </script>
