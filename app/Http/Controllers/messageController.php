@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UpdateChat;
+use App\Events\UpdateNotification;
 use App\Model\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,6 +40,9 @@ class messageController extends Controller
 
         $message->save();
 
+        event(new UpdateChat($to_user,'hi'));
+        event(new UpdateNotification($to_user,'hi'));
+
         return json_encode(['success'=>true]);
 
 
@@ -59,7 +64,7 @@ class messageController extends Controller
     }
     public function numOfUnseenMessge() {
         $id = Auth::id();
-        return Message::where([['to_user', '=',$id],['status_id','=', 4] ])->select('id')->count();
+        return Message::where([['to_user', '=',$id],['status_id','=', 4] ])->count();
     }
     public function updateMessageStatus($sender) {
         $id = Auth::id();
