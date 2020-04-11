@@ -45,10 +45,11 @@ class messageController extends Controller
 
         $message->save();
 
-        event(new UpdateChat($to_user,'hi'));
-        event(new UpdateNotification($to_user,'hi'));
+//        event(new UpdateChat($to_user,'hi'));
+//        event(new UpdateNotification($to_user,'hi'));
 
-        return json_encode(['success' => true]);
+//        return json_encode(['success' => true]);
+        return;
 
 
     }
@@ -69,6 +70,11 @@ class messageController extends Controller
     {
         $message = Message::where('to_user', 21)->orderBy('created_at', 'desc')->limit(10)->get();
         return view('Message.allMessage', ['messages' => $message]);
+    }
+
+    public function getLastestMessage()
+    {
+
     }
 
     public function numOfUnseenMessge()

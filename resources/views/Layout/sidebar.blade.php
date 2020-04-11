@@ -3,7 +3,7 @@
     <a href="index3.html" class="brand-link">
         <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">{{(App\Model\User::find(Auth::id()))->role->name}}</span>
     </a>
 
     <!-- Sidebar -->
@@ -15,15 +15,7 @@
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{Auth::user()->id.Auth::user()->name}}
-                    @if(Auth::user()->role_id==3)
-                        (Tutor)
-                    @elseif(Auth::user()->role_id==4)
-                        (Student)
-                    @elseif(Auth::user()->role_id==1)
-                        (Auth Staff)
-                    @elseif(Auth::user()->role_id==2)
-                        (Staff)
-                    @endif
+
                 </a>
             </div>
         </div>

@@ -16,8 +16,13 @@ use function GuzzleHttp\Psr7\get_message_body_summary;
 class UserController extends Controller
 {
     //
+    private  $user_id;
+    private $authUser;
+
     function __construct()
     {
+
+
         set_time_limit(0);
         ini_set('memory_limit', '-1');
     }
@@ -32,7 +37,7 @@ class UserController extends Controller
     function GetAllTutors(Request $request)
     {
         $user = User::where('role_id', 3)->with(['role'])->withCount('tutorRegistrationByTutor')->paginate(25);
-        return view('User.allTutor',['users' => $user] );
+        return view('User.allTutor', ['users' => $user]);
     }
 
     function GetNontudentTutor(Request $request)
@@ -47,7 +52,7 @@ class UserController extends Controller
 //            ->leftJoin('tutor_registrations','users.id' ,'=','tutor_registrations.tutor_id')
 //            ->where('student_id','=',null)->get();
 //        $user = $user->where('tut orRegistrationByTutor',null);
-        $user = User::doesntHave('tutorRegistrationByTutor')->where('role_id',3)->paginate(25);
+        $user = User::doesntHave('tutorRegistrationByTutor')->where('role_id', 3)->paginate(25);
         return view('User.allUser', ['users' => $user]);
     }
 
@@ -115,6 +120,17 @@ class UserController extends Controller
         Auth::logout();
 
         return redirect()->route('login');
+
+    }
+
+    function getFriendList()
+    {
+        $id = Auth::id();
+        $user = User::where([
+            ['role_id','=',4] ,
+            ['id', '!=' , $id]
+        ])->paginate(25);
+        return view('User.allUser', ['users'=>$user]);
 
     }
 

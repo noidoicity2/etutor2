@@ -4,7 +4,7 @@
     {{--    {{json_encode($messages)}}--}}
 
     <section class="content">
-        <div class="card card-blue cardutline direct-chat direct-chat-success" >
+        <div class="card card-blue cardutline direct-chat direct-chat-success">
             <div class="card-header">
                 <h3 class="card-title">Direct Chat</h3>
 
@@ -23,7 +23,7 @@
             <div class="card-body" style="display: block;">
 
                 <!-- Conversations are loaded here -->
-                <div class="direct-chat-messages"  id="messageContainer">
+                <div class="direct-chat-messages" id="messageContainer">
                     <!-- Message. Default to the left -->
 
                     {{--                    @foreach ($messages as $message)--}}
@@ -61,7 +61,8 @@
         <div class="card-footer" style="display: block;">
             <form action="#" method="post">
                 <div class="input-group">
-                    <input type="text" name="message" id="message" placeholder="Type Message ..." class="form-control">
+                    <input type="text" name="message" id="message" placeholder="Type Message ..." class="form-control"
+                         ">
                     <span class="input-group-append">
                       <button id="sendmsg" type="submit" class="btn btn-success">Send</button>
                     </span>
@@ -77,7 +78,10 @@
 @section('script')
     @parent
 
-    <script>
+    <script>function checkNullMsg() {
+
+        }
+
 
         $(document).ready(function () {
 
@@ -134,6 +138,7 @@
 
             }
 
+
             function sendMessage() {
                 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                 var chat_msg = $('#message').val();
@@ -153,41 +158,51 @@
                 });
             }
 
+
             $('#sendmsg').click(function (e) {
                 e.preventDefault();
-                var today = new Date();
-                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-                var dateTime = date+' '+time;
+                var msg = $('#message').val();
 
-                sendMessage();
-                getNoUnseen();
-                var htm = ' <div class="direct-chat-msg right "> ' +
-                    '                            <div class="direct-chat-infos clearfix">' +
-                    '                                <span class="direct-chat-name float-left">  ' + '{{\Illuminate\Support\Facades\Auth::user()->name}}' + ' </span>' +
-                    '                                <span class="direct-chat-timestamp float-right">' + dateTime + ' </span>' +
-                    '                            </div>' +
-                    '                            <!-- /.direct-chat-infos -->' +
-                    '                            <img class="direct-chat-img" src="{{asset('dist/img/user1-128x128.jpg')}}"' +
-                    '                                 alt="Message User Image">' +
-                    '                            <!-- /.direct-chat-img -->' +
+                if (msg === '') {
 
 
-                    '                            <div class="direct-chat-text">' + $('#message').val() +
-                    '                                ' +
-                    '                            </div>' +
-                    '                            <!-- /.direct-chat-text -->' +
-                    '                        </div>  ';
-                $('#messageContainer').append(htm);
-                $("#messageContainer").animate({ scrollTop: $("#messageContainer")[0].scrollHeight}, 1000);
+                } else {
+
+                    var today = new Date();
+                    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                    var dateTime = date + ' ' + time;
+
+                    sendMessage();
+                    getNoUnseen();
+                    var htm = ' <div class="direct-chat-msg right "> ' +
+                        '                            <div class="direct-chat-infos clearfix">' +
+                        '                                <span class="direct-chat-name float-left">  ' + '{{\Illuminate\Support\Facades\Auth::user()->name}}' + ' </span>' +
+                        '                                <span class="direct-chat-timestamp float-right">' + dateTime + ' </span>' +
+                        '                            </div>' +
+                        '                            <!-- /.direct-chat-infos -->' +
+                        '                            <img class="direct-chat-img" src="{{asset('dist/img/user1-128x128.jpg')}}"' +
+                        '                                 alt="Message User Image">' +
+                        '                            <!-- /.direct-chat-img -->' +
 
 
-                $('#message').val('');
+                        '                            <div class="direct-chat-text">' + $('#message').val() +
+                        '                                ' +
+                        '                            </div>' +
+                        '                            <!-- /.direct-chat-text -->' +
+                        '                        </div>  ';
+                    $('#messageContainer').append(htm);
+                    $("#messageContainer").animate({scrollTop: $("#messageContainer")[0].scrollHeight}, 1000);
+
+
+                    $('#message').val('');
+                }
+
             });
             // var a = setInterval(updateChatHistory, 2000);
             var channel2 = pusher.subscribe('update-chat-channel');
             channel2.bind('chat-event', function (data) {
-                if(data.id === '{{Auth::user()->id}}') {
+                if (data.id === '{{Auth::user()->id}}') {
                     updateChatHistory();
                 }
 
