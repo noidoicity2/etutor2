@@ -161,7 +161,7 @@
                 var dateTime = date+' '+time;
 
                 sendMessage();
-
+                getNoUnseen();
                 var htm = ' <div class="direct-chat-msg right "> ' +
                     '                            <div class="direct-chat-infos clearfix">' +
                     '                                <span class="direct-chat-name float-left">  ' + '{{\Illuminate\Support\Facades\Auth::user()->name}}' + ' </span>' +

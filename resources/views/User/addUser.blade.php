@@ -17,7 +17,7 @@
                         <!-- form start -->
                         @if(session('message'))
                             <div class="alert alert-warning" role="alert">
-                               {{session('message')}}
+                                {{session('message')}}
                             </div>
 
                         @endif
@@ -63,6 +63,17 @@
                                            aria-describedby="exampleInputPassword1-error" aria-invalid="true">
                                     <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
                                 </div>
+                                <div class="form-group">
+                                    <label for="sel1">Select list:</label>
+                                    <select name="role_id" class="form-control" id="sel1">
+                                        @foreach($roles as $role)
+                                            <option value="{{$role->id}}">{{$role->name}}</option>
+                                        @endforeach
+
+
+                                    </select>
+                                </div>
+
                                 <div class="form-group mb-0">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" name="terms" class="custom-control-input"

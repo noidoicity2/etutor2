@@ -62,13 +62,63 @@
     <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="https://js.pusher.com/5.1/pusher.min.js"></script>
+<script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+<script>
+
+    var pusher = new Pusher('dffd2ae08a37c8e3920f', {
+        cluster: 'ap1',
+        forceTLS: true
+    });
+    Pusher.logToConsole = true;
+
+
+
+
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+        function getNoUnseen() {
+            $.ajax({
+                url: '/getunseenmsg',
+                type: 'post',
+                data: {
+                    _token: CSRF_TOKEN,
+                },
+                dataType: 'JSON',
+                success: function (data) {
+                    if (data !== 0) {
+                        $('#no-unseen').html(data);
+                    }
+
+
+                },
+            });
+        }
+        getNoUnseen();
+
+        // var updateUnseenMsg = setInterval(getNoUnseen, 5000);
+        // Enable pusher logging - don't include this in production
+
+
+
+
+        var channel = pusher.subscribe('update-notification-channel');
+        channel.bind('notificaiton-event', function (data) {
+            if(data.id === '{{Auth::user()->id}}') {
+                getNoUnseen();
+            }
+
+        });
+
+
+</script>
 @section('script')
 
     <!-- jQuery -->
-    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+
     <!-- jQuery UI 1.11.4 -->
-    <script src="{{asset('plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
@@ -103,50 +153,6 @@
 
 @show
 
-<script>
-    var pusher = new Pusher('dffd2ae08a37c8e3920f', {
-        cluster: 'ap1',
-        forceTLS: true
-    });
-    Pusher.logToConsole = true;
 
-    $(document).ready(function () {
-
-        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-
-        function getNoUnseen() {
-            $.ajax({
-                url: '/getunseenmsg',
-                type: 'post',
-                data: {
-                    _token: CSRF_TOKEN,
-                },
-                dataType: 'JSON',
-                success: function (data) {
-                    if (data !== 0) {
-                        $('#no-unseen').html(data);
-                    }
-
-
-                },
-            });
-        }
-
-        // var updateUnseenMsg = setInterval(getNoUnseen, 5000);
-        // Enable pusher logging - don't include this in production
-
-
-
-
-        var channel = pusher.subscribe('update-notification-channel');
-        channel.bind('notificaiton-event', function (data) {
-            if(data.id === '{{Auth::user()->id}}') {
-                getNoUnseen();
-            }
-
-        });
-
-    });
-</script>
 </body>
 </html>

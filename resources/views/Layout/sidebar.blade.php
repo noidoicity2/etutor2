@@ -14,7 +14,17 @@
                 <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{Auth::user()->id}}</a>
+                <a href="#" class="d-block">{{Auth::user()->id.Auth::user()->name}}
+                    @if(Auth::user()->role_id==3)
+                        (Tutor)
+                    @elseif(Auth::user()->role_id==4)
+                        (Student)
+                    @elseif(Auth::user()->role_id==1)
+                        (Auth Staff)
+                    @elseif(Auth::user()->role_id==2)
+                        (Staff)
+                    @endif
+                </a>
             </div>
         </div>
 
@@ -23,12 +33,12 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-                @if(Auth::user()->role_id===1)
+
                     <li class="nav-item has-treeview menu-open">
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fas fa-user-md"></i>
                             <p>
-                                Tutor
+                                Dashboard
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -36,7 +46,7 @@
                             <li class="nav-item">
                                 <a href="/allReg" class="nav-link {{Request::is('allReg') ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>All Registration</p>
+                                    <p>All Allocation</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -46,14 +56,14 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./index3.html" class="nav-link">
+                                <a href="/tutors" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v3</p>
+                                    <p>All tutor</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
-                @endif
+
 
 
                 <li class="nav-item has-treeview">
@@ -125,7 +135,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/assignedstudent" class="nav-link">
+                                <a href="/assigntutor" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Tutor list</p>
                                 </a>
