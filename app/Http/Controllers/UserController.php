@@ -28,43 +28,55 @@ class UserController extends Controller
 //        $user = User::all();
         return view('User.allUser', ['users' => $user]);
     }
+
     function GetAllTutors(Request $request)
     {
-        $user = User::where('role_id',3)->with(['role'])->paginate(25);
+        $user = User::where('role_id', 3)->with(['role'])->withCount('tutorRegistrationByTutor')->paginate(25);
+        return view('User.allTutor',['users' => $user] );
+    }
+
+    function GetNontudentTutor(Request $request)
+    {
+//        $user = User::where('role_id', 3)->with(['tutorRegistrationByStudent' => function ($query) {
+//            $query->where(null);
+//        }])->get();
+//        $user = User::where('role_id',3)->with(['tutorRegistrationByTutor' =>function($query) {
+//            $query->where('tutor_id',null);
+//        }] )->get();
+//        $user = User::where('role_id',3);
+//            ->leftJoin('tutor_registrations','users.id' ,'=','tutor_registrations.tutor_id')
+//            ->where('student_id','=',null)->get();
+//        $user = $user->where('tut orRegistrationByTutor',null);
+        $user = User::doesntHave('tutorRegistrationByTutor')->where('role_id',3)->paginate(25);
         return view('User.allUser', ['users' => $user]);
     }
-    function GetNonTutorStudent(Request $request)
-    {
-        $user = User::where('role_id',3)
-            ->leftJoin('tutor_registrations','users.id' ,'=','tutor_registrations.tutor_id')
-            ->where('student_id','=',null)->get();
-//        $user = $user->where('tutorRegistrationByTutor',null);
-        return $user;
-    }
+
     function GetAllStudent(Request $request)
     {
-        $user = User::where('role_id',4)->get();
+        $user = User::where('role_id', 4)->get();
         return view('User.allUser', ['users' => $user]);
     }
+
     function DoAddUser(Request $request)
     {
         $user = new User();
-            $file = $request->file('image');
-            $user->name = $request->get('name');
-            $user->email = $request->get('email');
+        $file = $request->file('image');
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
         if (isset($request->dob)) {
             $user->dob = $request->dob;
         }
-            $user->password = bcrypt($request->get('password'));
-            $user->image = $file->getClientOriginalName();
-            $user->role_id = $request->role_id;
-            $user->save();
-            return back()->with('message', 'add successfully');
+        $user->password = bcrypt($request->get('password'));
+        $user->image = $file->getClientOriginalName();
+        $user->role_id = $request->role_id;
+        $user->save();
+        return back()->with('message', 'add successfully');
     }
+
     function AddUser(Request $request)
     {
         $role = role::all();
-       return view('User.addUser', ['roles'=>$role] );
+        return view('User.addUser', ['roles' => $role]);
     }
 
 
@@ -72,13 +84,15 @@ class UserController extends Controller
     {
 
     }
+
     function Login(Request $request)
     {
-        if(Auth::user())
+        if (Auth::user())
             return redirect('allusers');
         return view('Login.login');
 
     }
+
     function CheckLogin(LoginRequest $request)
     {
         $login = [
@@ -95,6 +109,7 @@ class UserController extends Controller
 
 
     }
+
     function Logout(Request $request)
     {
         Auth::logout();

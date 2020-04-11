@@ -78,13 +78,13 @@
                         <li class="nav-item">
                             <a href="pages/mailbox/mailbox.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Inbox</p>
+                                <p>your meeting</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="pages/mailbox/compose.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Compose</p>
+                                <p>add a meeting</p>
                             </a>
                         </li>
                         <li class="nav-item">

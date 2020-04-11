@@ -111,7 +111,7 @@ Route::get('delMessage', function () {
 Route::get('getmessage', 'messageController@getChatHistory');
 Route::get('login', 'UserController@login')->name('login');
 Route::post('postlogin', 'UserController@CheckLogin');
-Route::get('logout', 'UserController@logout');
+Route::get('logout', 'UserController@logout')->name('logout');
 Route::get('getAuthUser', function () {
     $user = Auth::user();
     return json_encode($user);
@@ -129,7 +129,7 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('/adduser',  'UserController@AddUser');
     Route::post('add', 'UserController@DoAddUser')->name('add');
     Route::get('allusers', 'UserController@GetAllUser')->name('allusers');
-    Route::get('nontutor',  'UserController@GetNonTutorStudent');
+    Route::get('nonstudenttutor',  'UserController@GetNontudentTutor');
 
 
     Route::get('allReg', 'TutorRegistrationController@GetAllRegistration');
