@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\TutorRegistration;
+use App\Model\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,6 +23,14 @@ class TutorRegistrationController extends Controller
 
         return view('TutorRegistration.assignedstudent', ['regs' => $regs]);
 
+
+    }
+
+    public function AssignStudent()
+    {
+        $user = User::doesntHave('tutorRegistrationByStudent')->where('role_id', 4)->paginate(25);
+
+        return view('TutorRegistration.AssignStudent' , ['users'=>$user]);
 
     }
 

@@ -45,8 +45,8 @@ class messageController extends Controller
 
         $message->save();
 
-//        event(new UpdateChat($to_user,'hi'));
-//        event(new UpdateNotification($to_user,'hi'));
+        event(new UpdateChat($to_user,'hi'));
+        event(new UpdateNotification($to_user,'hi'));
 
 //        return json_encode(['success' => true]);
         return;
