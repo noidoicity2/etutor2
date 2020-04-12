@@ -144,4 +144,8 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
         event(new \App\Events\UpdateNotification(1,'2'));
         return 'hi';
     });
+    Route::get('meeting', function(){
+        return view('Meeting.settingMetiings');
+    });
+
 });

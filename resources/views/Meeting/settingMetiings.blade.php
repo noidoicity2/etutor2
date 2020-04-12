@@ -31,40 +31,25 @@
                                     {{--<span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>--}}
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Email</label>
+                                    <label for="exampleInputPassword1">Meeting Name</label>
                                     <input type="email" name="email" class="form-control"
                                            id="email" placeholder="email"
                                            aria-describedby="exampleInputPassword1-error" aria-invalid="true">
                                     <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Date of Birth</label>
+                                    <label for="exampleInputPassword1">Date</label>
                                     <input type="date" name="dob" class="form-control "
                                            id="email" placeholder="email"
                                            aria-describedby="exampleInputPassword1-error" aria-invalid="true">
                                     <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">gender</label>
-                                    <input type="email" name="gender" class="form-control "
-                                           id="email" placeholder="email"
-                                           aria-describedby="exampleInputPassword1-error" aria-invalid="true">
-                                    <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Image</label>
+                                    <label for="exampleInputPassword1">Document</label>
                                     <input type="file" name="image" class=" btn-file "
                                            id="email" placeholder="image"
                                            aria-describedby="exampleInputPassword1-error" aria-invalid="true">
                                     <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
-                                </div>
-                                <div class="form-group mb-0">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="terms" class="custom-control-input"
-                                               id="exampleCheck1">
-                                        <label class="custom-control-label" for="exampleCheck1">I agree to the <a
-                                                href="#">terms of service</a>.</label>
-                                    </div>
                                 </div>
                             </div>
                             <!-- /.card-body -->
