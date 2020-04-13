@@ -26,11 +26,13 @@ class TutorRegistrationController extends Controller
 
     }
 
-    public function AssignStudent()
+    public function AssignStudent($id)
     {
+        $tutor_id  = $id;
+        $tutor = User::find($id);
         $user = User::doesntHave('tutorRegistrationByStudent')->where('role_id', 4)->paginate(25);
 
-        return view('TutorRegistration.AssignStudent' , ['users'=>$user]);
+        return view('TutorRegistration.AssignStudent' , ['users'=>$user, 'tutor'=>$tutor ]);
 
     }
 
@@ -41,5 +43,19 @@ class TutorRegistrationController extends Controller
         $regs = TutorRegistration::where('student_id', $id)->with(['tutor'])->get();
 
         return view('TutorRegistration.assignTutor', ['regs' => $regs]);
+    }
+    function RegStudents(Request $request) {
+        $id = $request->id;
+        $arr = $request->arr;
+        foreach ($arr as $ar) {
+            $reg = new TutorRegistration();
+            $reg->tutor_id = $id;
+            $reg->student_id = $ar;
+            $reg->created_by = Auth::id();
+
+            $reg->save();
+        }
+
+        return json_encode(['success'=>true, 'msg'=> 'add successfully']);
     }
 }

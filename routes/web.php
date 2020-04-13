@@ -135,7 +135,8 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 
 
     Route::get('allReg', 'TutorRegistrationController@GetAllRegistration');
-    Route::get('assignstudent', 'TutorRegistrationController@AssignStudent');
+    Route::get('assignstudent/{id}', 'TutorRegistrationController@AssignStudent');
+    Route::post('RegStudents', 'TutorRegistrationController@RegStudents');
 
 //    message
     Route::get('getmessage/id/{id}', 'messageController@getChatHistory');

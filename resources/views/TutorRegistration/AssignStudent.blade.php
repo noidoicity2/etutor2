@@ -29,17 +29,19 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="card-title">Assign student for tutor</h2>
+                        <h2 class="card-title">Assign student for tutor {{$tutor->name}} (id:{{$tutor->id}})</h2>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                            <a href="/adduser" class="btn btn-success">  <i class="fas fa-pencil-alt">
+                            <a id="reg-student" href="/RegStudents" class="btn btn-success">  <i class="fas fa-pencil-alt">
                                 </i> assign selected</a>
                             <a href="/adduser" class="btn btn-primary">   <i class="fas fa-pencil-alt">
                                 </i>assign All</a>
                             <a href="/adduser" class="btn btn-warning">  <i class="fas fa-pencil-alt">
                                 </i>     assign randon</a>
+                            <a href="/adduser" class="btn btn-warning" id="clear-select">   <i class="fas fa-pencil-alt">
+                                </i>     clear selection </a>
                             <div class="row">
 
                                 <div class="col-sm-12">
@@ -77,7 +79,7 @@
 
                                         @foreach($users as $user)
                                             <tr role="row" class="odd">
-                                                <td tabindex="0" class="sorting_1">{{$user->id}}</td>
+                                                <td id="id" tabindex="0" class="sorting_1">{{$user->id}}</td>
                                                 <td>{{$user->name}}</td>
 
                                                 <td>{{substr($user->email,0,15)}}</td>
@@ -90,11 +92,11 @@
                                                             </i>
                                                             View
                                                         </a>
-                                                        <a class="btn btn-info btn-sm" href="#">
-                                                            <i class="fas fa-pencil-alt">
-                                                            </i>
-                                                            Assign student
-                                                        </a>
+{{--                                                        <a class="btn btn-info btn-sm" href="#">--}}
+{{--                                                            <i class="fas fa-pencil-alt">--}}
+{{--                                                            </i>--}}
+{{--                                                            Assign student--}}
+{{--                                                        </a>--}}
 
 
                                                     </td>
@@ -174,25 +176,52 @@
 
             });
 
-            var table = $('#example1').DataTable();
-            $('#count').click(function () {
-                var d = table.rows({ selected: true } ).data();
-                console.log(d[3][1] );
+            $('#reg-student').click(function (e) {
+                e.preventDefault();
+                var table = $('#example1').DataTable();
+                var selectedRows = table.rows('.selected').data();
+                // var values='';
+                var values=[];
+                // lay
+                $.each(selectedRows, function(index, value) {values.push( value[0]) ;}); // value[0] is first column
+
+                $.ajax({
+                    url: '/RegStudents',
+                    type: 'post',
+                    data: {
+                        id: '{{$tutor->id}}',
+                        arr: values,
+                        _token: CSRF_TOKEN,
+                    },
+                    dataType: 'JSON',
+                    success: function (data) {
+                       alert(JSON.stringify(data));
+                       location.reload();
+
+                    },
+                });
+
+
             });
 
 
-            //
-            // $('#example1 tbody').on( 'click', 'tr', function () {
-            //     if ( $(this).hasClass('selected') ) {
-            //         $(this).removeClass('selected');
-            //     }
-            //     else {
-            //         table.$('tr.selected').removeClass('selected');
-            //         $(this).addClass('selected');
-            //     }
-            // } );
+            var table = $('#example1').DataTable();
+            $('#count').click(function () {
+                var d = table.rows({ selected: true } );
+                // var rowData = table.rows( { selected: true } ).data()[][0];
+                var selectedRows = table.rows('.selected').data();
+                // var values='';
+                var values=[];
+                // lay
+                $.each(selectedRows, function(index, value) {values.push( value[0]) ;}); // value[0] is first column
+                // return(values);
 
-
+                console.log(values);
+            });
+            $('#clear-select').click(function (e) {
+                e.preventDefault();
+                table.rows('.selected').deselect();
+            });
 
         });
     </script>

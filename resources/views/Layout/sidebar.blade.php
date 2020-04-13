@@ -53,6 +53,12 @@
                                     <p>All tutor</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/nonstudenttutor" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>tutor without tutee</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 

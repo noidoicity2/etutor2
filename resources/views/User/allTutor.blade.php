@@ -93,7 +93,7 @@
                                                         </i>
                                                         View
                                                     </a>
-                                                    <a class="btn btn-info btn-sm" href="#">
+                                                    <a class="btn btn-info btn-sm" href="/assignstudent/{{$user->id}}">
                                                         <i class="fas fa-pencil-alt">
                                                         </i>
                                                         Assign student

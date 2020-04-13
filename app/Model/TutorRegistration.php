@@ -4,6 +4,10 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property  tutor_id
+ * @property  student_id
+ */
 class TutorRegistration extends Model
 {
     //
