@@ -39,7 +39,7 @@
                             <a href="/adduser" class="btn btn-primary">   <i class="fas fa-pencil-alt">
                                 </i>assign All</a>
                             <a href="/adduser" class="btn btn-warning">  <i class="fas fa-pencil-alt">
-                                </i> assign randon</a>
+                                </i>     assign randon</a>
                             <div class="row">
 
                                 <div class="col-sm-12">
@@ -67,7 +67,7 @@
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 Role
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                            <th class="sorting  text-center" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 action
                                             </th>
