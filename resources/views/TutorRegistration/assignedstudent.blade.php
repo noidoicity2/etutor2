@@ -77,7 +77,7 @@
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-info btn-sm" href="#">
+                                                    <a class="btn btn-info btn-sm" href="arangeMeeting">
                                                         <i class="fas fa-calendar">
                                                         </i>
 
