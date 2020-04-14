@@ -30,9 +30,10 @@ class TutorRegistrationController extends Controller
     {
         $tutor_id  = $id;
         $tutor = User::find($id);
+        $tutee_count =  TutorRegistration::where('tutor_id', $tutor_id)->count();
         $user = User::doesntHave('tutorRegistrationByStudent')->where('role_id', 4)->paginate(25);
 
-        return view('TutorRegistration.AssignStudent' , ['users'=>$user, 'tutor'=>$tutor ]);
+        return view('TutorRegistration.AssignStudent' , ['users'=>$user, 'tutor'=>$tutor , 'tutee_count'=>$tutee_count ]);
 
     }
 
@@ -56,6 +57,6 @@ class TutorRegistrationController extends Controller
             $reg->save();
         }
 
-        return json_encode(['success'=>true, 'msg'=> 'add successfully']);
+        return json_encode(['success'=>true, 'msg'=> 'allocate ' . count($arr) . '  student successfully successfully']);
     }
 }

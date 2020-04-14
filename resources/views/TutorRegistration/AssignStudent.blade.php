@@ -29,15 +29,16 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="card-title">Assign student for tutor {{$tutor->name}} (id:{{$tutor->id}})</h2>
+                        <h2 class="card-title">Assign student for tutor {{$tutor->name}} (id:{{$tutor->id}})</h2> <br>
+                        <h2 class="card-title">Total tutee {{$tutee_count}}</h2>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                             <a id="reg-student" href="/RegStudents" class="btn btn-success">  <i class="fas fa-pencil-alt">
                                 </i> assign selected</a>
-                            <a href="/adduser" class="btn btn-primary">   <i class="fas fa-pencil-alt">
-                                </i>assign All</a>
+                            <a id="select-all" href="/adduser" class="btn btn-primary">   <i class="fas fa-pencil-alt">
+                                </i>select All</a>
                             <a href="/adduser" class="btn btn-warning">  <i class="fas fa-pencil-alt">
                                 </i>     assign randon</a>
                             <a href="/adduser" class="btn btn-warning" id="clear-select">   <i class="fas fa-pencil-alt">
@@ -195,12 +196,18 @@
                     },
                     dataType: 'JSON',
                     success: function (data) {
-                       alert(JSON.stringify(data));
+                       alert(JSON.stringify(data.msg));
                        location.reload();
 
                     },
                 });
 
+
+            });
+            $('#select-all').click(function (e) {
+                e.preventDefault();
+                var table = $('#example1').DataTable();
+                table.rows().select();
 
             });
 
