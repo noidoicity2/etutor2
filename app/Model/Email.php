@@ -9,6 +9,7 @@ class Email extends Model
     //
     protected $table = "email";
     protected $fillable = [
-        'name','title','content','to_user','created_at','status',
+        'title','content','to_user','created_at','status',
     ];
+    public $timestamps = false;
 }

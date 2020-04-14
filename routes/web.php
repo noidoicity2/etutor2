@@ -154,4 +154,9 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
         return view('Meeting.settingMetiings');
     });
 
+    Route::get('allEmail', 'EmailController@getEmail');
+    Route::post('markasread', 'EmailController@markAsRead');
+    Route::post('markallasread', 'EmailController@markAllAsRead');
+
+
 });
