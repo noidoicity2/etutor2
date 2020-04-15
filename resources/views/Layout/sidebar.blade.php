@@ -199,6 +199,13 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="/myrequest" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Your request</p>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
 

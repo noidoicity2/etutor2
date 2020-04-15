@@ -193,7 +193,7 @@
                         '                            <!-- /.direct-chat-text -->' +
                         '                        </div>  ';
                     $('#messageContainer').append(htm);
-                    $("#messageContainer").animate({scrollTop: $("#messageContainer")[0].scrollHeight}, 1000);
+                    $("#messageContainer").animate({scrollTop: $("#messageContainer")[0].scrollHeight}, 1);
 
 
                     $('#message').val('');

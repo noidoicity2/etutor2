@@ -95,6 +95,24 @@
                 },
             });
         }
+        function updateLastActivity() {
+            $.ajax({
+                url: '/getunseenmsg',
+                type: 'post',
+                data: {
+                    _token: CSRF_TOKEN,
+                },
+                dataType: 'JSON',
+                success: function (data) {
+                    if (data !== 0) {
+                        $('#no-unseen').html(data);
+                    }
+
+
+                },
+            });
+
+        }
         getNoUnseen();
 
         // var updateUnseenMsg = setInterval(getNoUnseen, 5000);

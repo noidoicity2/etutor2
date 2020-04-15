@@ -39,8 +39,8 @@
                                 </i> assign selected</a>
                             <a id="select-all" href="/adduser" class="btn btn-primary">   <i class="fas fa-pencil-alt">
                                 </i>select All</a>
-                            <a href="/adduser" class="btn btn-warning">  <i class="fas fa-pencil-alt">
-                                </i>     assign randon</a>
+{{--                            <a href="/adduser" class="btn btn-warning">  <i class="fas fa-pencil-alt">--}}
+{{--                                </i>     assign randon</a>--}}
                             <a href="/adduser" class="btn btn-warning" id="clear-select">   <i class="fas fa-pencil-alt">
                                 </i>     clear selection </a>
                             <div class="row">

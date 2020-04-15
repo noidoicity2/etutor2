@@ -1,5 +1,3 @@
-
-
 @extends('Layout.layout');
 @section('style')
     <!-- Font Awesome -->
@@ -23,11 +21,12 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">All registration</h3>
+                        <h3 class="card-title">All request</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
 
                             <div class="row">
                                 <div class="col-sm-12">
@@ -38,21 +37,23 @@
                                             <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-sort="ascending"
                                                 aria-label="Rendering engine: activate to sort column descending">
-                                                Tutor Id
+                                                ID
                                             </th>
-
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="Platform(s): activate to sort column ascending">
-                                                Tutor name
-                                            </th>
-
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Created date
+                                                colspan="1" aria-label="Browser: activate to sort column ascending">
+                                                Name
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 Status
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                                                Created at
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                                                Replied at
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
@@ -62,32 +63,21 @@
                                         </thead>
                                         <tbody>
 
-                                        @foreach($regs as $reg)
+                                        @foreach($requests as $req )
                                             <tr role="row" class="odd">
-                                                <td tabindex="0" class="sorting_1">{{$reg->tutor_id}}</td>
-
-                                                <td>
-                                                    {{ $reg->tutor->name}}
-                                                </td>
-
-                                                <td>{{$reg->created_at}}</td>
-                                                <td>{{$reg->status_id}}</td>
+                                                <td tabindex="0" class="sorting_1">{{$req->id}}</td>
+                                                <td>{{$req->name}}</td>
+                                                <td>{{$req->status}}</td>
+                                                <td>{{$req->created_at}}</td>
+                                                <td>{{$req->replied_at}}</td>
                                                 <td class="project-actions text-right">
-                                                    <a class="btn btn-primary btn-sm" href="/getmessage/id/{{$reg->tutor_id}}">
-                                                        <i class="fas fa-mail-bulk">
+                                                    <a class="btn btn-primary btn-sm" href="/viewresponse/{{$req->id}}">
+                                                        <i class="fas fa-eye">
                                                         </i>
+                                                        View response
+                                                    </a>
 
-                                                    </a>
-                                                    <a class="btn btn-info btn-sm" href="#">
-                                                        <i class="fas fa-calendar">
-                                                        </i>
 
-                                                    </a>
-                                                    <a class="btn btn-danger btn-sm" href="#">
-                                                        <i class="fas fa-trash">
-                                                        </i>
-                                                        Delete
-                                                    </a>
 
                                                 </td>
                                             </tr>
@@ -96,6 +86,10 @@
                                         </tbody>
 
                                     </table>
+
+                                    {{ $requests->links() }}
+
+
                                 </div>
                             </div>
 
@@ -108,6 +102,8 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
+
+
     </section>
 @endsection
 
@@ -130,6 +126,23 @@
             $("#example1").removeAttr('width').DataTable({
                 "responsive": true,
                 "autoWidth": false,
+                "searching": true,
+                "paging": false,
+                "lengthChange": true,
+
+                createdRow: function (row, data, index) {
+                    //
+                    // if the second column cell is blank apply special formatting
+                    //
+                    if (data[2] === "no response") {
+                        console.log(data[2]);
+
+                        $(row).addClass("bg-warning");
+
+                    }
+
+                }
+
 
 
             });
@@ -145,3 +158,5 @@
         });
     </script>
 @endsection
+
+

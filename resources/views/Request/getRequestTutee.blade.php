@@ -44,6 +44,10 @@
                                                 Name
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                                colspan="1" aria-label="Browser: activate to sort column ascending">
+                                                Status
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 Created at
                                             </th>
@@ -59,17 +63,18 @@
                                             <tr role="row" class="odd">
                                                 <td tabindex="0" class="sorting_1">{{$req->id}}</td>
                                                 <td>{{$req->name}}</td>
+                                                <td>{{$req->status}}</td>
                                                 <td>{{$req->created_at}}</td>
                                                 <td class="project-actions text-right">
-                                                    <a class="btn btn-primary btn-sm" href="#">
+                                                    <a class="btn btn-primary btn-sm" href="/viewrequest/{{$req->id}}">
                                                         <i class="fas fa-eye">
                                                         </i>
                                                         View
                                                     </a>
-                                                    <a class="btn btn-info btn-sm" href="/assignstudent/{{$req->id}}">
+                                                    <a class="btn btn-info btn-sm" href="/createResponse/{{$req->id}}">
                                                         <i class="fas fa-pencil-alt">
                                                         </i>
-                                                        mask as done
+                                                       Response
                                                     </a>
 
 
@@ -123,6 +128,19 @@
                 "searching": true,
                 "paging": false,
                 "lengthChange": true,
+
+                createdRow: function (row, data, index) {
+                    //
+                    // if the second column cell is blank apply special formatting
+                    //
+                    if (data[2] === "no response") {
+                        console.log(data[2]);
+
+                        $(row).addClass("bg-warning");
+
+                    }
+
+                }
 
             });
             // $('#example2').DataTable({

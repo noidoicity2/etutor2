@@ -158,8 +158,17 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::post('markasread', 'EmailController@markAsRead');
     Route::post('markallasread', 'EmailController@markAllAsRead');
 
-
+//request
     Route::get('allrequests', 'RequestController@AllRequest');
+    Route::get('newrequest', 'RequestController@newRequest');
+    Route::post('docreaterequest', 'RequestController@doCreateRequest');
+    Route::get('myrequest', 'RequestController@getMyRequest');
+    Route::get('viewrequest/{id}', 'RequestController@viewRequest');
+    Route::get('viewresponse/{id}', 'RequestController@viewResponse');
+    Route::get('createResponse/{id}', 'RequestController@createResponse');
+    Route::post('doresponse', 'RequestController@doResponse');
+
+
 
 
 });

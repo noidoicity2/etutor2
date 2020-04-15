@@ -16,7 +16,7 @@ use function GuzzleHttp\Psr7\get_message_body_summary;
 class UserController extends Controller
 {
     //
-    private  $user_id;
+    private $user_id;
     private $authUser;
 
     function __construct()
@@ -126,11 +126,20 @@ class UserController extends Controller
     function getFriendList()
     {
         $id = Auth::id();
-        $user = User::where([
-            ['role_id','=',4] ,
-            ['id', '!=' , $id]
-        ])->paginate(25);
-        return view('User.allUser', ['users'=>$user]);
+        $user = User::where([['role_id', '=', 4], ['id', '!=', $id]])->paginate(25);
+        return view('User.allUser', ['users' => $user]);
+
+    }
+
+    function updateLastActivity(Request $request)
+    {
+        $user = User::find(Auth::id());
+        $date = date('Y-m-d H:i:s');
+
+        $user->last_actitvity = $date;
+        $user->save();
+        return;
+
 
     }
 
