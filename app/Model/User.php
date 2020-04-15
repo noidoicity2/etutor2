@@ -52,5 +52,11 @@ class User extends Authenticatable
     public function  tutorRegistrationByStudent() {
         return $this->hasMany('App\Model\TutorRegistration', 'student_id', 'id');
     }
+    public  function  sentMessages() {
+        return $this->hasMany('App\Model\Message', 'from_user', 'id');
+    }
+    public  function  receivedMessages() {
+        return $this->hasMany('App\Model\Message', 'to_user', 'id');
+    }
 
 }

@@ -49,10 +49,7 @@
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 Created date
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Status
-                                            </th>
+
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 action
@@ -70,7 +67,7 @@
                                                 </td>
 
                                                 <td>{{$reg->created_at}}</td>
-                                                <td>{{$reg->status_id}}</td>
+
                                                 <td class="project-actions text-right">
                                                     <a class="btn btn-primary btn-sm" href="getmessage/id/{{$reg->student_id}}">
                                                         <i class="fas fa-mail-bulk">
@@ -82,11 +79,7 @@
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-danger btn-sm" href="#">
-                                                        <i class="fas fa-trash">
-                                                        </i>
-                                                        Delete
-                                                    </a>
+
 
                                                 </td>
                                             </tr>

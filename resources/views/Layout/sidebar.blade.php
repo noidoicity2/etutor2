@@ -25,16 +25,41 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-
-                <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-user-md"></i>
+                <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link active ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/dashboard" class="nav-link {{Request::is('dashboard') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-user-md"></i>
+                        <p>
+                            Allocation
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/dashboard" class="nav-link {{Request::is('dashboard') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="/allReg" class="nav-link {{Request::is('allReg') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
@@ -92,6 +117,7 @@
                         </li>
                     </ul>
                 </li>
+                @if(Auth::user()->role_id ===3)
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-user"></i>
@@ -107,20 +133,11 @@
                                 <p>student list</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/mailbox/compose.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Compose</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/mailbox/read-mail.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Read</p>
-                            </a>
-                        </li>
+
+
                     </ul>
                 </li>
+                @endif
                 @if(Auth::user()->role_id ===4)
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
@@ -137,18 +154,8 @@
                                     <p>Tutor list</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/compose.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>request</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/read-mail.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Read</p>
-                                </a>
-                            </li>
+
+
                         </ul>
                     </li>
                 @endif
@@ -186,6 +193,7 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        @if(Auth::user()->role_id ===3)
                         <li class="nav-item">
                             <a href="/allrequests" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -198,11 +206,18 @@
                                 <p>done request</p>
                             </a>
                         </li>
+                        @endif
 
                         <li class="nav-item">
                             <a href="/myrequest" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Your request</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/newrequest" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>new request</p>
                             </a>
                         </li>
 

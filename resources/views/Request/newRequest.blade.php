@@ -116,13 +116,14 @@
         // });
 
         $(document).ready(function () {
-            var from_user = '{{Auth::user()->id}}';
-            var to_user = '{{$tutor->tutor_id}}';
 
-            var content = $('#compose-textarea').summernote('code');
-            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
             $('#send-req').click(function () {
+                var from_user = '{{Auth::user()->id}}';
+                var to_user = '{{$tutor->tutor_id}}';
+
+                var content = $('#compose-textarea').summernote('code');
+                var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                 var name =  document.getElementById('req-name').value;
                 $.ajax({
                     url: '/docreaterequest',
@@ -138,6 +139,7 @@
                     dataType: 'JSON',
                     success: function (data) {
                        alert(JSON.stringify(data.msg));
+                       window.location = '/myrequest';
 
 
                     },

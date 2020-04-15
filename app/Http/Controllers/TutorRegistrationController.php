@@ -13,7 +13,7 @@ class TutorRegistrationController extends Controller
     //
     public function GetAllRegistration()
     {
-        $regs = TutorRegistration::with(['tutor', 'student'])->get();
+        $regs = TutorRegistration::with(['tutor', 'student'])->paginate(25);
         return view('TutorRegistration.allregs', ['regs' => $regs]);
     }
 

@@ -169,6 +169,12 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::post('doresponse', 'RequestController@doResponse');
 
 
+    Route::get('dashboard', 'DashboardController@index');
+    Route::get('msgChart', 'DashboardController@messageChart');
+    Route::post('postChart', 'DashboardController@messageChart');
+
+
+
 
 
 });

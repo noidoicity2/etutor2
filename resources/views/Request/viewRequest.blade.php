@@ -48,7 +48,7 @@
                             {{--                            <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Draft--}}
                             {{--                            </button>--}}
 {{--                            <button id="send-req"  class="btn btn-primary"><i class="far fa-envelope"></i> Send</button>--}}
-                            <a class="btn btn-primary btn-sm" href="/viewrequest/{{$req->id}}">
+                            <a class="btn btn-primary btn-sm" href="/createResponse/{{$request->id}}">
                                 <i class="fas fa-eye">
                                 </i>
                                 Response

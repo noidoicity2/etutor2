@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 
+use App\Model\Email;
 use Illuminate\Http\Request;
 use App\Model\TutorRegistration;
 use Illuminate\Support\Facades\Auth;
@@ -33,6 +34,13 @@ class RequestController extends Controller
        $req->to_user =  $request->get('to_user');
 
        $req->save();
+
+        $email = new Email();
+        //email to tutor
+        $email->title = 'You have new request';
+        $email->content = 'Student id#' .  Auth::id() . '  send you a request';
+        $email->to_user =  $request->get('to_user');;
+        $email->save();
 
        return json_encode(['success'=>true, 'msg'=>'Send request successfully']);
     }

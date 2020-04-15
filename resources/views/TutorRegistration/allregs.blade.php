@@ -55,10 +55,7 @@
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 Created date
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Status
-                                            </th>
+
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 action
@@ -80,22 +77,22 @@
                                                     @endif
                                                    </td>
                                                 <td>{{$reg->created_at}}</td>
-                                                <td>{{$reg->status_id}}</td>
+
                                                 <td class="project-actions text-right">
-                                                    <a class="btn btn-primary btn-sm" href="#">
-                                                        <i class="fas fa-folder">
-                                                        </i>
-                                                        View
-                                                    </a>
-                                                    <a class="btn btn-info btn-sm" href="#">
-                                                        <i class="fas fa-pencil-alt">
-                                                        </i>
-                                                        Edit
-                                                    </a>
+{{--                                                    <a class="btn btn-primary btn-sm" href="#">--}}
+{{--                                                        <i class="fas fa-folder">--}}
+{{--                                                        </i>--}}
+{{--                                                        View--}}
+{{--                                                    </a>--}}
+{{--                                                    <a class="btn btn-info btn-sm" href="#">--}}
+{{--                                                        <i class="fas fa-pencil-alt">--}}
+{{--                                                        </i>--}}
+{{--                                                        Edit--}}
+{{--                                                    </a>--}}
                                                     <a class="btn btn-danger btn-sm" href="#">
                                                         <i class="fas fa-trash">
                                                         </i>
-                                                        Delete
+                                                        Cancel
                                                     </a>
 
                                                 </td>
@@ -105,6 +102,7 @@
                                         </tbody>
 
                                     </table>
+                                    {{$regs->links()}}
                                 </div>
                             </div>
 
@@ -139,6 +137,7 @@
             $("#example1").removeAttr('width').DataTable({
                 "responsive": true,
                 "autoWidth": false,
+                "paging": false,
 
 
             });
