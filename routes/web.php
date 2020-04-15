@@ -159,4 +159,7 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::post('markallasread', 'EmailController@markAllAsRead');
 
 
+    Route::get('allrequests', 'RequestController@AllRequest');
+
+
 });
