@@ -44,7 +44,7 @@
 
                     </ul>
                 </li>
-
+                @if(Auth::user()->role_id ===1)
                 <li class="nav-item has-treeview ">
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas fa-user-md"></i>
@@ -86,6 +86,7 @@
                         </li>
                     </ul>
                 </li>
+                @endif
 
 
                 <li class="nav-item has-treeview">

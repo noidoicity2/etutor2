@@ -86,7 +86,8 @@
                                                         Female
                                                     @endif
                                                 </td>
-                                                <td>{{substr($user->email,0,15)}}</td>
+                                                <td>{{substr($user->email,0,25)}}</td>
+{{--                                                <td>{{$user->email}}</td>--}}
                                                 <td>{{$user->role->name}}</td>
                                                 <td>{{$user->created_at}}</td>
                                                 @if(Auth::user()->role_id === 1 ||Auth::user()->role_id === 2 )
