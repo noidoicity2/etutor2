@@ -14,7 +14,7 @@ class MeetingController extends Controller
         $meeting->name = $request->get('meetingName');
         $meeting->tutor_id = $request->get('date');
         $meeting->save();
-        // return back()->with('arangeGeeting', 'add successfully');
+        return back()->with('arangeGeeting', 'add successfully');
     }
     public function renderViewMeetings(){
         return view('Meeting.settingMetiings');
