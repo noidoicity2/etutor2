@@ -173,6 +173,8 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('msgChart', 'DashboardController@messageChart');
     Route::post('postChart', 'DashboardController@messageChart');
 
+    Route::get('yourdocument', 'DocumentController@GetAllDocument');
+
 
 
 

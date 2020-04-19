@@ -21,7 +21,8 @@ class DashboardController extends Controller
         $noReg = $this->getNumberOfRegs();
 
         return view('DashBoard.Dashboard',
-            ['tuteeNo' => $tuteeNo,
+            [
+                'tuteeNo' => $tuteeNo,
                 'noReq' => $noReq,
                 'unseenMsg' => $noUnseenMsg,
                 'handleReq' => $handleReq,
@@ -39,7 +40,7 @@ class DashboardController extends Controller
         $day = date('d');
         $year = date('Y');
         $date_array = array();
-        for ($i = -1; $i < $days - 1; $i++) {
+        for ($i = 0; $i < $days - 1; $i++) {
             $date_array[] = date($format, mktime(0, 0, 0, $month, ($day - $i), $year));
         }
 //         rsort($date_array);
