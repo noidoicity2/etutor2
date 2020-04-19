@@ -172,4 +172,7 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('dashboard', 'DashboardController@index');
     Route::get('msgChart', 'DashboardController@messageChart');
     Route::post('postChart', 'DashboardController@messageChart');
+
+//Meeting
+    Route::get('viewMeeting/id/{id}','MeetingController@renderViewMeetings');
 });
