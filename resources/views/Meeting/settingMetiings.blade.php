@@ -44,13 +44,13 @@
                                            aria-describedby="exampleInputPassword1-error" aria-invalid="true">
                                     <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="exampleInputPassword1">Document</label>
                                     <input type="file" name="image" class=" btn-file "
-                                           id="email" placeholder="image"
+                                           id="email" placehder="image"
                                            aria-describedby="exampleInputPassword1-error" aria-invalid="true">
                                     <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">

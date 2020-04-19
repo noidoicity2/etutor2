@@ -22,4 +22,7 @@ class MeetingController extends Controller
         $meeting->save();
         return view('Meeting.settingMetiings');
     }
+    public function renderViewMeetings(){
+        return view('Meeting.settingMetiings');
+    }
 }
