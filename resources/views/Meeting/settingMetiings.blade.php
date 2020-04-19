@@ -14,12 +14,12 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        @if(session('message'))
+                        @if(session('arangeGeeting'))
                             <div class="alert alert-warning" role="alert">
-                               {{session('message')}}
+                               {{session('arangeGeeting')}}
                             </div>
                         @endif
-                        <form enctype="multipart/form-data" action="{{route('add')}}" role="form" method="post"
+                        <form enctype="multipart/form-data" action="{{route('arangeGeeting')}}" role="form" method="post"
                               id="quickForm" novalidate="novalidate">
                             @csrf
                             <div class="card-body">
@@ -32,14 +32,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Meeting Name</label>
-                                    <input type="email" name="email" class="form-control"
+                                    <input type="text" name="meetingName" class="form-control"
                                            id="email" placeholder="email"
                                            aria-describedby="exampleInputPassword1-error" aria-invalid="true">
                                     <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Date</label>
-                                    <input type="date" name="dob" class="form-control "
+                                    <input type="date" name="date" class="form-control "
                                            id="email" placeholder="email"
                                            aria-describedby="exampleInputPassword1-error" aria-invalid="true">
                                     <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>

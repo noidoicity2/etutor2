@@ -175,4 +175,5 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 
 //Meeting
     Route::get('viewMeeting/id/{id}','MeetingController@renderViewMeetings');
+    Route::post('arangeGeeting','MeetingController@arangeGeeting');
 });
