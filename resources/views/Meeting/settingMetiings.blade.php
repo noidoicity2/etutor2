@@ -14,20 +14,20 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <!-- @if(session('arangeGeeting'))
+                       @if(session('arangeGeeting'))
                             <div class="alert alert-warning" role="alert">
                                {{session('arangeGeeting')}}
                             </div>
-                        @endif -->
+                        @endif
                         <form enctype="multipart/form-data" action="{{route('arangeGeeting')}}" role="form" method="post"
                               id="quickForm" novalidate="novalidate">
-                            <!-- @csrf -->
+                            @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Name</label>
                                     <input type="text" name="name" class='form-control'
                                            id="name" placeholder="Enter name"
-                                           
+
                                            aria-describedby="exampleInputEmail1-error" aria-invalid="true">
                                     {{--<span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>--}}
                                 </div>
