@@ -74,7 +74,8 @@
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-info btn-sm" href="arangeMeeting">
+                                                    <!-- arangeMeeting -->
+                                                    <a class="btn btn-info btn-sm" href="viewMeeting/id/{{$reg->student_id}}">
                                                         <i class="fas fa-calendar">
                                                         </i>
 
