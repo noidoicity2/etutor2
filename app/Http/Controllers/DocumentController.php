@@ -17,7 +17,28 @@ class DocumentController extends Controller
 
     }
 
-    public function GetSharedDocument() {
+    public function UploadDocument() {
+        return view('Document.uploadDocument');
+
+    }
+    public function  DoUploadFile(Request $request) {
+        $file = $request->file('file');
+        $doc = new Document();
+        $doc->name = $file->getClientOriginalName();
+        $doc->link = '/Uploads/'.   $doc->name;
+        $doc->created_by= Auth::id();
+        $doc->isPublic = $request->status;
+
+        $doc->save();
+//        echo $file->getFilename();
+//        $file->move('Uploads', $file->getClientOriginalName());
+        $this->SaveDocument($file);
+        return back()->with('status', 'Upload File Successfully');
+
+    }
+    private  function SaveDocument($file) {
+        $file->move('Uploads', $file->getClientOriginalName());
+        return;
 
     }
     public function DeleteDocument() {
