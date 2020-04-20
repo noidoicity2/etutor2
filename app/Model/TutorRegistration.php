@@ -24,6 +24,4 @@ class TutorRegistration extends Model
     public function createdby() {
         return $this->belongsTo('App\Model\user', 'created_by','id');
     }
-
-
 }

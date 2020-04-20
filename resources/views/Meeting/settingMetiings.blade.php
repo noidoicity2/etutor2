@@ -21,7 +21,7 @@
                         @endif -->
                         <form enctype="multipart/form-data" action="{{route('arangeGeeting')}}" role="form" method="post"
                               id="quickForm" novalidate="novalidate">
-                            <!-- @csrf -->
+                            @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Name</label>

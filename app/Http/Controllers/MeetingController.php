@@ -12,7 +12,7 @@ class MeetingController extends Controller
         $meeting = new Meeting();
         $tutor_id = Auth::id();
         $meeting->name = $request->get('meetingName');
-        $meeting->tutor_id = $request->get('date');
+        $meeting->start_at = $request->get('date');
         $meeting->save();
         return back()->with('arangeGeeting', 'add successfully');
     }
