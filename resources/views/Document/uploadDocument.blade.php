@@ -34,6 +34,11 @@
                                     <input name="file" type="file" class="form-control-file" id="exampleFormControlFile1">
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Link</label>
+                                    <input name="link" type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter link if the file is on the internet">
+                                </div>
+
 
                                 <div class="form-group">
                                     <label for="sel1">Status:</label>
