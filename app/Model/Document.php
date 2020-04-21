@@ -12,4 +12,7 @@ class Document extends Model
         'name'	,'link'	,'created_by',	'created_at'	,'updated_by',	'updated_at'	, 'isPublic'	,'status_id'
     ];
     public $timestamps = false;
+    public function tutor() {
+        return $this->belongsTo('App\Model\user', 'created_by','id');
+    }
 }

@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
 
-    <link rel="stylesheet" type="text/css" href=" https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css"
+          href=" https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
 
 
 
@@ -35,13 +36,14 @@
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                            <a id="mark-as-read" href="/markasread" class="btn btn-success">  <i class="fas fa-pencil-alt">
-                                </i> Mark as read </a>
-                            <a id="mark-all-as-read" href="/adduser" class="btn btn-primary">   <i class="fas fa-pencil-alt">
+                            <a href="/newdocument" class="btn btn-success"> <i class="fas fa-upload">
+                                </i> Upload File </a>
+                            <a id="mark-all-as-read" href="/adduser" class="btn btn-primary"> <i
+                                    class="fas fa-pencil-alt">
                                 </i>Mask all as read </a>
 
-                            <a href="/adduser" class="btn btn-warning" id="clear-select">   <i class="fas fa-pencil-alt">
-                                </i>     clear selection </a>
+                            <a href="/adduser" class="btn btn-warning" id="clear-select"> <i class="fas fa-pencil-alt">
+                                </i> clear selection </a>
                             <div class="row">
 
                                 <div class="col-sm-12">
@@ -60,11 +62,17 @@
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Upload at
+                                                Author
                                             </th>
-                                            <th class="sorting  text-center" tabindex="0" aria-controls="example1" rowspan="1"
+                                            <th class="sorting  text-center" tabindex="0" aria-controls="example1"
+                                                rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 Public
+                                            </th>
+                                            <th class="sorting  text-center" tabindex="0" aria-controls="example1"
+                                                rowspan="1"
+                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                                                Action
                                             </th>
                                         </tr>
                                         </thead>
@@ -74,12 +82,30 @@
                                             <tr role="row" class="">
                                                 <td>{{$document->id}}</td>
                                                 <td id="id" tabindex="0" class="sorting_1">{{$document->name}}</td>
-                                                <td>{{$document->created_at}}</td>
-                                                <td>{{$document->isPublic}}</td>
+                                                <td>{{$document->tutor->name}}</td>
+                                                <td>
+                                                    @if($document->isPublic===1)
+                                                        Public
+                                                    @else
+                                                        Private
+                                                @endif
+                                                <td>
+                                                    <a class="btn btn-primary btn-sm" href="#">
+                                                        <i class="fas fa-eye">
+                                                        </i>
+
+                                                    </a>
+                                                    <a class="btn btn-primary btn-sm" href="#">
+                                                        <i class="fas fa-share">
+                                                        </i>
+
+                                                    </a>
+                                                </td>
 
 
 
                                             </tr>
+
                                         @endforeach
 
                                         </tbody>
@@ -125,7 +151,7 @@
     <script src="{{asset('dist/js/demo.js')}}"></script>
     <!-- page script -->
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $("#example1").removeAttr('width').DataTable({
 
                 "responsive": true,
@@ -157,9 +183,11 @@
                 var table = $('#example1').DataTable();
                 var selectedRows = table.rows('.selected').data();
                 // var values='';
-                var values=[];
+                var values = [];
                 // lay
-                $.each(selectedRows, function(index, value) {values.push( value[0]) ;}); // value[0] is first column
+                $.each(selectedRows, function (index, value) {
+                    values.push(value[0]);
+                }); // value[0] is first column
 
                 $.ajax({
                     url: '/markasread',
@@ -185,9 +213,11 @@
                 var table = $('#example1').DataTable();
                 var selectedRows = table.rows('.selected').data();
                 // var values='';
-                var values=[];
+                var values = [];
                 // lay
-                $.each(selectedRows, function(index, value) {values.push( value[0]) ;}); // value[0] is first column
+                $.each(selectedRows, function (index, value) {
+                    values.push(value[0]);
+                }); // value[0] is first column
 
                 $.ajax({
                     url: '/markallasread',
@@ -217,13 +247,15 @@
 
             var table = $('#example1').DataTable();
             $('#count').click(function () {
-                var d = table.rows({ selected: true } );
+                var d = table.rows({selected: true});
                 // var rowData = table.rows( { selected: true } ).data()[][0];
                 var selectedRows = table.rows('.selected').data();
                 // var values='';
-                var values=[];
+                var values = [];
                 // lay
-                $.each(selectedRows, function(index, value) {values.push( value[0]) ;}); // value[0] is first column
+                $.each(selectedRows, function (index, value) {
+                    values.push(value[0]);
+                }); // value[0] is first column
                 // return(values);
 
                 console.log(values);

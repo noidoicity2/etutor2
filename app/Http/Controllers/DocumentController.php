@@ -25,7 +25,14 @@ class DocumentController extends Controller
         $file = $request->file('file');
         $doc = new Document();
         $doc->name = $file->getClientOriginalName();
-        $doc->link = '/Uploads/'.   $doc->name;
+        if($request->link=='')
+        {
+            $doc->link = '/Uploads/'.   $doc->name;
+        }
+        else{
+            $doc->link = $request->link;
+        }
+
         $doc->created_by= Auth::id();
         $doc->isPublic = $request->status;
 

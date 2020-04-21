@@ -192,3 +192,7 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 
 //default page
 Route::get('/', 'DashboardController@index')->middleware('checkAdminLogin');
+
+Route::get('/testck', function () {
+    return view('CKFinder.index');
+});
