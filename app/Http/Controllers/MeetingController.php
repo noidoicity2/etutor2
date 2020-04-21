@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class MeetingController extends Controller
 {
-    public function arangeGeeting(Request $request)
+    public function arangeGeeting(Request $request,$id)
     {
         $meeting = new Meeting();
-        $tutor_id = Auth::id();
+        $student_id = Auth::id();
         $meeting->name = $request->get('meetingName');
-        $meeting->tutor_id = $tutor_id;
+        $meeting->student_id = $student_id;
         $meeting->save();
         return back()->with('arangeGeeting', 'add successfully');
     }
