@@ -19,7 +19,7 @@ use App\Model\Message;
 |
 */
 
-Route::get('/', 'UserController@GetAllUser')->middleware('checkAdminLogin');
+
 
 Auth::routes();
 
@@ -123,7 +123,7 @@ Route::get('updateAllPass', function () {
     User::query()->update(['password' => bcrypt('dat')]);
 });
 Route::group(['middleware' => ['checkAdminLogin']], function () {
-    Route::get('/', 'UserController@GetAllUser');
+
     Route::get('/users', 'UserController@GetAllUser');
     Route::get('/tutors', 'UserController@GetAllTutors');
     Route::get('/adduser',  'UserController@AddUser');
@@ -170,10 +170,25 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 
 
     Route::get('dashboard', 'DashboardController@index');
+
+
     Route::get('msgChart', 'DashboardController@messageChart');
     Route::post('postChart', 'DashboardController@messageChart');
+    Route::get('yourdocument', 'DocumentController@GetAllDocument');
+    Route::get('newdocument', 'DocumentController@UploadDocument');
+    Route::post('uploadfile', 'DocumentController@DoUploadFile');
+
+
+
+
+
 
 //Meeting
     Route::get('viewMeeting/id/{id}','MeetingController@renderViewMeetings');
     Route::post('arangeGeeting','MeetingController@arangeGeeting')->name('arangeGeeting');
 });
+
+
+
+//default page
+Route::get('/', 'DashboardController@index')->middleware('checkAdminLogin');

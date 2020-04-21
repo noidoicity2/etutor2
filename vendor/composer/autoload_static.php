@@ -11,15 +11,17 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-        'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
+        '8a9dc1de0ca7e01f3e08231539562f61' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/functions.php',
+        'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
@@ -33,30 +35,30 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
     );
 
     public static $prefixLengthsPsr4 = array (
-        'v' =>
+        'v' => 
         array (
             'voku\\tests\\' => 11,
             'voku\\' => 5,
         ),
-        'p' =>
+        'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
-        'X' =>
+        'X' => 
         array (
             'XdgBaseDir\\' => 11,
         ),
-        'W' =>
+        'W' => 
         array (
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
         ),
-        'T' =>
+        'T' => 
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
         ),
-        'S' =>
+        'S' => 
         array (
             'Symfony\\Polyfill\\Php73\\' => 23,
             'Symfony\\Polyfill\\Php72\\' => 23,
@@ -80,15 +82,17 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\FlysystemDropbox\\' => 24,
+            'Spatie\\Dropbox\\' => 15,
             'Seld\\PharUtils\\' => 15,
             'Seld\\JsonLint\\' => 14,
         ),
-        'R' =>
+        'R' => 
         array (
             'Ramsey\\Uuid\\' => 12,
             'Ramsey\\Collection\\' => 18,
         ),
-        'P' =>
+        'P' => 
         array (
             'Pusher\\' => 7,
             'Psy\\' => 4,
@@ -97,47 +101,52 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
             'Psr\\Http\\Message\\' => 17,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
+            'Psr\\Cache\\' => 10,
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
         ),
-        'O' =>
+        'O' => 
         array (
             'Opis\\Closure\\' => 13,
         ),
-        'N' =>
+        'N' => 
         array (
             'NunoMaduro\\Collision\\' => 21,
         ),
-        'M' =>
+        'M' => 
         array (
             'Monolog\\' => 8,
         ),
-        'L' =>
+        'L' => 
         array (
+            'League\\Flysystem\\Cached\\' => 24,
+            'League\\Flysystem\\AwsS3v3\\' => 25,
             'League\\Flysystem\\' => 17,
             'League\\CommonMark\\' => 18,
             'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
         ),
-        'J' =>
+        'J' => 
         array (
             'JsonSchema\\' => 11,
+            'JmesPath\\' => 9,
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
             'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
-        'I' =>
+        'I' => 
         array (
             'Illuminate\\Foundation\\Auth\\' => 27,
             'Illuminate\\' => 11,
         ),
-        'G' =>
+        'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+            'GrahamCampbell\\GuzzleFactory\\' => 29,
         ),
-        'F' =>
+        'F' => 
         array (
             'Fruitcake\\Cors\\' => 15,
             'Fideloper\\Proxy\\' => 16,
@@ -146,11 +155,11 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
             'Facade\\IgnitionContracts\\' => 25,
             'Facade\\FlareClient\\' => 19,
         ),
-        'E' =>
+        'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
         ),
-        'D' =>
+        'D' => 
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
@@ -161,7 +170,7 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
             'Doctrine\\Common\\' => 16,
             'DeepCopy\\' => 9,
         ),
-        'C' =>
+        'C' => 
         array (
             'Cron\\' => 5,
             'Composer\\XdebugHandler\\' => 23,
@@ -170,386 +179,436 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
             'Composer\\CaBundle\\' => 18,
             'Composer\\' => 9,
             'Carbon\\' => 7,
+            'CKSource\\CKFinder\\' => 18,
+            'CKSource\\CKFinderBridge\\' => 24,
         ),
-        'B' =>
+        'B' => 
         array (
             'Brick\\Math\\' => 11,
             'Barryvdh\\LaravelIdeHelper\\' => 26,
         ),
-        'A' =>
+        'A' => 
         array (
+            'Aws\\' => 4,
             'Asm89\\Stack\\' => 12,
             'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'voku\\tests\\' =>
+        'voku\\tests\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/tests',
         ),
-        'voku\\' =>
+        'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
         ),
-        'phpDocumentor\\Reflection\\' =>
+        'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
-        'XdgBaseDir\\' =>
+        'XdgBaseDir\\' => 
         array (
             0 => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src',
         ),
-        'Whoops\\' =>
+        'Whoops\\' => 
         array (
             0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
         ),
-        'Webmozart\\Assert\\' =>
+        'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
-        'TijsVerkoyen\\CssToInlineStyles\\' =>
+        'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
             0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
         ),
-        'Tests\\' =>
+        'Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
         ),
-        'Symfony\\Polyfill\\Php73\\' =>
+        'Symfony\\Polyfill\\Php73\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php73',
         ),
-        'Symfony\\Polyfill\\Php72\\' =>
+        'Symfony\\Polyfill\\Php72\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' =>
+        'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Symfony\\Polyfill\\Intl\\Idn\\' =>
+        'Symfony\\Polyfill\\Intl\\Idn\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
         ),
-        'Symfony\\Polyfill\\Iconv\\' =>
+        'Symfony\\Polyfill\\Iconv\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-iconv',
         ),
-        'Symfony\\Polyfill\\Ctype\\' =>
+        'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'Symfony\\Contracts\\Translation\\' =>
+        'Symfony\\Contracts\\Translation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/translation-contracts',
         ),
-        'Symfony\\Contracts\\Service\\' =>
+        'Symfony\\Contracts\\Service\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/service-contracts',
         ),
-        'Symfony\\Contracts\\EventDispatcher\\' =>
+        'Symfony\\Contracts\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher-contracts',
         ),
-        'Symfony\\Component\\VarDumper\\' =>
+        'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
-        'Symfony\\Component\\Translation\\' =>
+        'Symfony\\Component\\Translation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
         ),
-        'Symfony\\Component\\Routing\\' =>
+        'Symfony\\Component\\Routing\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/routing',
         ),
-        'Symfony\\Component\\Process\\' =>
+        'Symfony\\Component\\Process\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/process',
         ),
-        'Symfony\\Component\\Mime\\' =>
+        'Symfony\\Component\\Mime\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/mime',
         ),
-        'Symfony\\Component\\HttpKernel\\' =>
+        'Symfony\\Component\\HttpKernel\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/http-kernel',
         ),
-        'Symfony\\Component\\HttpFoundation\\' =>
+        'Symfony\\Component\\HttpFoundation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/http-foundation',
         ),
-        'Symfony\\Component\\Finder\\' =>
+        'Symfony\\Component\\Finder\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
         ),
-        'Symfony\\Component\\Filesystem\\' =>
+        'Symfony\\Component\\Filesystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/filesystem',
         ),
-        'Symfony\\Component\\EventDispatcher\\' =>
+        'Symfony\\Component\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
         ),
-        'Symfony\\Component\\ErrorHandler\\' =>
+        'Symfony\\Component\\ErrorHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/error-handler',
         ),
-        'Symfony\\Component\\CssSelector\\' =>
+        'Symfony\\Component\\CssSelector\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/css-selector',
         ),
-        'Symfony\\Component\\Console\\' =>
+        'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
-        'Seld\\PharUtils\\' =>
+        'Spatie\\FlysystemDropbox\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/flysystem-dropbox/src',
+        ),
+        'Spatie\\Dropbox\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/dropbox-api/src',
+        ),
+        'Seld\\PharUtils\\' => 
         array (
             0 => __DIR__ . '/..' . '/seld/phar-utils/src',
         ),
-        'Seld\\JsonLint\\' =>
+        'Seld\\JsonLint\\' => 
         array (
             0 => __DIR__ . '/..' . '/seld/jsonlint/src/Seld/JsonLint',
         ),
-        'Ramsey\\Uuid\\' =>
+        'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
         ),
-        'Ramsey\\Collection\\' =>
+        'Ramsey\\Collection\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/collection/src',
         ),
-        'Pusher\\' =>
+        'Pusher\\' => 
         array (
             0 => __DIR__ . '/..' . '/pusher/pusher-php-server/src',
         ),
-        'Psy\\' =>
+        'Psy\\' => 
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src',
         ),
-        'Psr\\SimpleCache\\' =>
+        'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
         ),
-        'Psr\\Log\\' =>
+        'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
-        'Psr\\Http\\Message\\' =>
+        'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'Psr\\EventDispatcher\\' =>
+        'Psr\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/event-dispatcher/src',
         ),
-        'Psr\\Container\\' =>
+        'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
-        'Prophecy\\' =>
+        'Psr\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'Prophecy\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
         ),
-        'PhpParser\\' =>
+        'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
-        'PhpOption\\' =>
+        'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
-        'Opis\\Closure\\' =>
+        'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
         ),
-        'NunoMaduro\\Collision\\' =>
+        'NunoMaduro\\Collision\\' => 
         array (
             0 => __DIR__ . '/..' . '/nunomaduro/collision/src',
         ),
-        'Monolog\\' =>
+        'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'League\\Flysystem\\' =>
+        'League\\Flysystem\\Cached\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src',
+        ),
+        'League\\Flysystem\\AwsS3v3\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/flysystem-aws-s3-v3/src',
+        ),
+        'League\\Flysystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
         ),
-        'League\\CommonMark\\' =>
+        'League\\CommonMark\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/commonmark/src',
         ),
-        'Laravel\\Ui\\' =>
+        'Laravel\\Ui\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/ui/src',
         ),
-        'Laravel\\Tinker\\' =>
+        'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
-        'JsonSchema\\' =>
+        'JsonSchema\\' => 
         array (
             0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
         ),
-        'JakubOnderka\\PhpConsoleHighlighter\\' =>
+        'JmesPath\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mtdowling/jmespath.php/src',
+        ),
+        'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
         ),
-        'JakubOnderka\\PhpConsoleColor\\' =>
+        'JakubOnderka\\PhpConsoleColor\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
         ),
-        'Illuminate\\Foundation\\Auth\\' =>
+        'Illuminate\\Foundation\\Auth\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/ui/auth-backend',
         ),
-        'Illuminate\\' =>
+        'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
         ),
-        'GuzzleHttp\\Psr7\\' =>
+        'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
-        'GuzzleHttp\\Promise\\' =>
+        'GuzzleHttp\\Promise\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
         ),
-        'GuzzleHttp\\' =>
+        'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'Fruitcake\\Cors\\' =>
+        'GrahamCampbell\\GuzzleFactory\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/graham-campbell/guzzle-factory/src',
+        ),
+        'Fruitcake\\Cors\\' => 
         array (
             0 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
         ),
-        'Fideloper\\Proxy\\' =>
+        'Fideloper\\Proxy\\' => 
         array (
             0 => __DIR__ . '/..' . '/fideloper/proxy/src',
         ),
-        'Faker\\' =>
+        'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
-        'Facade\\Ignition\\' =>
+        'Facade\\Ignition\\' => 
         array (
             0 => __DIR__ . '/..' . '/facade/ignition/src',
         ),
-        'Facade\\IgnitionContracts\\' =>
+        'Facade\\IgnitionContracts\\' => 
         array (
             0 => __DIR__ . '/..' . '/facade/ignition-contracts/src',
         ),
-        'Facade\\FlareClient\\' =>
+        'Facade\\FlareClient\\' => 
         array (
             0 => __DIR__ . '/..' . '/facade/flare-client-php/src',
         ),
-        'Egulias\\EmailValidator\\' =>
+        'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
         ),
-        'Dotenv\\' =>
+        'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
-        'Doctrine\\Instantiator\\' =>
+        'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
-        'Doctrine\\DBAL\\' =>
+        'Doctrine\\DBAL\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL',
         ),
-        'Doctrine\\Common\\Lexer\\' =>
+        'Doctrine\\Common\\Lexer\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
         ),
-        'Doctrine\\Common\\Inflector\\' =>
+        'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
         ),
-        'Doctrine\\Common\\Cache\\' =>
+        'Doctrine\\Common\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
         ),
-        'Doctrine\\Common\\' =>
+        'Doctrine\\Common\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
         ),
-        'DeepCopy\\' =>
+        'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
-        'Cron\\' =>
+        'Cron\\' => 
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
-        'Composer\\XdebugHandler\\' =>
+        'Composer\\XdebugHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/xdebug-handler/src',
         ),
-        'Composer\\Spdx\\' =>
+        'Composer\\Spdx\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/spdx-licenses/src',
         ),
-        'Composer\\Semver\\' =>
+        'Composer\\Semver\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/semver/src',
         ),
-        'Composer\\CaBundle\\' =>
+        'Composer\\CaBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
         ),
-        'Composer\\' =>
+        'Composer\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/composer/src/Composer',
         ),
-        'Carbon\\' =>
+        'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
-        'Brick\\Math\\' =>
+        'CKSource\\CKFinder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/_connector',
+        ),
+        'CKSource\\CKFinderBridge\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/src',
+        ),
+        'Brick\\Math\\' => 
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
-        'Barryvdh\\LaravelIdeHelper\\' =>
+        'Barryvdh\\LaravelIdeHelper\\' => 
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-ide-helper/src',
         ),
-        'Asm89\\Stack\\' =>
+        'Aws\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/aws/aws-sdk-php/src',
+        ),
+        'Asm89\\Stack\\' => 
         array (
             0 => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack',
         ),
-        'App\\' =>
+        'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
     public static $prefixesPsr0 = array (
-        'M' =>
+        'P' => 
         array (
-            'Mockery' =>
+            'Pimple' => 
+            array (
+                0 => __DIR__ . '/..' . '/pimple/pimple/src',
+            ),
+        ),
+        'M' => 
+        array (
+            'Mockery' => 
             array (
                 0 => __DIR__ . '/..' . '/mockery/mockery/library',
             ),
         ),
-        'H' =>
+        'H' => 
         array (
-            'Highlight\\' =>
+            'Highlight\\' => 
             array (
                 0 => __DIR__ . '/..' . '/scrivo/highlight.php',
             ),
-            'HighlightUtilities\\' =>
+            'HighlightUtilities\\' => 
             array (
                 0 => __DIR__ . '/..' . '/scrivo/highlight.php',
             ),
         ),
-        'B' =>
+        'B' => 
         array (
-            'Barryvdh' =>
+            'Barryvdh' => 
             array (
                 0 => __DIR__ . '/..' . '/barryvdh/reflection-docblock/src',
             ),
@@ -558,17 +617,24 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Events\\UpdateChat' => __DIR__ . '/../..' . '/app/Events/UpdateChat.php',
+        'App\\Events\\UpdateNotification' => __DIR__ . '/../..' . '/app/Events/UpdateNotification.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
         'App\\Http\\Controllers\\DocumentController' => __DIR__ . '/../..' . '/app/Http/Controllers/DocumentController.php',
+        'App\\Http\\Controllers\\EmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/EmailController.php',
         'App\\Http\\Controllers\\MailController' => __DIR__ . '/../..' . '/app/Http/Controllers/MailController.php',
         'App\\Http\\Controllers\\MeetingController' => __DIR__ . '/../..' . '/app/Http/Controllers/MeetingController.php',
+        'App\\Http\\Controllers\\ReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReportController.php',
+        'App\\Http\\Controllers\\RequestController' => __DIR__ . '/../..' . '/app/Http/Controllers/RequestController.php',
         'App\\Http\\Controllers\\TutorRegistrationController' => __DIR__ . '/../..' . '/app/Http/Controllers/TutorRegistrationController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Controllers\\messageController' => __DIR__ . '/../..' . '/app/Http/Controllers/messageController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
+        'App\\Http\\Middleware\\CustomCKFinderAuth' => __DIR__ . '/../..' . '/app/Http/Middleware/CustomCKFinderAuth.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
@@ -576,7 +642,12 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Middleware\\checkAdminLogin' => __DIR__ . '/../..' . '/app/Http/Middleware/checkAdminLogin.php',
         'App\\Http\\Request\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Request/LoginRequest.php',
+        'App\\Http\\Utility\\Chart' => __DIR__ . '/../..' . '/app/Http/Utility/Chart.php',
+        'App\\Model\\Document' => __DIR__ . '/../..' . '/app/Model/Document.php',
+        'App\\Model\\Email' => __DIR__ . '/../..' . '/app/Model/Email.php',
+        'App\\Model\\Meeting' => __DIR__ . '/../..' . '/app/Model/Meeting.php',
         'App\\Model\\Message' => __DIR__ . '/../..' . '/app/Model/Message.php',
+        'App\\Model\\Request' => __DIR__ . '/../..' . '/app/Model/Request.php',
         'App\\Model\\TutorRegistration' => __DIR__ . '/../..' . '/app/Model/TutorRegistration.php',
         'App\\Model\\User' => __DIR__ . '/../..' . '/app/Model/User.php',
         'App\\Model\\role' => __DIR__ . '/../..' . '/app/Model/role.php',
@@ -588,6 +659,667 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
+        'Aws\\ACMPCA\\ACMPCAClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ACMPCA/ACMPCAClient.php',
+        'Aws\\ACMPCA\\Exception\\ACMPCAException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ACMPCA/Exception/ACMPCAException.php',
+        'Aws\\AbstractConfigurationProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AbstractConfigurationProvider.php',
+        'Aws\\AccessAnalyzer\\AccessAnalyzerClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AccessAnalyzer/AccessAnalyzerClient.php',
+        'Aws\\AccessAnalyzer\\Exception\\AccessAnalyzerException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AccessAnalyzer/Exception/AccessAnalyzerException.php',
+        'Aws\\Acm\\AcmClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Acm/AcmClient.php',
+        'Aws\\Acm\\Exception\\AcmException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Acm/Exception/AcmException.php',
+        'Aws\\AlexaForBusiness\\AlexaForBusinessClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AlexaForBusiness/AlexaForBusinessClient.php',
+        'Aws\\AlexaForBusiness\\Exception\\AlexaForBusinessException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AlexaForBusiness/Exception/AlexaForBusinessException.php',
+        'Aws\\Amplify\\AmplifyClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Amplify/AmplifyClient.php',
+        'Aws\\Amplify\\Exception\\AmplifyException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Amplify/Exception/AmplifyException.php',
+        'Aws\\ApiGatewayManagementApi\\ApiGatewayManagementApiClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ApiGatewayManagementApi/ApiGatewayManagementApiClient.php',
+        'Aws\\ApiGatewayManagementApi\\Exception\\ApiGatewayManagementApiException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ApiGatewayManagementApi/Exception/ApiGatewayManagementApiException.php',
+        'Aws\\ApiGatewayV2\\ApiGatewayV2Client' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ApiGatewayV2/ApiGatewayV2Client.php',
+        'Aws\\ApiGatewayV2\\Exception\\ApiGatewayV2Exception' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ApiGatewayV2/Exception/ApiGatewayV2Exception.php',
+        'Aws\\ApiGateway\\ApiGatewayClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ApiGateway/ApiGatewayClient.php',
+        'Aws\\ApiGateway\\Exception\\ApiGatewayException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ApiGateway/Exception/ApiGatewayException.php',
+        'Aws\\Api\\AbstractModel' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/AbstractModel.php',
+        'Aws\\Api\\ApiProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/ApiProvider.php',
+        'Aws\\Api\\DateTimeResult' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/DateTimeResult.php',
+        'Aws\\Api\\DocModel' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/DocModel.php',
+        'Aws\\Api\\ErrorParser\\AbstractErrorParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/ErrorParser/AbstractErrorParser.php',
+        'Aws\\Api\\ErrorParser\\JsonParserTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/ErrorParser/JsonParserTrait.php',
+        'Aws\\Api\\ErrorParser\\JsonRpcErrorParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/ErrorParser/JsonRpcErrorParser.php',
+        'Aws\\Api\\ErrorParser\\RestJsonErrorParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/ErrorParser/RestJsonErrorParser.php',
+        'Aws\\Api\\ErrorParser\\XmlErrorParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/ErrorParser/XmlErrorParser.php',
+        'Aws\\Api\\ListShape' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/ListShape.php',
+        'Aws\\Api\\MapShape' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/MapShape.php',
+        'Aws\\Api\\Operation' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Operation.php',
+        'Aws\\Api\\Parser\\AbstractParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/AbstractParser.php',
+        'Aws\\Api\\Parser\\AbstractRestParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/AbstractRestParser.php',
+        'Aws\\Api\\Parser\\Crc32ValidatingParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/Crc32ValidatingParser.php',
+        'Aws\\Api\\Parser\\DecodingEventStreamIterator' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/DecodingEventStreamIterator.php',
+        'Aws\\Api\\Parser\\EventParsingIterator' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/EventParsingIterator.php',
+        'Aws\\Api\\Parser\\Exception\\ParserException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/Exception/ParserException.php',
+        'Aws\\Api\\Parser\\JsonParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/JsonParser.php',
+        'Aws\\Api\\Parser\\JsonRpcParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/JsonRpcParser.php',
+        'Aws\\Api\\Parser\\MetadataParserTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/MetadataParserTrait.php',
+        'Aws\\Api\\Parser\\PayloadParserTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/PayloadParserTrait.php',
+        'Aws\\Api\\Parser\\QueryParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/QueryParser.php',
+        'Aws\\Api\\Parser\\RestJsonParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/RestJsonParser.php',
+        'Aws\\Api\\Parser\\RestXmlParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/RestXmlParser.php',
+        'Aws\\Api\\Parser\\XmlParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Parser/XmlParser.php',
+        'Aws\\Api\\Serializer\\Ec2ParamBuilder' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Serializer/Ec2ParamBuilder.php',
+        'Aws\\Api\\Serializer\\JsonBody' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Serializer/JsonBody.php',
+        'Aws\\Api\\Serializer\\JsonRpcSerializer' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Serializer/JsonRpcSerializer.php',
+        'Aws\\Api\\Serializer\\QueryParamBuilder' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Serializer/QueryParamBuilder.php',
+        'Aws\\Api\\Serializer\\QuerySerializer' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Serializer/QuerySerializer.php',
+        'Aws\\Api\\Serializer\\RestJsonSerializer' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Serializer/RestJsonSerializer.php',
+        'Aws\\Api\\Serializer\\RestSerializer' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Serializer/RestSerializer.php',
+        'Aws\\Api\\Serializer\\RestXmlSerializer' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Serializer/RestXmlSerializer.php',
+        'Aws\\Api\\Serializer\\XmlBody' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Serializer/XmlBody.php',
+        'Aws\\Api\\Service' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Service.php',
+        'Aws\\Api\\Shape' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Shape.php',
+        'Aws\\Api\\ShapeMap' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/ShapeMap.php',
+        'Aws\\Api\\StructureShape' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/StructureShape.php',
+        'Aws\\Api\\TimestampShape' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/TimestampShape.php',
+        'Aws\\Api\\Validator' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Api/Validator.php',
+        'Aws\\AppConfig\\AppConfigClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AppConfig/AppConfigClient.php',
+        'Aws\\AppConfig\\Exception\\AppConfigException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AppConfig/Exception/AppConfigException.php',
+        'Aws\\AppMesh\\AppMeshClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AppMesh/AppMeshClient.php',
+        'Aws\\AppMesh\\Exception\\AppMeshException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AppMesh/Exception/AppMeshException.php',
+        'Aws\\AppSync\\AppSyncClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AppSync/AppSyncClient.php',
+        'Aws\\AppSync\\Exception\\AppSyncException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AppSync/Exception/AppSyncException.php',
+        'Aws\\ApplicationAutoScaling\\ApplicationAutoScalingClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ApplicationAutoScaling/ApplicationAutoScalingClient.php',
+        'Aws\\ApplicationAutoScaling\\Exception\\ApplicationAutoScalingException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ApplicationAutoScaling/Exception/ApplicationAutoScalingException.php',
+        'Aws\\ApplicationDiscoveryService\\ApplicationDiscoveryServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ApplicationDiscoveryService/ApplicationDiscoveryServiceClient.php',
+        'Aws\\ApplicationDiscoveryService\\Exception\\ApplicationDiscoveryServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ApplicationDiscoveryService/Exception/ApplicationDiscoveryServiceException.php',
+        'Aws\\ApplicationInsights\\ApplicationInsightsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ApplicationInsights/ApplicationInsightsClient.php',
+        'Aws\\ApplicationInsights\\Exception\\ApplicationInsightsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ApplicationInsights/Exception/ApplicationInsightsException.php',
+        'Aws\\Appstream\\AppstreamClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Appstream/AppstreamClient.php',
+        'Aws\\Appstream\\Exception\\AppstreamException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Appstream/Exception/AppstreamException.php',
+        'Aws\\Arn\\AccessPointArn' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Arn/AccessPointArn.php',
+        'Aws\\Arn\\Arn' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Arn/Arn.php',
+        'Aws\\Arn\\ArnInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Arn/ArnInterface.php',
+        'Aws\\Arn\\ArnParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Arn/ArnParser.php',
+        'Aws\\Arn\\Exception\\InvalidArnException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Arn/Exception/InvalidArnException.php',
+        'Aws\\Arn\\ResourceTypeAndIdTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Arn/ResourceTypeAndIdTrait.php',
+        'Aws\\Arn\\S3\\AccessPointArn' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Arn/S3/AccessPointArn.php',
+        'Aws\\Athena\\AthenaClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Athena/AthenaClient.php',
+        'Aws\\Athena\\Exception\\AthenaException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Athena/Exception/AthenaException.php',
+        'Aws\\AugmentedAIRuntime\\AugmentedAIRuntimeClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AugmentedAIRuntime/AugmentedAIRuntimeClient.php',
+        'Aws\\AugmentedAIRuntime\\Exception\\AugmentedAIRuntimeException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AugmentedAIRuntime/Exception/AugmentedAIRuntimeException.php',
+        'Aws\\AutoScalingPlans\\AutoScalingPlansClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AutoScalingPlans/AutoScalingPlansClient.php',
+        'Aws\\AutoScalingPlans\\Exception\\AutoScalingPlansException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AutoScalingPlans/Exception/AutoScalingPlansException.php',
+        'Aws\\AutoScaling\\AutoScalingClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AutoScaling/AutoScalingClient.php',
+        'Aws\\AutoScaling\\Exception\\AutoScalingException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AutoScaling/Exception/AutoScalingException.php',
+        'Aws\\AwsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AwsClient.php',
+        'Aws\\AwsClientInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AwsClientInterface.php',
+        'Aws\\AwsClientTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/AwsClientTrait.php',
+        'Aws\\Backup\\BackupClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Backup/BackupClient.php',
+        'Aws\\Backup\\Exception\\BackupException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Backup/Exception/BackupException.php',
+        'Aws\\Batch\\BatchClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Batch/BatchClient.php',
+        'Aws\\Batch\\Exception\\BatchException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Batch/Exception/BatchException.php',
+        'Aws\\Budgets\\BudgetsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Budgets/BudgetsClient.php',
+        'Aws\\Budgets\\Exception\\BudgetsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Budgets/Exception/BudgetsException.php',
+        'Aws\\CacheInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CacheInterface.php',
+        'Aws\\Chime\\ChimeClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Chime/ChimeClient.php',
+        'Aws\\Chime\\Exception\\ChimeException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Chime/Exception/ChimeException.php',
+        'Aws\\ClientResolver' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ClientResolver.php',
+        'Aws\\ClientSideMonitoring\\AbstractMonitoringMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ClientSideMonitoring/AbstractMonitoringMiddleware.php',
+        'Aws\\ClientSideMonitoring\\ApiCallAttemptMonitoringMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ClientSideMonitoring/ApiCallAttemptMonitoringMiddleware.php',
+        'Aws\\ClientSideMonitoring\\ApiCallMonitoringMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ClientSideMonitoring/ApiCallMonitoringMiddleware.php',
+        'Aws\\ClientSideMonitoring\\Configuration' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ClientSideMonitoring/Configuration.php',
+        'Aws\\ClientSideMonitoring\\ConfigurationInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ClientSideMonitoring/ConfigurationInterface.php',
+        'Aws\\ClientSideMonitoring\\ConfigurationProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ClientSideMonitoring/ConfigurationProvider.php',
+        'Aws\\ClientSideMonitoring\\Exception\\ConfigurationException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ClientSideMonitoring/Exception/ConfigurationException.php',
+        'Aws\\ClientSideMonitoring\\MonitoringMiddlewareInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ClientSideMonitoring/MonitoringMiddlewareInterface.php',
+        'Aws\\Cloud9\\Cloud9Client' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Cloud9/Cloud9Client.php',
+        'Aws\\Cloud9\\Exception\\Cloud9Exception' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Cloud9/Exception/Cloud9Exception.php',
+        'Aws\\CloudDirectory\\CloudDirectoryClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudDirectory/CloudDirectoryClient.php',
+        'Aws\\CloudDirectory\\Exception\\CloudDirectoryException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudDirectory/Exception/CloudDirectoryException.php',
+        'Aws\\CloudFormation\\CloudFormationClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudFormation/CloudFormationClient.php',
+        'Aws\\CloudFormation\\Exception\\CloudFormationException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudFormation/Exception/CloudFormationException.php',
+        'Aws\\CloudFront\\CloudFrontClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudFront/CloudFrontClient.php',
+        'Aws\\CloudFront\\CookieSigner' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudFront/CookieSigner.php',
+        'Aws\\CloudFront\\Exception\\CloudFrontException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudFront/Exception/CloudFrontException.php',
+        'Aws\\CloudFront\\Signer' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudFront/Signer.php',
+        'Aws\\CloudFront\\UrlSigner' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudFront/UrlSigner.php',
+        'Aws\\CloudHSMV2\\CloudHSMV2Client' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudHSMV2/CloudHSMV2Client.php',
+        'Aws\\CloudHSMV2\\Exception\\CloudHSMV2Exception' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudHSMV2/Exception/CloudHSMV2Exception.php',
+        'Aws\\CloudHsm\\CloudHsmClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudHsm/CloudHsmClient.php',
+        'Aws\\CloudHsm\\Exception\\CloudHsmException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudHsm/Exception/CloudHsmException.php',
+        'Aws\\CloudSearchDomain\\CloudSearchDomainClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudSearchDomain/CloudSearchDomainClient.php',
+        'Aws\\CloudSearchDomain\\Exception\\CloudSearchDomainException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudSearchDomain/Exception/CloudSearchDomainException.php',
+        'Aws\\CloudSearch\\CloudSearchClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudSearch/CloudSearchClient.php',
+        'Aws\\CloudSearch\\Exception\\CloudSearchException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudSearch/Exception/CloudSearchException.php',
+        'Aws\\CloudTrail\\CloudTrailClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudTrail/CloudTrailClient.php',
+        'Aws\\CloudTrail\\Exception\\CloudTrailException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudTrail/Exception/CloudTrailException.php',
+        'Aws\\CloudTrail\\LogFileIterator' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudTrail/LogFileIterator.php',
+        'Aws\\CloudTrail\\LogFileReader' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudTrail/LogFileReader.php',
+        'Aws\\CloudTrail\\LogRecordIterator' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudTrail/LogRecordIterator.php',
+        'Aws\\CloudWatchEvents\\CloudWatchEventsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudWatchEvents/CloudWatchEventsClient.php',
+        'Aws\\CloudWatchEvents\\Exception\\CloudWatchEventsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudWatchEvents/Exception/CloudWatchEventsException.php',
+        'Aws\\CloudWatchLogs\\CloudWatchLogsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudWatchLogs/CloudWatchLogsClient.php',
+        'Aws\\CloudWatchLogs\\Exception\\CloudWatchLogsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudWatchLogs/Exception/CloudWatchLogsException.php',
+        'Aws\\CloudWatch\\CloudWatchClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudWatch/CloudWatchClient.php',
+        'Aws\\CloudWatch\\Exception\\CloudWatchException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CloudWatch/Exception/CloudWatchException.php',
+        'Aws\\CodeBuild\\CodeBuildClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeBuild/CodeBuildClient.php',
+        'Aws\\CodeBuild\\Exception\\CodeBuildException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeBuild/Exception/CodeBuildException.php',
+        'Aws\\CodeCommit\\CodeCommitClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeCommit/CodeCommitClient.php',
+        'Aws\\CodeCommit\\Exception\\CodeCommitException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeCommit/Exception/CodeCommitException.php',
+        'Aws\\CodeDeploy\\CodeDeployClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeDeploy/CodeDeployClient.php',
+        'Aws\\CodeDeploy\\Exception\\CodeDeployException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeDeploy/Exception/CodeDeployException.php',
+        'Aws\\CodeGuruProfiler\\CodeGuruProfilerClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeGuruProfiler/CodeGuruProfilerClient.php',
+        'Aws\\CodeGuruProfiler\\Exception\\CodeGuruProfilerException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeGuruProfiler/Exception/CodeGuruProfilerException.php',
+        'Aws\\CodeGuruReviewer\\CodeGuruReviewerClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeGuruReviewer/CodeGuruReviewerClient.php',
+        'Aws\\CodeGuruReviewer\\Exception\\CodeGuruReviewerException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeGuruReviewer/Exception/CodeGuruReviewerException.php',
+        'Aws\\CodePipeline\\CodePipelineClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodePipeline/CodePipelineClient.php',
+        'Aws\\CodePipeline\\Exception\\CodePipelineException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodePipeline/Exception/CodePipelineException.php',
+        'Aws\\CodeStarNotifications\\CodeStarNotificationsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeStarNotifications/CodeStarNotificationsClient.php',
+        'Aws\\CodeStarNotifications\\Exception\\CodeStarNotificationsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeStarNotifications/Exception/CodeStarNotificationsException.php',
+        'Aws\\CodeStar\\CodeStarClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeStar/CodeStarClient.php',
+        'Aws\\CodeStar\\Exception\\CodeStarException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeStar/Exception/CodeStarException.php',
+        'Aws\\CodeStarconnections\\CodeStarconnectionsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeStarconnections/CodeStarconnectionsClient.php',
+        'Aws\\CodeStarconnections\\Exception\\CodeStarconnectionsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CodeStarconnections/Exception/CodeStarconnectionsException.php',
+        'Aws\\CognitoIdentityProvider\\CognitoIdentityProviderClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CognitoIdentityProvider/CognitoIdentityProviderClient.php',
+        'Aws\\CognitoIdentityProvider\\Exception\\CognitoIdentityProviderException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CognitoIdentityProvider/Exception/CognitoIdentityProviderException.php',
+        'Aws\\CognitoIdentity\\CognitoIdentityClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CognitoIdentity/CognitoIdentityClient.php',
+        'Aws\\CognitoIdentity\\CognitoIdentityProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CognitoIdentity/CognitoIdentityProvider.php',
+        'Aws\\CognitoIdentity\\Exception\\CognitoIdentityException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CognitoIdentity/Exception/CognitoIdentityException.php',
+        'Aws\\CognitoSync\\CognitoSyncClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CognitoSync/CognitoSyncClient.php',
+        'Aws\\CognitoSync\\Exception\\CognitoSyncException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CognitoSync/Exception/CognitoSyncException.php',
+        'Aws\\Command' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Command.php',
+        'Aws\\CommandInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CommandInterface.php',
+        'Aws\\CommandPool' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CommandPool.php',
+        'Aws\\ComprehendMedical\\ComprehendMedicalClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ComprehendMedical/ComprehendMedicalClient.php',
+        'Aws\\ComprehendMedical\\Exception\\ComprehendMedicalException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ComprehendMedical/Exception/ComprehendMedicalException.php',
+        'Aws\\Comprehend\\ComprehendClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Comprehend/ComprehendClient.php',
+        'Aws\\Comprehend\\Exception\\ComprehendException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Comprehend/Exception/ComprehendException.php',
+        'Aws\\ComputeOptimizer\\ComputeOptimizerClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ComputeOptimizer/ComputeOptimizerClient.php',
+        'Aws\\ComputeOptimizer\\Exception\\ComputeOptimizerException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ComputeOptimizer/Exception/ComputeOptimizerException.php',
+        'Aws\\ConfigService\\ConfigServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ConfigService/ConfigServiceClient.php',
+        'Aws\\ConfigService\\Exception\\ConfigServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ConfigService/Exception/ConfigServiceException.php',
+        'Aws\\ConfigurationProviderInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ConfigurationProviderInterface.php',
+        'Aws\\ConnectParticipant\\ConnectParticipantClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ConnectParticipant/ConnectParticipantClient.php',
+        'Aws\\ConnectParticipant\\Exception\\ConnectParticipantException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ConnectParticipant/Exception/ConnectParticipantException.php',
+        'Aws\\Connect\\ConnectClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Connect/ConnectClient.php',
+        'Aws\\Connect\\Exception\\ConnectException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Connect/Exception/ConnectException.php',
+        'Aws\\CostExplorer\\CostExplorerClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CostExplorer/CostExplorerClient.php',
+        'Aws\\CostExplorer\\Exception\\CostExplorerException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CostExplorer/Exception/CostExplorerException.php',
+        'Aws\\CostandUsageReportService\\CostandUsageReportServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CostandUsageReportService/CostandUsageReportServiceClient.php',
+        'Aws\\CostandUsageReportService\\Exception\\CostandUsageReportServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/CostandUsageReportService/Exception/CostandUsageReportServiceException.php',
+        'Aws\\Credentials\\AssumeRoleCredentialProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Credentials/AssumeRoleCredentialProvider.php',
+        'Aws\\Credentials\\AssumeRoleWithWebIdentityCredentialProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Credentials/AssumeRoleWithWebIdentityCredentialProvider.php',
+        'Aws\\Credentials\\CredentialProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Credentials/CredentialProvider.php',
+        'Aws\\Credentials\\Credentials' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Credentials/Credentials.php',
+        'Aws\\Credentials\\CredentialsInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Credentials/CredentialsInterface.php',
+        'Aws\\Credentials\\EcsCredentialProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Credentials/EcsCredentialProvider.php',
+        'Aws\\Credentials\\InstanceProfileProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Credentials/InstanceProfileProvider.php',
+        'Aws\\Crypto\\AbstractCryptoClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/AbstractCryptoClient.php',
+        'Aws\\Crypto\\AesDecryptingStream' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/AesDecryptingStream.php',
+        'Aws\\Crypto\\AesEncryptingStream' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/AesEncryptingStream.php',
+        'Aws\\Crypto\\AesGcmDecryptingStream' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/AesGcmDecryptingStream.php',
+        'Aws\\Crypto\\AesGcmEncryptingStream' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/AesGcmEncryptingStream.php',
+        'Aws\\Crypto\\AesStreamInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/AesStreamInterface.php',
+        'Aws\\Crypto\\Cipher\\Cbc' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/Cipher/Cbc.php',
+        'Aws\\Crypto\\Cipher\\CipherBuilderTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/Cipher/CipherBuilderTrait.php',
+        'Aws\\Crypto\\Cipher\\CipherMethod' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/Cipher/CipherMethod.php',
+        'Aws\\Crypto\\DecryptionTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/DecryptionTrait.php',
+        'Aws\\Crypto\\EncryptionTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/EncryptionTrait.php',
+        'Aws\\Crypto\\KmsMaterialsProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/KmsMaterialsProvider.php',
+        'Aws\\Crypto\\MaterialsProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/MaterialsProvider.php',
+        'Aws\\Crypto\\MetadataEnvelope' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/MetadataEnvelope.php',
+        'Aws\\Crypto\\MetadataStrategyInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Crypto/MetadataStrategyInterface.php',
+        'Aws\\DAX\\DAXClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DAX/DAXClient.php',
+        'Aws\\DAX\\Exception\\DAXException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DAX/Exception/DAXException.php',
+        'Aws\\DLM\\DLMClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DLM/DLMClient.php',
+        'Aws\\DLM\\Exception\\DLMException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DLM/Exception/DLMException.php',
+        'Aws\\DataExchange\\DataExchangeClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DataExchange/DataExchangeClient.php',
+        'Aws\\DataExchange\\Exception\\DataExchangeException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DataExchange/Exception/DataExchangeException.php',
+        'Aws\\DataPipeline\\DataPipelineClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DataPipeline/DataPipelineClient.php',
+        'Aws\\DataPipeline\\Exception\\DataPipelineException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DataPipeline/Exception/DataPipelineException.php',
+        'Aws\\DataSync\\DataSyncClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DataSync/DataSyncClient.php',
+        'Aws\\DataSync\\Exception\\DataSyncException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DataSync/Exception/DataSyncException.php',
+        'Aws\\DatabaseMigrationService\\DatabaseMigrationServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DatabaseMigrationService/DatabaseMigrationServiceClient.php',
+        'Aws\\DatabaseMigrationService\\Exception\\DatabaseMigrationServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DatabaseMigrationService/Exception/DatabaseMigrationServiceException.php',
+        'Aws\\Detective\\DetectiveClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Detective/DetectiveClient.php',
+        'Aws\\Detective\\Exception\\DetectiveException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Detective/Exception/DetectiveException.php',
+        'Aws\\DeviceFarm\\DeviceFarmClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DeviceFarm/DeviceFarmClient.php',
+        'Aws\\DeviceFarm\\Exception\\DeviceFarmException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DeviceFarm/Exception/DeviceFarmException.php',
+        'Aws\\DirectConnect\\DirectConnectClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DirectConnect/DirectConnectClient.php',
+        'Aws\\DirectConnect\\Exception\\DirectConnectException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DirectConnect/Exception/DirectConnectException.php',
+        'Aws\\DirectoryService\\DirectoryServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DirectoryService/DirectoryServiceClient.php',
+        'Aws\\DirectoryService\\Exception\\DirectoryServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DirectoryService/Exception/DirectoryServiceException.php',
+        'Aws\\DocDB\\DocDBClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DocDB/DocDBClient.php',
+        'Aws\\DocDB\\Exception\\DocDBException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DocDB/Exception/DocDBException.php',
+        'Aws\\DoctrineCacheAdapter' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DoctrineCacheAdapter.php',
+        'Aws\\DynamoDbStreams\\DynamoDbStreamsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDbStreams/DynamoDbStreamsClient.php',
+        'Aws\\DynamoDbStreams\\Exception\\DynamoDbStreamsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDbStreams/Exception/DynamoDbStreamsException.php',
+        'Aws\\DynamoDb\\BinaryValue' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDb/BinaryValue.php',
+        'Aws\\DynamoDb\\DynamoDbClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDb/DynamoDbClient.php',
+        'Aws\\DynamoDb\\Exception\\DynamoDbException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDb/Exception/DynamoDbException.php',
+        'Aws\\DynamoDb\\LockingSessionConnection' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDb/LockingSessionConnection.php',
+        'Aws\\DynamoDb\\Marshaler' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDb/Marshaler.php',
+        'Aws\\DynamoDb\\NumberValue' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDb/NumberValue.php',
+        'Aws\\DynamoDb\\SessionConnectionConfigTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDb/SessionConnectionConfigTrait.php',
+        'Aws\\DynamoDb\\SessionConnectionInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDb/SessionConnectionInterface.php',
+        'Aws\\DynamoDb\\SessionHandler' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDb/SessionHandler.php',
+        'Aws\\DynamoDb\\SetValue' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDb/SetValue.php',
+        'Aws\\DynamoDb\\StandardSessionConnection' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDb/StandardSessionConnection.php',
+        'Aws\\DynamoDb\\WriteRequestBatch' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/DynamoDb/WriteRequestBatch.php',
+        'Aws\\EBS\\EBSClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EBS/EBSClient.php',
+        'Aws\\EBS\\Exception\\EBSException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EBS/Exception/EBSException.php',
+        'Aws\\EC2InstanceConnect\\EC2InstanceConnectClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EC2InstanceConnect/EC2InstanceConnectClient.php',
+        'Aws\\EC2InstanceConnect\\Exception\\EC2InstanceConnectException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EC2InstanceConnect/Exception/EC2InstanceConnectException.php',
+        'Aws\\EKS\\EKSClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EKS/EKSClient.php',
+        'Aws\\EKS\\Exception\\EKSException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EKS/Exception/EKSException.php',
+        'Aws\\Ec2\\Ec2Client' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Ec2/Ec2Client.php',
+        'Aws\\Ec2\\Exception\\Ec2Exception' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Ec2/Exception/Ec2Exception.php',
+        'Aws\\Ecr\\EcrClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Ecr/EcrClient.php',
+        'Aws\\Ecr\\Exception\\EcrException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Ecr/Exception/EcrException.php',
+        'Aws\\Ecs\\EcsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Ecs/EcsClient.php',
+        'Aws\\Ecs\\Exception\\EcsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Ecs/Exception/EcsException.php',
+        'Aws\\Efs\\EfsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Efs/EfsClient.php',
+        'Aws\\Efs\\Exception\\EfsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Efs/Exception/EfsException.php',
+        'Aws\\ElastiCache\\ElastiCacheClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElastiCache/ElastiCacheClient.php',
+        'Aws\\ElastiCache\\Exception\\ElastiCacheException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElastiCache/Exception/ElastiCacheException.php',
+        'Aws\\ElasticBeanstalk\\ElasticBeanstalkClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElasticBeanstalk/ElasticBeanstalkClient.php',
+        'Aws\\ElasticBeanstalk\\Exception\\ElasticBeanstalkException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElasticBeanstalk/Exception/ElasticBeanstalkException.php',
+        'Aws\\ElasticInference\\ElasticInferenceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElasticInference/ElasticInferenceClient.php',
+        'Aws\\ElasticInference\\Exception\\ElasticInferenceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElasticInference/Exception/ElasticInferenceException.php',
+        'Aws\\ElasticLoadBalancingV2\\ElasticLoadBalancingV2Client' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElasticLoadBalancingV2/ElasticLoadBalancingV2Client.php',
+        'Aws\\ElasticLoadBalancingV2\\Exception\\ElasticLoadBalancingV2Exception' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElasticLoadBalancingV2/Exception/ElasticLoadBalancingV2Exception.php',
+        'Aws\\ElasticLoadBalancing\\ElasticLoadBalancingClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElasticLoadBalancing/ElasticLoadBalancingClient.php',
+        'Aws\\ElasticLoadBalancing\\Exception\\ElasticLoadBalancingException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElasticLoadBalancing/Exception/ElasticLoadBalancingException.php',
+        'Aws\\ElasticTranscoder\\ElasticTranscoderClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElasticTranscoder/ElasticTranscoderClient.php',
+        'Aws\\ElasticTranscoder\\Exception\\ElasticTranscoderException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElasticTranscoder/Exception/ElasticTranscoderException.php',
+        'Aws\\ElasticsearchService\\ElasticsearchServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElasticsearchService/ElasticsearchServiceClient.php',
+        'Aws\\ElasticsearchService\\Exception\\ElasticsearchServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ElasticsearchService/Exception/ElasticsearchServiceException.php',
+        'Aws\\Emr\\EmrClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Emr/EmrClient.php',
+        'Aws\\Emr\\Exception\\EmrException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Emr/Exception/EmrException.php',
+        'Aws\\EndpointDiscovery\\Configuration' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EndpointDiscovery/Configuration.php',
+        'Aws\\EndpointDiscovery\\ConfigurationInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EndpointDiscovery/ConfigurationInterface.php',
+        'Aws\\EndpointDiscovery\\ConfigurationProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EndpointDiscovery/ConfigurationProvider.php',
+        'Aws\\EndpointDiscovery\\EndpointDiscoveryMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EndpointDiscovery/EndpointDiscoveryMiddleware.php',
+        'Aws\\EndpointDiscovery\\EndpointList' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EndpointDiscovery/EndpointList.php',
+        'Aws\\EndpointDiscovery\\Exception\\ConfigurationException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EndpointDiscovery/Exception/ConfigurationException.php',
+        'Aws\\EndpointParameterMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EndpointParameterMiddleware.php',
+        'Aws\\Endpoint\\EndpointProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Endpoint/EndpointProvider.php',
+        'Aws\\Endpoint\\Partition' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Endpoint/Partition.php',
+        'Aws\\Endpoint\\PartitionEndpointProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Endpoint/PartitionEndpointProvider.php',
+        'Aws\\Endpoint\\PartitionInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Endpoint/PartitionInterface.php',
+        'Aws\\Endpoint\\PatternEndpointProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Endpoint/PatternEndpointProvider.php',
+        'Aws\\EventBridge\\EventBridgeClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EventBridge/EventBridgeClient.php',
+        'Aws\\EventBridge\\Exception\\EventBridgeException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/EventBridge/Exception/EventBridgeException.php',
+        'Aws\\Exception\\AwsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Exception/AwsException.php',
+        'Aws\\Exception\\CouldNotCreateChecksumException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Exception/CouldNotCreateChecksumException.php',
+        'Aws\\Exception\\CredentialsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Exception/CredentialsException.php',
+        'Aws\\Exception\\EventStreamDataException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Exception/EventStreamDataException.php',
+        'Aws\\Exception\\IncalculablePayloadException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Exception/IncalculablePayloadException.php',
+        'Aws\\Exception\\InvalidJsonException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Exception/InvalidJsonException.php',
+        'Aws\\Exception\\InvalidRegionException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Exception/InvalidRegionException.php',
+        'Aws\\Exception\\MultipartUploadException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Exception/MultipartUploadException.php',
+        'Aws\\Exception\\UnresolvedApiException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Exception/UnresolvedApiException.php',
+        'Aws\\Exception\\UnresolvedEndpointException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Exception/UnresolvedEndpointException.php',
+        'Aws\\Exception\\UnresolvedSignatureException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Exception/UnresolvedSignatureException.php',
+        'Aws\\FMS\\Exception\\FMSException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/FMS/Exception/FMSException.php',
+        'Aws\\FMS\\FMSClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/FMS/FMSClient.php',
+        'Aws\\FSx\\Exception\\FSxException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/FSx/Exception/FSxException.php',
+        'Aws\\FSx\\FSxClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/FSx/FSxClient.php',
+        'Aws\\Firehose\\Exception\\FirehoseException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Firehose/Exception/FirehoseException.php',
+        'Aws\\Firehose\\FirehoseClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Firehose/FirehoseClient.php',
+        'Aws\\ForecastQueryService\\Exception\\ForecastQueryServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ForecastQueryService/Exception/ForecastQueryServiceException.php',
+        'Aws\\ForecastQueryService\\ForecastQueryServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ForecastQueryService/ForecastQueryServiceClient.php',
+        'Aws\\ForecastService\\Exception\\ForecastServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ForecastService/Exception/ForecastServiceException.php',
+        'Aws\\ForecastService\\ForecastServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ForecastService/ForecastServiceClient.php',
+        'Aws\\FraudDetector\\Exception\\FraudDetectorException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/FraudDetector/Exception/FraudDetectorException.php',
+        'Aws\\FraudDetector\\FraudDetectorClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/FraudDetector/FraudDetectorClient.php',
+        'Aws\\GameLift\\Exception\\GameLiftException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/GameLift/Exception/GameLiftException.php',
+        'Aws\\GameLift\\GameLiftClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/GameLift/GameLiftClient.php',
+        'Aws\\Glacier\\Exception\\GlacierException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Glacier/Exception/GlacierException.php',
+        'Aws\\Glacier\\GlacierClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Glacier/GlacierClient.php',
+        'Aws\\Glacier\\MultipartUploader' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Glacier/MultipartUploader.php',
+        'Aws\\Glacier\\TreeHash' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Glacier/TreeHash.php',
+        'Aws\\GlobalAccelerator\\Exception\\GlobalAcceleratorException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/GlobalAccelerator/Exception/GlobalAcceleratorException.php',
+        'Aws\\GlobalAccelerator\\GlobalAcceleratorClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/GlobalAccelerator/GlobalAcceleratorClient.php',
+        'Aws\\Glue\\Exception\\GlueException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Glue/Exception/GlueException.php',
+        'Aws\\Glue\\GlueClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Glue/GlueClient.php',
+        'Aws\\Greengrass\\Exception\\GreengrassException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Greengrass/Exception/GreengrassException.php',
+        'Aws\\Greengrass\\GreengrassClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Greengrass/GreengrassClient.php',
+        'Aws\\GroundStation\\Exception\\GroundStationException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/GroundStation/Exception/GroundStationException.php',
+        'Aws\\GroundStation\\GroundStationClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/GroundStation/GroundStationClient.php',
+        'Aws\\GuardDuty\\Exception\\GuardDutyException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/GuardDuty/Exception/GuardDutyException.php',
+        'Aws\\GuardDuty\\GuardDutyClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/GuardDuty/GuardDutyClient.php',
+        'Aws\\HandlerList' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/HandlerList.php',
+        'Aws\\Handler\\GuzzleV5\\GuzzleHandler' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Handler/GuzzleV5/GuzzleHandler.php',
+        'Aws\\Handler\\GuzzleV5\\GuzzleStream' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Handler/GuzzleV5/GuzzleStream.php',
+        'Aws\\Handler\\GuzzleV5\\PsrStream' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Handler/GuzzleV5/PsrStream.php',
+        'Aws\\Handler\\GuzzleV6\\GuzzleHandler' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Handler/GuzzleV6/GuzzleHandler.php',
+        'Aws\\HasDataTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/HasDataTrait.php',
+        'Aws\\HasMonitoringEventsTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/HasMonitoringEventsTrait.php',
+        'Aws\\HashInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/HashInterface.php',
+        'Aws\\HashingStream' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/HashingStream.php',
+        'Aws\\Health\\Exception\\HealthException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Health/Exception/HealthException.php',
+        'Aws\\Health\\HealthClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Health/HealthClient.php',
+        'Aws\\History' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/History.php',
+        'Aws\\Iam\\Exception\\IamException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Iam/Exception/IamException.php',
+        'Aws\\Iam\\IamClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Iam/IamClient.php',
+        'Aws\\IdempotencyTokenMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IdempotencyTokenMiddleware.php',
+        'Aws\\ImportExport\\Exception\\ImportExportException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ImportExport/Exception/ImportExportException.php',
+        'Aws\\ImportExport\\ImportExportClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ImportExport/ImportExportClient.php',
+        'Aws\\Inspector\\Exception\\InspectorException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Inspector/Exception/InspectorException.php',
+        'Aws\\Inspector\\InspectorClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Inspector/InspectorClient.php',
+        'Aws\\IoT1ClickDevicesService\\Exception\\IoT1ClickDevicesServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoT1ClickDevicesService/Exception/IoT1ClickDevicesServiceException.php',
+        'Aws\\IoT1ClickDevicesService\\IoT1ClickDevicesServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoT1ClickDevicesService/IoT1ClickDevicesServiceClient.php',
+        'Aws\\IoT1ClickProjects\\Exception\\IoT1ClickProjectsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoT1ClickProjects/Exception/IoT1ClickProjectsException.php',
+        'Aws\\IoT1ClickProjects\\IoT1ClickProjectsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoT1ClickProjects/IoT1ClickProjectsClient.php',
+        'Aws\\IoTAnalytics\\Exception\\IoTAnalyticsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTAnalytics/Exception/IoTAnalyticsException.php',
+        'Aws\\IoTAnalytics\\IoTAnalyticsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTAnalytics/IoTAnalyticsClient.php',
+        'Aws\\IoTEventsData\\Exception\\IoTEventsDataException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTEventsData/Exception/IoTEventsDataException.php',
+        'Aws\\IoTEventsData\\IoTEventsDataClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTEventsData/IoTEventsDataClient.php',
+        'Aws\\IoTEvents\\Exception\\IoTEventsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTEvents/Exception/IoTEventsException.php',
+        'Aws\\IoTEvents\\IoTEventsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTEvents/IoTEventsClient.php',
+        'Aws\\IoTJobsDataPlane\\Exception\\IoTJobsDataPlaneException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTJobsDataPlane/Exception/IoTJobsDataPlaneException.php',
+        'Aws\\IoTJobsDataPlane\\IoTJobsDataPlaneClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTJobsDataPlane/IoTJobsDataPlaneClient.php',
+        'Aws\\IoTSecureTunneling\\Exception\\IoTSecureTunnelingException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTSecureTunneling/Exception/IoTSecureTunnelingException.php',
+        'Aws\\IoTSecureTunneling\\IoTSecureTunnelingClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTSecureTunneling/IoTSecureTunnelingClient.php',
+        'Aws\\IoTThingsGraph\\Exception\\IoTThingsGraphException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTThingsGraph/Exception/IoTThingsGraphException.php',
+        'Aws\\IoTThingsGraph\\IoTThingsGraphClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IoTThingsGraph/IoTThingsGraphClient.php',
+        'Aws\\IotDataPlane\\Exception\\IotDataPlaneException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IotDataPlane/Exception/IotDataPlaneException.php',
+        'Aws\\IotDataPlane\\IotDataPlaneClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/IotDataPlane/IotDataPlaneClient.php',
+        'Aws\\Iot\\Exception\\IotException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Iot/Exception/IotException.php',
+        'Aws\\Iot\\IotClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Iot/IotClient.php',
+        'Aws\\JsonCompiler' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/JsonCompiler.php',
+        'Aws\\Kafka\\Exception\\KafkaException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Kafka/Exception/KafkaException.php',
+        'Aws\\Kafka\\KafkaClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Kafka/KafkaClient.php',
+        'Aws\\KinesisAnalyticsV2\\Exception\\KinesisAnalyticsV2Exception' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/KinesisAnalyticsV2/Exception/KinesisAnalyticsV2Exception.php',
+        'Aws\\KinesisAnalyticsV2\\KinesisAnalyticsV2Client' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/KinesisAnalyticsV2/KinesisAnalyticsV2Client.php',
+        'Aws\\KinesisAnalytics\\Exception\\KinesisAnalyticsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/KinesisAnalytics/Exception/KinesisAnalyticsException.php',
+        'Aws\\KinesisAnalytics\\KinesisAnalyticsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/KinesisAnalytics/KinesisAnalyticsClient.php',
+        'Aws\\KinesisVideoArchivedMedia\\Exception\\KinesisVideoArchivedMediaException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/KinesisVideoArchivedMedia/Exception/KinesisVideoArchivedMediaException.php',
+        'Aws\\KinesisVideoArchivedMedia\\KinesisVideoArchivedMediaClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/KinesisVideoArchivedMedia/KinesisVideoArchivedMediaClient.php',
+        'Aws\\KinesisVideoMedia\\Exception\\KinesisVideoMediaException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/KinesisVideoMedia/Exception/KinesisVideoMediaException.php',
+        'Aws\\KinesisVideoMedia\\KinesisVideoMediaClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/KinesisVideoMedia/KinesisVideoMediaClient.php',
+        'Aws\\KinesisVideoSignalingChannels\\Exception\\KinesisVideoSignalingChannelsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/KinesisVideoSignalingChannels/Exception/KinesisVideoSignalingChannelsException.php',
+        'Aws\\KinesisVideoSignalingChannels\\KinesisVideoSignalingChannelsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/KinesisVideoSignalingChannels/KinesisVideoSignalingChannelsClient.php',
+        'Aws\\KinesisVideo\\Exception\\KinesisVideoException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/KinesisVideo/Exception/KinesisVideoException.php',
+        'Aws\\KinesisVideo\\KinesisVideoClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/KinesisVideo/KinesisVideoClient.php',
+        'Aws\\Kinesis\\Exception\\KinesisException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Kinesis/Exception/KinesisException.php',
+        'Aws\\Kinesis\\KinesisClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Kinesis/KinesisClient.php',
+        'Aws\\Kms\\Exception\\KmsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Kms/Exception/KmsException.php',
+        'Aws\\Kms\\KmsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Kms/KmsClient.php',
+        'Aws\\LakeFormation\\Exception\\LakeFormationException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/LakeFormation/Exception/LakeFormationException.php',
+        'Aws\\LakeFormation\\LakeFormationClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/LakeFormation/LakeFormationClient.php',
+        'Aws\\Lambda\\Exception\\LambdaException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Lambda/Exception/LambdaException.php',
+        'Aws\\Lambda\\LambdaClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Lambda/LambdaClient.php',
+        'Aws\\LexModelBuildingService\\Exception\\LexModelBuildingServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/LexModelBuildingService/Exception/LexModelBuildingServiceException.php',
+        'Aws\\LexModelBuildingService\\LexModelBuildingServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/LexModelBuildingService/LexModelBuildingServiceClient.php',
+        'Aws\\LexRuntimeService\\Exception\\LexRuntimeServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/LexRuntimeService/Exception/LexRuntimeServiceException.php',
+        'Aws\\LexRuntimeService\\LexRuntimeServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/LexRuntimeService/LexRuntimeServiceClient.php',
+        'Aws\\LicenseManager\\Exception\\LicenseManagerException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/LicenseManager/Exception/LicenseManagerException.php',
+        'Aws\\LicenseManager\\LicenseManagerClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/LicenseManager/LicenseManagerClient.php',
+        'Aws\\Lightsail\\Exception\\LightsailException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Lightsail/Exception/LightsailException.php',
+        'Aws\\Lightsail\\LightsailClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Lightsail/LightsailClient.php',
+        'Aws\\LruArrayCache' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/LruArrayCache.php',
+        'Aws\\MQ\\Exception\\MQException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MQ/Exception/MQException.php',
+        'Aws\\MQ\\MQClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MQ/MQClient.php',
+        'Aws\\MTurk\\Exception\\MTurkException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MTurk/Exception/MTurkException.php',
+        'Aws\\MTurk\\MTurkClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MTurk/MTurkClient.php',
+        'Aws\\MachineLearning\\Exception\\MachineLearningException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MachineLearning/Exception/MachineLearningException.php',
+        'Aws\\MachineLearning\\MachineLearningClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MachineLearning/MachineLearningClient.php',
+        'Aws\\Macie\\Exception\\MacieException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Macie/Exception/MacieException.php',
+        'Aws\\Macie\\MacieClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Macie/MacieClient.php',
+        'Aws\\ManagedBlockchain\\Exception\\ManagedBlockchainException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ManagedBlockchain/Exception/ManagedBlockchainException.php',
+        'Aws\\ManagedBlockchain\\ManagedBlockchainClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ManagedBlockchain/ManagedBlockchainClient.php',
+        'Aws\\MarketplaceCatalog\\Exception\\MarketplaceCatalogException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MarketplaceCatalog/Exception/MarketplaceCatalogException.php',
+        'Aws\\MarketplaceCatalog\\MarketplaceCatalogClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MarketplaceCatalog/MarketplaceCatalogClient.php',
+        'Aws\\MarketplaceCommerceAnalytics\\Exception\\MarketplaceCommerceAnalyticsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MarketplaceCommerceAnalytics/Exception/MarketplaceCommerceAnalyticsException.php',
+        'Aws\\MarketplaceCommerceAnalytics\\MarketplaceCommerceAnalyticsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MarketplaceCommerceAnalytics/MarketplaceCommerceAnalyticsClient.php',
+        'Aws\\MarketplaceEntitlementService\\Exception\\MarketplaceEntitlementServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MarketplaceEntitlementService/Exception/MarketplaceEntitlementServiceException.php',
+        'Aws\\MarketplaceEntitlementService\\MarketplaceEntitlementServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MarketplaceEntitlementService/MarketplaceEntitlementServiceClient.php',
+        'Aws\\MarketplaceMetering\\Exception\\MarketplaceMeteringException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MarketplaceMetering/Exception/MarketplaceMeteringException.php',
+        'Aws\\MarketplaceMetering\\MarketplaceMeteringClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MarketplaceMetering/MarketplaceMeteringClient.php',
+        'Aws\\MediaConnect\\Exception\\MediaConnectException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaConnect/Exception/MediaConnectException.php',
+        'Aws\\MediaConnect\\MediaConnectClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaConnect/MediaConnectClient.php',
+        'Aws\\MediaConvert\\Exception\\MediaConvertException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaConvert/Exception/MediaConvertException.php',
+        'Aws\\MediaConvert\\MediaConvertClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaConvert/MediaConvertClient.php',
+        'Aws\\MediaLive\\Exception\\MediaLiveException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaLive/Exception/MediaLiveException.php',
+        'Aws\\MediaLive\\MediaLiveClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaLive/MediaLiveClient.php',
+        'Aws\\MediaPackageVod\\Exception\\MediaPackageVodException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaPackageVod/Exception/MediaPackageVodException.php',
+        'Aws\\MediaPackageVod\\MediaPackageVodClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaPackageVod/MediaPackageVodClient.php',
+        'Aws\\MediaPackage\\Exception\\MediaPackageException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaPackage/Exception/MediaPackageException.php',
+        'Aws\\MediaPackage\\MediaPackageClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaPackage/MediaPackageClient.php',
+        'Aws\\MediaStoreData\\Exception\\MediaStoreDataException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaStoreData/Exception/MediaStoreDataException.php',
+        'Aws\\MediaStoreData\\MediaStoreDataClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaStoreData/MediaStoreDataClient.php',
+        'Aws\\MediaStore\\Exception\\MediaStoreException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaStore/Exception/MediaStoreException.php',
+        'Aws\\MediaStore\\MediaStoreClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaStore/MediaStoreClient.php',
+        'Aws\\MediaTailor\\Exception\\MediaTailorException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaTailor/Exception/MediaTailorException.php',
+        'Aws\\MediaTailor\\MediaTailorClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MediaTailor/MediaTailorClient.php',
+        'Aws\\Middleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Middleware.php',
+        'Aws\\MigrationHubConfig\\Exception\\MigrationHubConfigException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MigrationHubConfig/Exception/MigrationHubConfigException.php',
+        'Aws\\MigrationHubConfig\\MigrationHubConfigClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MigrationHubConfig/MigrationHubConfigClient.php',
+        'Aws\\MigrationHub\\Exception\\MigrationHubException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MigrationHub/Exception/MigrationHubException.php',
+        'Aws\\MigrationHub\\MigrationHubClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MigrationHub/MigrationHubClient.php',
+        'Aws\\Mobile\\Exception\\MobileException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Mobile/Exception/MobileException.php',
+        'Aws\\Mobile\\MobileClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Mobile/MobileClient.php',
+        'Aws\\MockHandler' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MockHandler.php',
+        'Aws\\MonitoringEventsInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MonitoringEventsInterface.php',
+        'Aws\\MultiRegionClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/MultiRegionClient.php',
+        'Aws\\Multipart\\AbstractUploadManager' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Multipart/AbstractUploadManager.php',
+        'Aws\\Multipart\\AbstractUploader' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Multipart/AbstractUploader.php',
+        'Aws\\Multipart\\UploadState' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Multipart/UploadState.php',
+        'Aws\\Neptune\\Exception\\NeptuneException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Neptune/Exception/NeptuneException.php',
+        'Aws\\Neptune\\NeptuneClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Neptune/NeptuneClient.php',
+        'Aws\\NetworkManager\\Exception\\NetworkManagerException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/NetworkManager/Exception/NetworkManagerException.php',
+        'Aws\\NetworkManager\\NetworkManagerClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/NetworkManager/NetworkManagerClient.php',
+        'Aws\\OpsWorksCM\\Exception\\OpsWorksCMException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/OpsWorksCM/Exception/OpsWorksCMException.php',
+        'Aws\\OpsWorksCM\\OpsWorksCMClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/OpsWorksCM/OpsWorksCMClient.php',
+        'Aws\\OpsWorks\\Exception\\OpsWorksException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/OpsWorks/Exception/OpsWorksException.php',
+        'Aws\\OpsWorks\\OpsWorksClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/OpsWorks/OpsWorksClient.php',
+        'Aws\\Organizations\\Exception\\OrganizationsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Organizations/Exception/OrganizationsException.php',
+        'Aws\\Organizations\\OrganizationsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Organizations/OrganizationsClient.php',
+        'Aws\\Outposts\\Exception\\OutpostsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Outposts/Exception/OutpostsException.php',
+        'Aws\\Outposts\\OutpostsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Outposts/OutpostsClient.php',
+        'Aws\\PI\\Exception\\PIException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PI/Exception/PIException.php',
+        'Aws\\PI\\PIClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PI/PIClient.php',
+        'Aws\\PersonalizeEvents\\Exception\\PersonalizeEventsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PersonalizeEvents/Exception/PersonalizeEventsException.php',
+        'Aws\\PersonalizeEvents\\PersonalizeEventsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PersonalizeEvents/PersonalizeEventsClient.php',
+        'Aws\\PersonalizeRuntime\\Exception\\PersonalizeRuntimeException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PersonalizeRuntime/Exception/PersonalizeRuntimeException.php',
+        'Aws\\PersonalizeRuntime\\PersonalizeRuntimeClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PersonalizeRuntime/PersonalizeRuntimeClient.php',
+        'Aws\\Personalize\\Exception\\PersonalizeException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Personalize/Exception/PersonalizeException.php',
+        'Aws\\Personalize\\PersonalizeClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Personalize/PersonalizeClient.php',
+        'Aws\\PhpHash' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PhpHash.php',
+        'Aws\\PinpointEmail\\Exception\\PinpointEmailException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PinpointEmail/Exception/PinpointEmailException.php',
+        'Aws\\PinpointEmail\\PinpointEmailClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PinpointEmail/PinpointEmailClient.php',
+        'Aws\\PinpointSMSVoice\\Exception\\PinpointSMSVoiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PinpointSMSVoice/Exception/PinpointSMSVoiceException.php',
+        'Aws\\PinpointSMSVoice\\PinpointSMSVoiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PinpointSMSVoice/PinpointSMSVoiceClient.php',
+        'Aws\\Pinpoint\\Exception\\PinpointException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Pinpoint/Exception/PinpointException.php',
+        'Aws\\Pinpoint\\PinpointClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Pinpoint/PinpointClient.php',
+        'Aws\\Polly\\Exception\\PollyException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Polly/Exception/PollyException.php',
+        'Aws\\Polly\\PollyClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Polly/PollyClient.php',
+        'Aws\\PresignUrlMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PresignUrlMiddleware.php',
+        'Aws\\Pricing\\Exception\\PricingException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Pricing/Exception/PricingException.php',
+        'Aws\\Pricing\\PricingClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Pricing/PricingClient.php',
+        'Aws\\Psr16CacheAdapter' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Psr16CacheAdapter.php',
+        'Aws\\PsrCacheAdapter' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/PsrCacheAdapter.php',
+        'Aws\\QLDBSession\\Exception\\QLDBSessionException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/QLDBSession/Exception/QLDBSessionException.php',
+        'Aws\\QLDBSession\\QLDBSessionClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/QLDBSession/QLDBSessionClient.php',
+        'Aws\\QLDB\\Exception\\QLDBException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/QLDB/Exception/QLDBException.php',
+        'Aws\\QLDB\\QLDBClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/QLDB/QLDBClient.php',
+        'Aws\\QuickSight\\Exception\\QuickSightException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/QuickSight/Exception/QuickSightException.php',
+        'Aws\\QuickSight\\QuickSightClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/QuickSight/QuickSightClient.php',
+        'Aws\\RAM\\Exception\\RAMException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/RAM/Exception/RAMException.php',
+        'Aws\\RAM\\RAMClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/RAM/RAMClient.php',
+        'Aws\\RDSDataService\\Exception\\RDSDataServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/RDSDataService/Exception/RDSDataServiceException.php',
+        'Aws\\RDSDataService\\RDSDataServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/RDSDataService/RDSDataServiceClient.php',
+        'Aws\\Rds\\AuthTokenGenerator' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Rds/AuthTokenGenerator.php',
+        'Aws\\Rds\\Exception\\RdsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Rds/Exception/RdsException.php',
+        'Aws\\Rds\\RdsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Rds/RdsClient.php',
+        'Aws\\Redshift\\Exception\\RedshiftException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Redshift/Exception/RedshiftException.php',
+        'Aws\\Redshift\\RedshiftClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Redshift/RedshiftClient.php',
+        'Aws\\Rekognition\\Exception\\RekognitionException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Rekognition/Exception/RekognitionException.php',
+        'Aws\\Rekognition\\RekognitionClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Rekognition/RekognitionClient.php',
+        'Aws\\ResourceGroupsTaggingAPI\\Exception\\ResourceGroupsTaggingAPIException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ResourceGroupsTaggingAPI/Exception/ResourceGroupsTaggingAPIException.php',
+        'Aws\\ResourceGroupsTaggingAPI\\ResourceGroupsTaggingAPIClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ResourceGroupsTaggingAPI/ResourceGroupsTaggingAPIClient.php',
+        'Aws\\ResourceGroups\\Exception\\ResourceGroupsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ResourceGroups/Exception/ResourceGroupsException.php',
+        'Aws\\ResourceGroups\\ResourceGroupsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ResourceGroups/ResourceGroupsClient.php',
+        'Aws\\ResponseContainerInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ResponseContainerInterface.php',
+        'Aws\\Result' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Result.php',
+        'Aws\\ResultInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ResultInterface.php',
+        'Aws\\ResultPaginator' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ResultPaginator.php',
+        'Aws\\RetryMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/RetryMiddleware.php',
+        'Aws\\RetryMiddlewareV2' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/RetryMiddlewareV2.php',
+        'Aws\\Retry\\Configuration' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Retry/Configuration.php',
+        'Aws\\Retry\\ConfigurationInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Retry/ConfigurationInterface.php',
+        'Aws\\Retry\\ConfigurationProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Retry/ConfigurationProvider.php',
+        'Aws\\Retry\\Exception\\ConfigurationException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Retry/Exception/ConfigurationException.php',
+        'Aws\\Retry\\QuotaManager' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Retry/QuotaManager.php',
+        'Aws\\Retry\\RateLimiter' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Retry/RateLimiter.php',
+        'Aws\\Retry\\RetryHelperTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Retry/RetryHelperTrait.php',
+        'Aws\\RoboMaker\\Exception\\RoboMakerException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/RoboMaker/Exception/RoboMakerException.php',
+        'Aws\\RoboMaker\\RoboMakerClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/RoboMaker/RoboMakerClient.php',
+        'Aws\\Route53Domains\\Exception\\Route53DomainsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Route53Domains/Exception/Route53DomainsException.php',
+        'Aws\\Route53Domains\\Route53DomainsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Route53Domains/Route53DomainsClient.php',
+        'Aws\\Route53Resolver\\Exception\\Route53ResolverException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Route53Resolver/Exception/Route53ResolverException.php',
+        'Aws\\Route53Resolver\\Route53ResolverClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Route53Resolver/Route53ResolverClient.php',
+        'Aws\\Route53\\Exception\\Route53Exception' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Route53/Exception/Route53Exception.php',
+        'Aws\\Route53\\Route53Client' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Route53/Route53Client.php',
+        'Aws\\S3Control\\Exception\\S3ControlException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3Control/Exception/S3ControlException.php',
+        'Aws\\S3Control\\S3ControlClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3Control/S3ControlClient.php',
+        'Aws\\S3Control\\S3ControlEndpointMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3Control/S3ControlEndpointMiddleware.php',
+        'Aws\\S3\\AmbiguousSuccessParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/AmbiguousSuccessParser.php',
+        'Aws\\S3\\ApplyChecksumMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/ApplyChecksumMiddleware.php',
+        'Aws\\S3\\BatchDelete' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/BatchDelete.php',
+        'Aws\\S3\\BucketEndpointArnMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/BucketEndpointArnMiddleware.php',
+        'Aws\\S3\\BucketEndpointMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/BucketEndpointMiddleware.php',
+        'Aws\\S3\\Crypto\\CryptoParamsTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/Crypto/CryptoParamsTrait.php',
+        'Aws\\S3\\Crypto\\HeadersMetadataStrategy' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/Crypto/HeadersMetadataStrategy.php',
+        'Aws\\S3\\Crypto\\InstructionFileMetadataStrategy' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/Crypto/InstructionFileMetadataStrategy.php',
+        'Aws\\S3\\Crypto\\S3EncryptionClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/Crypto/S3EncryptionClient.php',
+        'Aws\\S3\\Crypto\\S3EncryptionMultipartUploader' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/Crypto/S3EncryptionMultipartUploader.php',
+        'Aws\\S3\\Exception\\DeleteMultipleObjectsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/Exception/DeleteMultipleObjectsException.php',
+        'Aws\\S3\\Exception\\PermanentRedirectException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/Exception/PermanentRedirectException.php',
+        'Aws\\S3\\Exception\\S3Exception' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/Exception/S3Exception.php',
+        'Aws\\S3\\Exception\\S3MultipartUploadException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/Exception/S3MultipartUploadException.php',
+        'Aws\\S3\\GetBucketLocationParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/GetBucketLocationParser.php',
+        'Aws\\S3\\MultipartCopy' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/MultipartCopy.php',
+        'Aws\\S3\\MultipartUploader' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/MultipartUploader.php',
+        'Aws\\S3\\MultipartUploadingTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/MultipartUploadingTrait.php',
+        'Aws\\S3\\ObjectCopier' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/ObjectCopier.php',
+        'Aws\\S3\\ObjectUploader' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/ObjectUploader.php',
+        'Aws\\S3\\PermanentRedirectMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/PermanentRedirectMiddleware.php',
+        'Aws\\S3\\PostObject' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/PostObject.php',
+        'Aws\\S3\\PostObjectV4' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/PostObjectV4.php',
+        'Aws\\S3\\PutObjectUrlMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/PutObjectUrlMiddleware.php',
+        'Aws\\S3\\RegionalEndpoint\\Configuration' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/RegionalEndpoint/Configuration.php',
+        'Aws\\S3\\RegionalEndpoint\\ConfigurationInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/RegionalEndpoint/ConfigurationInterface.php',
+        'Aws\\S3\\RegionalEndpoint\\ConfigurationProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/RegionalEndpoint/ConfigurationProvider.php',
+        'Aws\\S3\\RegionalEndpoint\\Exception\\ConfigurationException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/RegionalEndpoint/Exception/ConfigurationException.php',
+        'Aws\\S3\\RetryableMalformedResponseParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/RetryableMalformedResponseParser.php',
+        'Aws\\S3\\S3Client' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/S3Client.php',
+        'Aws\\S3\\S3ClientInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/S3ClientInterface.php',
+        'Aws\\S3\\S3ClientTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/S3ClientTrait.php',
+        'Aws\\S3\\S3EndpointMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/S3EndpointMiddleware.php',
+        'Aws\\S3\\S3MultiRegionClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/S3MultiRegionClient.php',
+        'Aws\\S3\\S3UriParser' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/S3UriParser.php',
+        'Aws\\S3\\SSECMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/SSECMiddleware.php',
+        'Aws\\S3\\StreamWrapper' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/StreamWrapper.php',
+        'Aws\\S3\\Transfer' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/Transfer.php',
+        'Aws\\S3\\UseArnRegion\\Configuration' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/UseArnRegion/Configuration.php',
+        'Aws\\S3\\UseArnRegion\\ConfigurationInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/UseArnRegion/ConfigurationInterface.php',
+        'Aws\\S3\\UseArnRegion\\ConfigurationProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/UseArnRegion/ConfigurationProvider.php',
+        'Aws\\S3\\UseArnRegion\\Exception\\ConfigurationException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/S3/UseArnRegion/Exception/ConfigurationException.php',
+        'Aws\\SSOOIDC\\Exception\\SSOOIDCException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SSOOIDC/Exception/SSOOIDCException.php',
+        'Aws\\SSOOIDC\\SSOOIDCClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SSOOIDC/SSOOIDCClient.php',
+        'Aws\\SSO\\Exception\\SSOException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SSO/Exception/SSOException.php',
+        'Aws\\SSO\\SSOClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SSO/SSOClient.php',
+        'Aws\\SageMakerRuntime\\Exception\\SageMakerRuntimeException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SageMakerRuntime/Exception/SageMakerRuntimeException.php',
+        'Aws\\SageMakerRuntime\\SageMakerRuntimeClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SageMakerRuntime/SageMakerRuntimeClient.php',
+        'Aws\\SageMaker\\Exception\\SageMakerException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SageMaker/Exception/SageMakerException.php',
+        'Aws\\SageMaker\\SageMakerClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SageMaker/SageMakerClient.php',
+        'Aws\\SavingsPlans\\Exception\\SavingsPlansException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SavingsPlans/Exception/SavingsPlansException.php',
+        'Aws\\SavingsPlans\\SavingsPlansClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SavingsPlans/SavingsPlansClient.php',
+        'Aws\\Schemas\\Exception\\SchemasException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Schemas/Exception/SchemasException.php',
+        'Aws\\Schemas\\SchemasClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Schemas/SchemasClient.php',
+        'Aws\\Sdk' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sdk.php',
+        'Aws\\SecretsManager\\Exception\\SecretsManagerException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SecretsManager/Exception/SecretsManagerException.php',
+        'Aws\\SecretsManager\\SecretsManagerClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SecretsManager/SecretsManagerClient.php',
+        'Aws\\SecurityHub\\Exception\\SecurityHubException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SecurityHub/Exception/SecurityHubException.php',
+        'Aws\\SecurityHub\\SecurityHubClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SecurityHub/SecurityHubClient.php',
+        'Aws\\ServerlessApplicationRepository\\Exception\\ServerlessApplicationRepositoryException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ServerlessApplicationRepository/Exception/ServerlessApplicationRepositoryException.php',
+        'Aws\\ServerlessApplicationRepository\\ServerlessApplicationRepositoryClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ServerlessApplicationRepository/ServerlessApplicationRepositoryClient.php',
+        'Aws\\ServiceCatalog\\Exception\\ServiceCatalogException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ServiceCatalog/Exception/ServiceCatalogException.php',
+        'Aws\\ServiceCatalog\\ServiceCatalogClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ServiceCatalog/ServiceCatalogClient.php',
+        'Aws\\ServiceDiscovery\\Exception\\ServiceDiscoveryException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ServiceDiscovery/Exception/ServiceDiscoveryException.php',
+        'Aws\\ServiceDiscovery\\ServiceDiscoveryClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ServiceDiscovery/ServiceDiscoveryClient.php',
+        'Aws\\ServiceQuotas\\Exception\\ServiceQuotasException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ServiceQuotas/Exception/ServiceQuotasException.php',
+        'Aws\\ServiceQuotas\\ServiceQuotasClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ServiceQuotas/ServiceQuotasClient.php',
+        'Aws\\SesV2\\Exception\\SesV2Exception' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SesV2/Exception/SesV2Exception.php',
+        'Aws\\SesV2\\SesV2Client' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SesV2/SesV2Client.php',
+        'Aws\\Ses\\Exception\\SesException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Ses/Exception/SesException.php',
+        'Aws\\Ses\\SesClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Ses/SesClient.php',
+        'Aws\\Sfn\\Exception\\SfnException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sfn/Exception/SfnException.php',
+        'Aws\\Sfn\\SfnClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sfn/SfnClient.php',
+        'Aws\\Shield\\Exception\\ShieldException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Shield/Exception/ShieldException.php',
+        'Aws\\Shield\\ShieldClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Shield/ShieldClient.php',
+        'Aws\\Signature\\AnonymousSignature' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Signature/AnonymousSignature.php',
+        'Aws\\Signature\\S3SignatureV4' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Signature/S3SignatureV4.php',
+        'Aws\\Signature\\SignatureInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Signature/SignatureInterface.php',
+        'Aws\\Signature\\SignatureProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Signature/SignatureProvider.php',
+        'Aws\\Signature\\SignatureTrait' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Signature/SignatureTrait.php',
+        'Aws\\Signature\\SignatureV4' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Signature/SignatureV4.php',
+        'Aws\\Sms\\Exception\\SmsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sms/Exception/SmsException.php',
+        'Aws\\Sms\\SmsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sms/SmsClient.php',
+        'Aws\\SnowBall\\Exception\\SnowBallException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SnowBall/Exception/SnowBallException.php',
+        'Aws\\SnowBall\\SnowBallClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/SnowBall/SnowBallClient.php',
+        'Aws\\Sns\\Exception\\SnsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sns/Exception/SnsException.php',
+        'Aws\\Sns\\SnsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sns/SnsClient.php',
+        'Aws\\Sqs\\Exception\\SqsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sqs/Exception/SqsException.php',
+        'Aws\\Sqs\\SqsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sqs/SqsClient.php',
+        'Aws\\Ssm\\Exception\\SsmException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Ssm/Exception/SsmException.php',
+        'Aws\\Ssm\\SsmClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Ssm/SsmClient.php',
+        'Aws\\StorageGateway\\Exception\\StorageGatewayException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/StorageGateway/Exception/StorageGatewayException.php',
+        'Aws\\StorageGateway\\StorageGatewayClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/StorageGateway/StorageGatewayClient.php',
+        'Aws\\StreamRequestPayloadMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/StreamRequestPayloadMiddleware.php',
+        'Aws\\Sts\\Exception\\StsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sts/Exception/StsException.php',
+        'Aws\\Sts\\RegionalEndpoints\\Configuration' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sts/RegionalEndpoints/Configuration.php',
+        'Aws\\Sts\\RegionalEndpoints\\ConfigurationInterface' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sts/RegionalEndpoints/ConfigurationInterface.php',
+        'Aws\\Sts\\RegionalEndpoints\\ConfigurationProvider' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sts/RegionalEndpoints/ConfigurationProvider.php',
+        'Aws\\Sts\\RegionalEndpoints\\Exception\\ConfigurationException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sts/RegionalEndpoints/Exception/ConfigurationException.php',
+        'Aws\\Sts\\StsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Sts/StsClient.php',
+        'Aws\\Support\\Exception\\SupportException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Support/Exception/SupportException.php',
+        'Aws\\Support\\SupportClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Support/SupportClient.php',
+        'Aws\\Swf\\Exception\\SwfException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Swf/Exception/SwfException.php',
+        'Aws\\Swf\\SwfClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Swf/SwfClient.php',
+        'Aws\\Textract\\Exception\\TextractException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Textract/Exception/TextractException.php',
+        'Aws\\Textract\\TextractClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Textract/TextractClient.php',
+        'Aws\\TraceMiddleware' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/TraceMiddleware.php',
+        'Aws\\TranscribeService\\Exception\\TranscribeServiceException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/TranscribeService/Exception/TranscribeServiceException.php',
+        'Aws\\TranscribeService\\TranscribeServiceClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/TranscribeService/TranscribeServiceClient.php',
+        'Aws\\Transfer\\Exception\\TransferException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Transfer/Exception/TransferException.php',
+        'Aws\\Transfer\\TransferClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Transfer/TransferClient.php',
+        'Aws\\Translate\\Exception\\TranslateException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Translate/Exception/TranslateException.php',
+        'Aws\\Translate\\TranslateClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Translate/TranslateClient.php',
+        'Aws\\WAFV2\\Exception\\WAFV2Exception' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WAFV2/Exception/WAFV2Exception.php',
+        'Aws\\WAFV2\\WAFV2Client' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WAFV2/WAFV2Client.php',
+        'Aws\\WafRegional\\Exception\\WafRegionalException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WafRegional/Exception/WafRegionalException.php',
+        'Aws\\WafRegional\\WafRegionalClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WafRegional/WafRegionalClient.php',
+        'Aws\\Waf\\Exception\\WafException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Waf/Exception/WafException.php',
+        'Aws\\Waf\\WafClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Waf/WafClient.php',
+        'Aws\\Waiter' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/Waiter.php',
+        'Aws\\WorkDocs\\Exception\\WorkDocsException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WorkDocs/Exception/WorkDocsException.php',
+        'Aws\\WorkDocs\\WorkDocsClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WorkDocs/WorkDocsClient.php',
+        'Aws\\WorkLink\\Exception\\WorkLinkException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WorkLink/Exception/WorkLinkException.php',
+        'Aws\\WorkLink\\WorkLinkClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WorkLink/WorkLinkClient.php',
+        'Aws\\WorkMailMessageFlow\\Exception\\WorkMailMessageFlowException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WorkMailMessageFlow/Exception/WorkMailMessageFlowException.php',
+        'Aws\\WorkMailMessageFlow\\WorkMailMessageFlowClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WorkMailMessageFlow/WorkMailMessageFlowClient.php',
+        'Aws\\WorkMail\\Exception\\WorkMailException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WorkMail/Exception/WorkMailException.php',
+        'Aws\\WorkMail\\WorkMailClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WorkMail/WorkMailClient.php',
+        'Aws\\WorkSpaces\\Exception\\WorkSpacesException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WorkSpaces/Exception/WorkSpacesException.php',
+        'Aws\\WorkSpaces\\WorkSpacesClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WorkSpaces/WorkSpacesClient.php',
+        'Aws\\WrappedHttpHandler' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/WrappedHttpHandler.php',
+        'Aws\\XRay\\Exception\\XRayException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/XRay/Exception/XRayException.php',
+        'Aws\\XRay\\XRayClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/XRay/XRayClient.php',
+        'Aws\\imagebuilder\\Exception\\imagebuilderException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/imagebuilder/Exception/imagebuilderException.php',
+        'Aws\\imagebuilder\\imagebuilderClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/imagebuilder/imagebuilderClient.php',
+        'Aws\\kendra\\Exception\\kendraException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/kendra/Exception/kendraException.php',
+        'Aws\\kendra\\kendraClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/kendra/kendraClient.php',
+        'Aws\\signer\\Exception\\signerException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/signer/Exception/signerException.php',
+        'Aws\\signer\\signerClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/signer/signerClient.php',
         'Barryvdh\\LaravelIdeHelper\\Alias' => __DIR__ . '/..' . '/barryvdh/laravel-ide-helper/src/Alias.php',
         'Barryvdh\\LaravelIdeHelper\\Console\\EloquentCommand' => __DIR__ . '/..' . '/barryvdh/laravel-ide-helper/src/Console/EloquentCommand.php',
         'Barryvdh\\LaravelIdeHelper\\Console\\GeneratorCommand' => __DIR__ . '/..' . '/barryvdh/laravel-ide-helper/src/Console/GeneratorCommand.php',
@@ -639,6 +1371,11 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'Brick\\Math\\Internal\\Calculator\\GmpCalculator' => __DIR__ . '/..' . '/brick/math/src/Internal/Calculator/GmpCalculator.php',
         'Brick\\Math\\Internal\\Calculator\\NativeCalculator' => __DIR__ . '/..' . '/brick/math/src/Internal/Calculator/NativeCalculator.php',
         'Brick\\Math\\RoundingMode' => __DIR__ . '/..' . '/brick/math/src/RoundingMode.php',
+        'CKSource\\CKFinderBridge\\CKFinderMiddleware' => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/src/CKFinderMiddleware.php',
+        'CKSource\\CKFinderBridge\\CKFinderServiceProvider' => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/src/CKFinderServiceProvider.php',
+        'CKSource\\CKFinderBridge\\Command\\CKFinderDownloadCommand' => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/src/Command/CKFinderDownloadCommand.php',
+        'CKSource\\CKFinderBridge\\Controller\\CKFinderController' => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/src/Controller/CKFinderController.php',
+        'CKSource\\CKFinderBridge\\Polyfill\\CommandResolver' => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/src/Polyfill/CommandResolver.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
         'Carbon\\CarbonInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterface.php',
@@ -1562,7 +2299,6 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'Faker\\Provider\\cs_CZ\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/cs_CZ/Payment.php',
         'Faker\\Provider\\cs_CZ\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/cs_CZ/Person.php',
         'Faker\\Provider\\cs_CZ\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/cs_CZ/PhoneNumber.php',
-        'Faker\\Provider\\cs_CZ\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/cs_CZ/Text.php',
         'Faker\\Provider\\da_DK\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/da_DK/Address.php',
         'Faker\\Provider\\da_DK\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/da_DK/Company.php',
         'Faker\\Provider\\da_DK\\Internet' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/da_DK/Internet.php',
@@ -1601,7 +2337,6 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'Faker\\Provider\\el_GR\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/el_GR/Payment.php',
         'Faker\\Provider\\el_GR\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/el_GR/Person.php',
         'Faker\\Provider\\el_GR\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/el_GR/PhoneNumber.php',
-        'Faker\\Provider\\el_GR\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/el_GR/Text.php',
         'Faker\\Provider\\en_AU\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/en_AU/Address.php',
         'Faker\\Provider\\en_AU\\Internet' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/en_AU/Internet.php',
         'Faker\\Provider\\en_AU\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/en_AU/PhoneNumber.php',
@@ -1702,7 +2437,6 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'Faker\\Provider\\fr_FR\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/fr_FR/Payment.php',
         'Faker\\Provider\\fr_FR\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/fr_FR/Person.php',
         'Faker\\Provider\\fr_FR\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/fr_FR/PhoneNumber.php',
-        'Faker\\Provider\\fr_FR\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/fr_FR/Text.php',
         'Faker\\Provider\\he_IL\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/he_IL/Address.php',
         'Faker\\Provider\\he_IL\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/he_IL/Company.php',
         'Faker\\Provider\\he_IL\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/he_IL/Payment.php',
@@ -1718,7 +2452,6 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'Faker\\Provider\\hu_HU\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hu_HU/Payment.php',
         'Faker\\Provider\\hu_HU\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hu_HU/Person.php',
         'Faker\\Provider\\hu_HU\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hu_HU/PhoneNumber.php',
-        'Faker\\Provider\\hu_HU\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hu_HU/Text.php',
         'Faker\\Provider\\hy_AM\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hy_AM/Address.php',
         'Faker\\Provider\\hy_AM\\Color' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hy_AM/Color.php',
         'Faker\\Provider\\hy_AM\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/hy_AM/Company.php',
@@ -1765,7 +2498,6 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'Faker\\Provider\\ka_GE\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ka_GE/Payment.php',
         'Faker\\Provider\\ka_GE\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ka_GE/Person.php',
         'Faker\\Provider\\ka_GE\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ka_GE/PhoneNumber.php',
-        'Faker\\Provider\\ka_GE\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ka_GE/Text.php',
         'Faker\\Provider\\kk_KZ\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/kk_KZ/Address.php',
         'Faker\\Provider\\kk_KZ\\Color' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/kk_KZ/Color.php',
         'Faker\\Provider\\kk_KZ\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/kk_KZ/Company.php',
@@ -1864,7 +2596,6 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'Faker\\Provider\\ru_RU\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ru_RU/Payment.php',
         'Faker\\Provider\\ru_RU\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ru_RU/Person.php',
         'Faker\\Provider\\ru_RU\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ru_RU/PhoneNumber.php',
-        'Faker\\Provider\\ru_RU\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ru_RU/Text.php',
         'Faker\\Provider\\sk_SK\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/sk_SK/Address.php',
         'Faker\\Provider\\sk_SK\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/sk_SK/Company.php',
         'Faker\\Provider\\sk_SK\\Internet' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/sk_SK/Internet.php',
@@ -1913,7 +2644,6 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'Faker\\Provider\\uk_UA\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/uk_UA/Payment.php',
         'Faker\\Provider\\uk_UA\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/uk_UA/Person.php',
         'Faker\\Provider\\uk_UA\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/uk_UA/PhoneNumber.php',
-        'Faker\\Provider\\uk_UA\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/uk_UA/Text.php',
         'Faker\\Provider\\vi_VN\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/vi_VN/Address.php',
         'Faker\\Provider\\vi_VN\\Color' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/vi_VN/Color.php',
         'Faker\\Provider\\vi_VN\\Internet' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/vi_VN/Internet.php',
@@ -1942,6 +2672,7 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'Fideloper\\Proxy\\TrustedProxyServiceProvider' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustedProxyServiceProvider.php',
         'Fruitcake\\Cors\\CorsServiceProvider' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/CorsServiceProvider.php',
         'Fruitcake\\Cors\\HandleCors' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/HandleCors.php',
+        'GrahamCampbell\\GuzzleFactory\\GuzzleFactory' => __DIR__ . '/..' . '/graham-campbell/guzzle-factory/src/GuzzleFactory.php',
         'GuzzleHttp\\Client' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Client.php',
         'GuzzleHttp\\ClientInterface' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/ClientInterface.php',
         'GuzzleHttp\\Cookie\\CookieJar' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/Cookie/CookieJar.php',
@@ -2960,6 +3691,17 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
+        'JmesPath\\AstRuntime' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/AstRuntime.php',
+        'JmesPath\\CompilerRuntime' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/CompilerRuntime.php',
+        'JmesPath\\DebugRuntime' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/DebugRuntime.php',
+        'JmesPath\\Env' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/Env.php',
+        'JmesPath\\FnDispatcher' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/FnDispatcher.php',
+        'JmesPath\\Lexer' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/Lexer.php',
+        'JmesPath\\Parser' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/Parser.php',
+        'JmesPath\\SyntaxErrorException' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/SyntaxErrorException.php',
+        'JmesPath\\TreeCompiler' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/TreeCompiler.php',
+        'JmesPath\\TreeInterpreter' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/TreeInterpreter.php',
+        'JmesPath\\Utils' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/Utils.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'JsonSchema\\Constraints\\BaseConstraint' => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema/Constraints/BaseConstraint.php',
         'JsonSchema\\Constraints\\CollectionConstraint' => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema/Constraints/CollectionConstraint.php',
@@ -3185,6 +3927,18 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'League\\Flysystem\\Adapter\\Polyfill\\StreamedTrait' => __DIR__ . '/..' . '/league/flysystem/src/Adapter/Polyfill/StreamedTrait.php',
         'League\\Flysystem\\Adapter\\Polyfill\\StreamedWritingTrait' => __DIR__ . '/..' . '/league/flysystem/src/Adapter/Polyfill/StreamedWritingTrait.php',
         'League\\Flysystem\\Adapter\\SynologyFtp' => __DIR__ . '/..' . '/league/flysystem/src/Adapter/SynologyFtp.php',
+        'League\\Flysystem\\AwsS3v3\\AwsS3Adapter' => __DIR__ . '/..' . '/league/flysystem-aws-s3-v3/src/AwsS3Adapter.php',
+        'League\\Flysystem\\Cached\\CacheInterface' => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src/CacheInterface.php',
+        'League\\Flysystem\\Cached\\CachedAdapter' => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src/CachedAdapter.php',
+        'League\\Flysystem\\Cached\\Storage\\AbstractCache' => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src/Storage/AbstractCache.php',
+        'League\\Flysystem\\Cached\\Storage\\Adapter' => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src/Storage/Adapter.php',
+        'League\\Flysystem\\Cached\\Storage\\Memcached' => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src/Storage/Memcached.php',
+        'League\\Flysystem\\Cached\\Storage\\Memory' => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src/Storage/Memory.php',
+        'League\\Flysystem\\Cached\\Storage\\Noop' => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src/Storage/Noop.php',
+        'League\\Flysystem\\Cached\\Storage\\PhpRedis' => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src/Storage/PhpRedis.php',
+        'League\\Flysystem\\Cached\\Storage\\Predis' => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src/Storage/Predis.php',
+        'League\\Flysystem\\Cached\\Storage\\Psr6Cache' => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src/Storage/Psr6Cache.php',
+        'League\\Flysystem\\Cached\\Storage\\Stash' => __DIR__ . '/..' . '/league/flysystem-cached-adapter/src/Storage/Stash.php',
         'League\\Flysystem\\Config' => __DIR__ . '/..' . '/league/flysystem/src/Config.php',
         'League\\Flysystem\\ConfigAwareTrait' => __DIR__ . '/..' . '/league/flysystem/src/ConfigAwareTrait.php',
         'League\\Flysystem\\ConnectionErrorException' => __DIR__ . '/..' . '/league/flysystem/src/ConnectionErrorException.php',
@@ -4142,6 +4896,24 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'PhpParser\\Parser\\Tokens' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Parser/Tokens.php',
         'PhpParser\\PrettyPrinterAbstract' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php',
         'PhpParser\\PrettyPrinter\\Standard' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php',
+        'Pimple\\Container' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Container.php',
+        'Pimple\\Exception\\ExpectedInvokableException' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Exception/ExpectedInvokableException.php',
+        'Pimple\\Exception\\FrozenServiceException' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Exception/FrozenServiceException.php',
+        'Pimple\\Exception\\InvalidServiceIdentifierException' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Exception/InvalidServiceIdentifierException.php',
+        'Pimple\\Exception\\UnknownIdentifierException' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Exception/UnknownIdentifierException.php',
+        'Pimple\\Psr11\\Container' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Psr11/Container.php',
+        'Pimple\\Psr11\\ServiceLocator' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Psr11/ServiceLocator.php',
+        'Pimple\\ServiceIterator' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/ServiceIterator.php',
+        'Pimple\\ServiceProviderInterface' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/ServiceProviderInterface.php',
+        'Pimple\\Tests\\Fixtures\\Invokable' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Tests/Fixtures/Invokable.php',
+        'Pimple\\Tests\\Fixtures\\NonInvokable' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Tests/Fixtures/NonInvokable.php',
+        'Pimple\\Tests\\Fixtures\\PimpleServiceProvider' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Tests/Fixtures/PimpleServiceProvider.php',
+        'Pimple\\Tests\\Fixtures\\Service' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Tests/Fixtures/Service.php',
+        'Pimple\\Tests\\PimpleServiceProviderInterfaceTest' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Tests/PimpleServiceProviderInterfaceTest.php',
+        'Pimple\\Tests\\PimpleTest' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Tests/PimpleTest.php',
+        'Pimple\\Tests\\Psr11\\ContainerTest' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Tests/Psr11/ContainerTest.php',
+        'Pimple\\Tests\\Psr11\\ServiceLocatorTest' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Tests/Psr11/ServiceLocatorTest.php',
+        'Pimple\\Tests\\ServiceIteratorTest' => __DIR__ . '/..' . '/pimple/pimple/src/Pimple/Tests/ServiceIteratorTest.php',
         'Prophecy\\Argument' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument.php',
         'Prophecy\\Argument\\ArgumentsWildcard' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php',
         'Prophecy\\Argument\\Token\\AnyValueToken' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php',
@@ -4231,6 +5003,10 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'Prophecy\\Prophet' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Prophet.php',
         'Prophecy\\Util\\ExportUtil' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Util/ExportUtil.php',
         'Prophecy\\Util\\StringUtil' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Util/StringUtil.php',
+        'Psr\\Cache\\CacheException' => __DIR__ . '/..' . '/psr/cache/src/CacheException.php',
+        'Psr\\Cache\\CacheItemInterface' => __DIR__ . '/..' . '/psr/cache/src/CacheItemInterface.php',
+        'Psr\\Cache\\CacheItemPoolInterface' => __DIR__ . '/..' . '/psr/cache/src/CacheItemPoolInterface.php',
+        'Psr\\Cache\\InvalidArgumentException' => __DIR__ . '/..' . '/psr/cache/src/InvalidArgumentException.php',
         'Psr\\Container\\ContainerExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerExceptionInterface.php',
         'Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',
         'Psr\\Container\\NotFoundExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/NotFoundExceptionInterface.php',
@@ -4649,6 +5425,10 @@ class ComposerStaticInitb33368be20c609b18b428b199d6bc7d2
         'Seld\\JsonLint\\Undefined' => __DIR__ . '/..' . '/seld/jsonlint/src/Seld/JsonLint/Undefined.php',
         'Seld\\PharUtils\\Linter' => __DIR__ . '/..' . '/seld/phar-utils/src/Linter.php',
         'Seld\\PharUtils\\Timestamps' => __DIR__ . '/..' . '/seld/phar-utils/src/Timestamps.php',
+        'Spatie\\Dropbox\\Client' => __DIR__ . '/..' . '/spatie/dropbox-api/src/Client.php',
+        'Spatie\\Dropbox\\Exceptions\\BadRequest' => __DIR__ . '/..' . '/spatie/dropbox-api/src/Exceptions/BadRequest.php',
+        'Spatie\\Dropbox\\UploadSessionCursor' => __DIR__ . '/..' . '/spatie/dropbox-api/src/UploadSessionCursor.php',
+        'Spatie\\FlysystemDropbox\\DropboxAdapter' => __DIR__ . '/..' . '/spatie/flysystem-dropbox/src/DropboxAdapter.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
         'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => __DIR__ . '/..' . '/symfony/console/CommandLoader/ContainerCommandLoader.php',

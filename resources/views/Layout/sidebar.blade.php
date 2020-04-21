@@ -208,7 +208,7 @@
                             </a>
                         </li>
                         @endif
-
+                            @if(Auth::user()->role_id ===4)
                         <li class="nav-item">
                             <a href="/myrequest" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -219,6 +219,67 @@
                             <a href="/newrequest" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>new request</p>
+                            </a>
+                        </li>
+                                @endif
+
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon far fa-file"></i>
+                        <p>
+                            Document
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/newdocument" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Upload document</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/yourdocument" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Your document</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/mailbox/compose.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Shared with you</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon far fa-file"></i>
+                        <p>
+                            Report
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/allEmail" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Upload document</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/yourdocument" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Your document</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/mailbox/compose.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Shared with you</p>
                             </a>
                         </li>
 

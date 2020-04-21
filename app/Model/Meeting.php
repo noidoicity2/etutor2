@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Meeting extends Model
 {
     //
-    protected $table = "tutor_registrations";
+    protected $table = "meeting";
     protected $fillable = [
     'name','tutor_id','student_id','link','start_at','created_by','created_at','status_id'
     ];
+    public $timestamps = false;
     public function tutor() {
         return $this->belongsTo('App\Model\user', 'tutor_id','id');
     }
