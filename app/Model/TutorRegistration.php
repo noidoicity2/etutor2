@@ -24,6 +24,10 @@ class TutorRegistration extends Model
     public function createdby() {
         return $this->belongsTo('App\Model\user', 'created_by','id');
     }
+    public function SharedDocument() {
+        return $this->hasMany('App\Model\DocumentShare', 'user_id', 'student_id');
+
+    }
 
 
 }

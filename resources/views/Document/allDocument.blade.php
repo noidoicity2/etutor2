@@ -90,13 +90,24 @@
                                                         Private
                                                 @endif
                                                 <td>
-                                                    <a class="btn btn-primary btn-sm" href="#">
+                                                    <a class="btn btn-primary btn-sm" href="/viewfile/{{$document->id}}">
                                                         <i class="fas fa-eye">
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-primary btn-sm" href="#">
+                                                    <a class="btn btn-primary btn-sm" href="/ShareDoc/{{$document->id}}">
                                                         <i class="fas fa-share">
+                                                        </i>
+
+                                                    </a>
+                                                    <a class="btn btn-primary btn-sm" href="/file/{{$document->id}}">
+                                                        <i class="fas fa-download">
+                                                        </i>
+
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="/file/{{$document->id}}">
+                                                        <i class="fas fa-trash">
+
                                                         </i>
 
                                                     </a>
