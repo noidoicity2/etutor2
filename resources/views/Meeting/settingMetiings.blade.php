@@ -25,7 +25,7 @@
                             <div class="card-body">
                             <div class="form-group">
                                     <input type="hidden" name="student_id" class='form-control'
-                                           id="name" placeholder="Enter name"
+                                          value="{{ $user->id }}" id="name" placeholder="Enter name"
 
                                            aria-describedby="exampleInputEmail1-error" aria-invalid="true">
                                     {{--<span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>--}}
