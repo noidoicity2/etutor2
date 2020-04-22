@@ -58,5 +58,11 @@ class User extends Authenticatable
     public  function  receivedMessages() {
         return $this->hasMany('App\Model\Message', 'to_user', 'id');
     }
+    public  function  sharedDocument() {
+        return $this->hasMany('App\Model\DocumentShare', 'user_id', 'id');
+    }
+    public  function  document() {
+        return $this->hasMany('App\Model\Document', 'created_by', 'id');
+    }
 
 }
