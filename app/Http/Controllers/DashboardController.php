@@ -54,7 +54,7 @@ class DashboardController extends Controller
         }
     }
 
-    public function messageChart()
+        public function messageChart()
     {
         $format = 'Y-m-d';
         $days = 7;
