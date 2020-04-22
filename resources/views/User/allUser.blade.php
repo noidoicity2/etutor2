@@ -92,10 +92,15 @@
                                                 <td>{{$user->created_at}}</td>
                                                 @if(Auth::user()->role_id === 1 ||Auth::user()->role_id === 2 )
                                                     <td class="project-actions text-right">
-                                                        <a class="btn btn-primary btn-sm" href="#">
+                                                        <a class="btn btn-primary btn-sm" href="/viewDashboard/{{$user->id}}">
+                                                            <i class="fas fa-tachometer-alt"></i>
+                                                            DashBoard
+
+                                                        </a>
+                                                        <a class="btn btn-primary btn-sm" href="/viewDashboard">
                                                             <i class="fas fa-eye">
                                                             </i>
-                                                            View
+                                                          profile
                                                         </a>
                                                         <a class="btn btn-info btn-sm" href="assignstudent/{{$user->id}}">
                                                             <i class="fas fa-pencil-alt">

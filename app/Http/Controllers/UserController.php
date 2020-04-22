@@ -140,6 +140,9 @@ class UserController extends Controller
         $user->save();
         return;
 
+    }
+    function  viewProFile($id) {
+        $user = User::find($id);
 
     }
 
