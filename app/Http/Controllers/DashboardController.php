@@ -14,11 +14,12 @@ class DashboardController extends Controller
     //
     public function index()
     {
-        $tuteeNo = $this->getNmberOfTutee();
-        $noReq = $this->getNmberOfunreplyRequest();
-        $noUnseenMsg = $this->getNumberofUnseenMsg();
-        $handleReq = $this->getNmberOfHandledRequest();
-        $noReg = $this->getNumberOfRegs();
+        $id = Auth::id();
+        $tuteeNo = $this->getNmberOfTutee($id);
+        $noReq = $this->getNmberOfunreplyRequest($id);
+        $noUnseenMsg = $this->getNumberofUnseenMsg($id);
+        $handleReq = $this->getNmberOfHandledRequest($id);
+        $noReg = $this->getNumberOfRegs($id);
 
         return view('DashBoard.Dashboard',
             [
@@ -30,6 +31,27 @@ class DashboardController extends Controller
 
             ]);
 
+    }
+    public function  viewDashBoard($id) {
+        if(Auth::user()->role_id != 1 ) {
+            return 'Unauthorized';
+        }
+        else {
+            $tuteeNo = $this->getNmberOfTutee($id);
+            $noReq = $this->getNmberOfunreplyRequest($id);
+            $noUnseenMsg = $this->getNumberofUnseenMsg($id);
+            $handleReq = $this->getNmberOfHandledRequest($id);
+            $noReg = $this->getNumberOfRegs($id);
+            return view('DashBoard.Dashboard',
+                [
+                    'tuteeNo' => $tuteeNo,
+                    'noReq' => $noReq,
+                    'unseenMsg' => $noUnseenMsg,
+                    'handleReq' => $handleReq,
+                    'noReg'=>$noReg
+
+                ]);
+        }
     }
 
     public function messageChart()
@@ -71,36 +93,36 @@ class DashboardController extends Controller
         }
     }
 
-    private function getNmberOfTutee()
+    private function getNmberOfTutee($id)
     {
-        $tutee = TutorRegistration::where('tutor_id', Auth::id())->count();
+        $tutee = TutorRegistration::where('tutor_id', $id)->count();
         return $tutee;
 
     }
 
-    private function getNmberOfunreplyRequest()
+    private function getNmberOfunreplyRequest($id)
     {
-        $req = \App\Model\Request::where([['status', '=', 'no response'], ['to_user', '=', Auth::id()]])->count();
+        $req = \App\Model\Request::where([['status', '=', 'no response'], ['to_user', '=', $id]])->count();
         return $req;
 
     }
 
-    private function getNmberOfHandledRequest()
+    private function getNmberOfHandledRequest($id)
     {
-        $req = \App\Model\Request::where([['status', '=', 'replied'], ['to_user', '=', Auth::id()]])->count();
+        $req = \App\Model\Request::where([['status', '=', 'replied'], ['to_user', '=', $id]])->count();
         return $req;
 
     }
 
-    public function getNumberofUnseenMsg()
+    public function getNumberofUnseenMsg($id)
     {
-        $id = Auth::id();
+//        $id = Auth::id();
         return Message::where([['to_user', '=', $id], ['status_id', '=', 4]])->count();
     }
 
-    private function getNumberOfRegs()
+    private function getNumberOfRegs($id)
     {
-        $regs = TutorRegistration::where('created_by', Auth::id())->count();
+        $regs = TutorRegistration::where('created_by', $id)->count();
         return $regs;
     }
 
