@@ -167,32 +167,32 @@
 
 
         $(document).ready(function () {
-
-            var dataPoints = [];
-            $.ajax({
-                url: '/postChart',
-                type: 'post',
-                data: {
-                    _token: CSRF_TOKEN,
-                },
-                dataType: 'JSON',
-                success: function (data) {
-
-                    for(var i = 0 ; i< data.length;  i++){
-                        dataPoints.push({
-                            label: JSON.stringify(data[i].label),
-                            y: parseInt(JSON.stringify(data[i].y))
-                        });
-                    }
-
-                    $("#chartContainer").CanvasJSChart(options);
-
-
-                    // alert(data2)
-
-
-                },
-            });
+{{--            {{json_encode($chartData)}}--}}
+            var dataPoints = @json($chartData);
+            // $.ajax({
+            //     url: '/postChart',
+            //     type: 'post',
+            //     data: {
+            //         _token: CSRF_TOKEN,
+            //     },
+            //     dataType: 'JSON',
+            //     success: function (data) {
+            //
+            //         for(var i = 0 ; i< data.length;  i++){
+            //             dataPoints.push({
+            //                 label: JSON.stringify(data[i].label),
+            //                 y: parseInt(JSON.stringify(data[i].y))
+            //             });
+            //         }
+            //
+            //         $("#chartContainer").CanvasJSChart(options);
+            //
+            //
+            //         // alert(data2)
+            //
+            //
+            //     },
+            // });
 
 
             var options = {
@@ -215,6 +215,8 @@
 
 
             };
+            $("#chartContainer").CanvasJSChart(options);
+
 
 
 

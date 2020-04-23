@@ -5,10 +5,30 @@ namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
 
 /**
+ * App\Model\Message
+ *
  * @property int from_user
  * @property int to_user
  * @property int status_id
  * @property string chat_message
+ * @property int $id
+ * @property int|null $from_user
+ * @property int|null $to_user
+ * @property string|null $chat_message
+ * @property string|null $created_at
+ * @property int|null $status_id
+ * @property-read \App\Model\User $receiver
+ * @property-read \App\Model\User|null $sender
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Message newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Message newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Message query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Message whereChatMessage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Message whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Message whereFromUser($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Message whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Message whereStatusId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Model\Message whereToUser($value)
+ * @mixin \Eloquent
  */
 class Message extends Model
 {

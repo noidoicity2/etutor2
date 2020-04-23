@@ -20,6 +20,7 @@ class DashboardController extends Controller
         $noUnseenMsg = $this->getNumberofUnseenMsg($id);
         $handleReq = $this->getNmberOfHandledRequest($id);
         $noReg = $this->getNumberOfRegs($id);
+        $chartData = $this->messageChart($id);
 
         return view('DashBoard.Dashboard',
             [
@@ -27,34 +28,39 @@ class DashboardController extends Controller
                 'noReq' => $noReq,
                 'unseenMsg' => $noUnseenMsg,
                 'handleReq' => $handleReq,
-                'noReg'=>$noReg
+                'noReg' => $noReg,
+                'chartData' => $chartData
 
             ]);
 
     }
-    public function  viewDashBoard($id) {
-        if(Auth::user()->role_id != 1 ) {
+
+    public function viewDashBoard($id)
+    {
+        if (Auth::user()->role_id != 1) {
             return 'Unauthorized';
-        }
-        else {
+        } else {
             $tuteeNo = $this->getNmberOfTutee($id);
             $noReq = $this->getNmberOfunreplyRequest($id);
             $noUnseenMsg = $this->getNumberofUnseenMsg($id);
             $handleReq = $this->getNmberOfHandledRequest($id);
             $noReg = $this->getNumberOfRegs($id);
+            $chartData = $this->messageChart($id);
+
             return view('DashBoard.Dashboard',
                 [
                     'tuteeNo' => $tuteeNo,
                     'noReq' => $noReq,
                     'unseenMsg' => $noUnseenMsg,
                     'handleReq' => $handleReq,
-                    'noReg'=>$noReg
+                    'noReg' => $noReg,
+                    'chartData' => $chartData
 
                 ]);
         }
     }
 
-        public function messageChart()
+    public function messageChart($id)
     {
         $format = 'Y-m-d';
         $days = 7;
@@ -70,7 +76,7 @@ class DashboardController extends Controller
         $charts = [];
 
         foreach ($date_array2 as $date) {
-            $c = Message::where('from_user', Auth::id())->whereDate('created_at', $date)->count();
+            $c = Message::where('from_user', $id)->whereDate('created_at', $date)->count();
             $chart = new Chart($date, $c);
             array_push($charts, $chart);
 

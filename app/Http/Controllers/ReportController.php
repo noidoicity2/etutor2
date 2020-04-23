@@ -7,4 +7,15 @@ use Illuminate\Http\Request;
 class ReportController extends Controller
 {
     //
+    public function index() {
+
+    }
+    private function getNonInteractStudent() {
+
+    }
+    private function  getNonstudentTutor() {
+
+
+    }
+    
 }

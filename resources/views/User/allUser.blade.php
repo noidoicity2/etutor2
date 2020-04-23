@@ -102,27 +102,22 @@
                                                             </i>
                                                           profile
                                                         </a>
-                                                        <a class="btn btn-info btn-sm" href="assignstudent/{{$user->id}}">
-                                                            <i class="fas fa-pencil-alt">
-                                                            </i>
-                                                            Assign student
-                                                        </a>
 
-
-                                                    </td>
-
-                                                    @elseif(Auth::user()->role_id === 4)
-                                                    <td class="project-actions text-right">
                                                         <a class="btn btn-primary btn-sm" href="getmessage/id/{{$user->id}}">
                                                             <i class="fas fa-envelope">
                                                             </i>
-                                                             message
+                                                            message
                                                         </a>
-
 
 
                                                     </td>
                                                 @endif
+
+
+
+
+
+
 
 
                                             </tr>
