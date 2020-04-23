@@ -174,17 +174,9 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 
     Route::get('msgChart', 'DashboardController@messageChart');
     Route::post('postChart', 'DashboardController@messageChart');
-
-    //    file upload
     Route::get('yourdocument', 'DocumentController@GetAllDocument');
     Route::get('newdocument', 'DocumentController@UploadDocument');
     Route::post('uploadfile', 'DocumentController@DoUploadFile');
-    Route::get('file/{id}', 'DocumentController@Download');
-    Route::get('viewfile/{id}', 'DocumentController@Details');
-    Route::get('ShareDoc/{id}', 'DocumentController@ShareDocument');
-    Route::post('doShareDoc', 'DocumentController@DoShare');
-    Route::get('sharedDocument', 'DocumentController@getSharedFile');
-    Route::post('comment', 'DocumentController@Comment');
 
 
 
@@ -192,7 +184,7 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 
 
 //Meeting
-    Route::get('viewMeeting/id/{id}','MeetingController@renderViewMeetings');
+    Route::get('viewMeeting/student_id/{student_id}','MeetingController@renderViewMeetings');
     Route::post('arangeGeeting','MeetingController@arangeGeeting')->name('arangeGeeting');
 });
 

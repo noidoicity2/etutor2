@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Meeting;
+use App\Model\User;
 use http\Exception;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -14,14 +15,18 @@ class MeetingController extends Controller
     {
         $meeting = new Meeting();
         $tutor_id = Auth::id();
-        $meeting->name = $request->get('meetingName');
+        $meeting->student_id = $request->student_id;
+        $meeting->name = $request->name;
         $meeting->tutor_id = $tutor_id;
+        
         $meeting->save();
         return back()->with('arangeGeeting', 'add successfully');
     }
 
-    public function renderViewMeetings()
+    public function renderViewMeetings($student_id)
     {
-        return view('Meeting.settingMetiings');
+        $user = User::find($student_id);
+
+        return view('Meeting.settingMetiings', ['user'=>$user]);
     }
 }

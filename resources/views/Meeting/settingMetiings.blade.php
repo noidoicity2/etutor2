@@ -23,6 +23,13 @@
                               id="quickForm" novalidate="novalidate">
                             @csrf
                             <div class="card-body">
+                            <div class="form-group">
+                                    <input type="hidden" name="student_id" class='form-control'
+                                          value="{{ $user->id }}" id="name" placeholder="Enter name"
+
+                                           aria-describedby="exampleInputEmail1-error" aria-invalid="true">
+                                    {{--<span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>--}}
+                                </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Name</label>
                                     <input type="text" name="name" class='form-control'
@@ -38,13 +45,13 @@
                                            aria-describedby="exampleInputEmail1-error" aria-invalid="true">
                                     <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="exampleInputPassword1">Date</label>
                                     <input type="date" name="date" class="form-control "
                                            id="email" placeholder="email"
                                            aria-describedby="exampleInputEmail1-error" aria-invalid="true">
                                     <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
-                                </div>
+                                </div> -->
                                 <!-- <div class="form-group">
                                     <label for="exampleInputPassword1">Document</label>
                                     <input type="file" name="image" class=" btn-file "
