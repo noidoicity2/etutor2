@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Model\Message
  *
- * @property int from_user
- * @property int to_user
- * @property int status_id
- * @property string chat_message
+
+
+
+
  * @property int $id
  * @property int|null $from_user
  * @property int|null $to_user
