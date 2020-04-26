@@ -33,17 +33,17 @@ class ReportController extends Controller
         $tutorCount = User::where('role_id', 4)->count();
 
         $AllSentMsg = Message::whereBetween('created_at', [$FromDate, $ToDate])->count();
-        $tutorMsgCount= Message::whereHas('sender',function (Builder $query) {
-            $query->where('role_id',3);
+        $tutorMsgCount = Message::whereHas('sender', function (Builder $query) {
+            $query->where('role_id', 3);
         })->whereBetween('created_at', [$FromDate, $ToDate])->count();
-        $tuteeMsgCount= Message::whereHas('sender',function (Builder $query) {
-            $query->where('role_id',4);
+        $tuteeMsgCount = Message::whereHas('sender', function (Builder $query) {
+            $query->where('role_id', 4);
         })->whereBetween('created_at', [$FromDate, $ToDate])->count();
-
+        $tutor = User::where('role_id', 3)->paginate(25);
 
 
         $AvgMsg = round($AllSentMsg / $days, 2);
-        return $AllSentMsg;
+        return $tutor;
 
 
 //

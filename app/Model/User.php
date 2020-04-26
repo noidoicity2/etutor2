@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -67,7 +68,7 @@ class User extends Authenticatable
     //
     use Notifiable;
 
-    protected $appends = ['Count_Send_Msg'];
+    protected $appends = ['Count_Send_Msg' , 'Avg_Msg_7_Day'];
 
     protected $table = 'users';
 
@@ -134,9 +135,13 @@ class User extends Authenticatable
     {
         return $this->sentMessages()->count();
     }
-//    public function getAvgMsg7DayAttribute()
-//    {
+    public function getAvgMsg7DayAttribute()
+    {
+        $currDate = Carbon::now('Asia/Ho_Chi_Minh');
+        $last7day = $currDate->subDay(7);
 //        return $this->sentMessages()->count();
-//    }
+        return round($this->sentMessages()->whereDate('created_at', '>=' , $last7day)->count()/7,2) ;
+//        return $currDate;
+    }
 
 }
