@@ -179,6 +179,14 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::post('uploadfile', 'DocumentController@DoUploadFile');
 
 
+//    report
+    Route::get('getNonInteractStudent', 'ReportController@getNonInteractStudent');
+    Route::get('getReport/{fromdate?}/{todate?}', 'ReportController@index');
+    Route::get('getRp', 'ReportController@getRp');
+
+    Route::post('postReport', 'ReportController@index');
+
+
 
 
 

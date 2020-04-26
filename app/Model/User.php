@@ -67,6 +67,8 @@ class User extends Authenticatable
     //
     use Notifiable;
 
+    protected $appends = ['Count_Send_Msg'];
+
     protected $table = 'users';
 
     /**
@@ -122,5 +124,19 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Model\Document', 'created_by', 'id');
     }
+
+    public function request()
+    {
+        return $this->hasMany('App\Model\Request', 'from_user', 'id');
+    }
+
+    public function getCountSendMsgAttribute()
+    {
+        return $this->sentMessages()->count();
+    }
+//    public function getAvgMsg7DayAttribute()
+//    {
+//        return $this->sentMessages()->count();
+//    }
 
 }
