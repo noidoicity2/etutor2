@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Document;
 use App\Model\Message;
+use App\Model\TutorRegistration;
 use App\Model\User;
 use Carbon\Carbon;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,6 +20,7 @@ class ReportController extends Controller
         $FromDate = Carbon::parse($fromdate);
         $ToDate = Carbon::parse($todate);
         $days = $ToDate->diffInDays($fromdate);
+        if($days==0) $days =1;
 
         $nonTutorStudent = User::whereDoesntHave('tutorRegistrationByStudent', function (Builder $query) use ($FromDate, $ToDate) {
             $query->whereBetween('created_at', [$FromDate, $ToDate]);
@@ -40,10 +43,14 @@ class ReportController extends Controller
             $query->where('role_id', 4);
         })->whereBetween('created_at', [$FromDate, $ToDate])->count();
         $tutor = User::where('role_id', 3)->paginate(25);
+        $RegCount = TutorRegistration::whereBetween('created_at', [$FromDate, $ToDate])->count();
+
+        $fileUploadCount = Document::whereBetween('created_at', [$FromDate, $ToDate])->count();
+
 
 
         $AvgMsg = round($AllSentMsg / $days, 2);
-        return $tutor;
+        return view('Report.Index');
 
 
 //

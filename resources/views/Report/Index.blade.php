@@ -24,155 +24,159 @@
 @section('content')
     <section class="content">
         <br>
-        <div class="row">
-            <div class="container">
-                <form class="form-inline">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container">
+                    <form class="form-inline">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
                       <span class="input-group-text">
                         <i class="far fa-calendar-alt"></i>
                       </span>
-                        </div>
-                        <input type="text" class="form-control float-right" id="reservation">
-                    </div>
-                    <input id="dateFrom" type="hidden" name="dateFrom">
-                    <input id="dateTo" type="hidden" name="dateTo">
-
-                    <a href="" id="searchBtn" class="btn btn-secondary">Search </a>
-                    @if(isset($nonTutorStCount))
-                        <span class="btn-danger">Number of student without tutor {{$nonTutorStCount}}</span>
-                    @endif
-                    @if(isset($nonInteractSt))
-                        <span class="btn-danger">Number of student without tutor {{$nonInteractSt}}</span>
-                    @endif
-                </form>
-            </div>
-
-            @if(isset($nonTutorStudent))
-                <span class="btn-danger">{{$nonTutorStudent}}</span>
-            @endif
-            <div class="col-md-3">
-
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-
-
-                <!-- /.card -->
-
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="card-title">:D</h2> <br>
-                        {{--                        <h2 class="card-title">Total tutee {{$tutee_count}}</h2>--}}
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                            <a id="reg-student" href="/RegStudents" class="btn btn-success"> <i
-                                    class="fas fa-pencil-alt">
-                                </i> assign selected</a>
-                            <a id="select-all" href="/adduser" class="btn btn-primary"> <i class="fas fa-pencil-alt">
-                                </i>select All</a>
-                            {{--                            <a href="/adduser" class="btn btn-warning">  <i class="fas fa-pencil-alt">--}}
-                            {{--                                </i>     assign randon</a>--}}
-                            <a href="/adduser" class="btn btn-warning" id="clear-select"> <i class="fas fa-pencil-alt">
-                                </i> clear selection </a>
-                            <div class="row">
-
-                                <div class="col-sm-12">
-                                    <table id="example1" class="table table-striped dataTable "
-                                           role="grid" aria-describedby="example1_info">
-                                        <thead>
-                                        <tr role="row">
-                                            <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-sort="ascending"
-                                                aria-label="Rendering engine: activate to sort column descending">
-                                                Name
-                                            </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="Browser: activate to sort column ascending">
-                                                Name
-                                            </th>
-
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1"
-                                                aria-label="Engine version: activate to sort column ascending">Quality
-
-                                            </th>
-
-                                            <th class="sorting  text-center" tabindex="0" aria-controls="example1"
-                                                rowspan="1"
-                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                action
-                                            </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-
-                                        {{--                                        @foreach($users as $user)--}}
-                                        {{--                                            <tr role="row" class="odd">--}}
-                                        {{--                                                <td id="id" tabindex="0" class="sorting_1">{{$user->id}}</td>--}}
-                                        {{--                                                <td>{{$user->name}}</td>--}}
-
-                                        {{--                                                <td>{{substr($user->email,0,15)}}</td>--}}
-
-                                        {{--                                                <td>{{$user->role->name}}</td>--}}
-                                        {{--                                                @if(Auth::user()->role_id === 1 ||Auth::user()->role_id === 2 )--}}
-                                        {{--                                                    <td class="project-actions text-right">--}}
-                                        {{--                                                        <a class="btn btn-primary btn-sm" href="#">--}}
-                                        {{--                                                            <i class="fas fa-eye">--}}
-                                        {{--                                                            </i>--}}
-                                        {{--                                                            View--}}
-                                        {{--                                                        </a>--}}
-                                        {{--                                                        --}}{{--                                                        <a class="btn btn-info btn-sm" href="#">--}}
-                                        {{--                                                        --}}{{--                                                            <i class="fas fa-pencil-alt">--}}
-                                        {{--                                                        --}}{{--                                                            </i>--}}
-                                        {{--                                                        --}}{{--                                                            Assign student--}}
-                                        {{--                                                        --}}{{--                                                        </a>--}}
-
-
-                                        {{--                                                    </td>--}}
-
-                                        {{--                                                @elseif(Auth::user()->role_id === 4)--}}
-                                        {{--                                                    <td class="project-actions text-right">--}}
-                                        {{--                                                        <a class="btn btn-primary btn-sm" href="/getmessage/id/{{$user->id}}">--}}
-                                        {{--                                                            <i class="fas fa-envelope">--}}
-                                        {{--                                                            </i>--}}
-                                        {{--                                                            message--}}
-                                        {{--                                                        </a>--}}
-
-
-
-                                        {{--                                                    </td>--}}
-                                        {{--                                                @endif--}}
-
-
-                                        {{--                                            </tr>--}}
-                                        {{--                                        @endforeach--}}
-
-                                        </tbody>
-
-                                    </table>
-
-                                    {{--                                    {{ $users->links() }}--}}
-
-
-                                </div>
                             </div>
-
+                            <input type="text" class="form-control float-right" id="reservation">
                         </div>
-                    </div>
-                    <!-- /.card-body -->
+                        <input id="dateFrom" type="hidden" name="dateFrom">
+                        <input id="dateTo" type="hidden" name="dateTo">
+
+                        <a style="margin-left: 15px" href="" id="searchBtn" class="btn btn-secondary">Search </a>
+                        @if(isset($nonTutorStCount))
+                            <span class="btn-danger">Number of student without tutor {{$nonTutorStCount}}</span>
+                        @endif
+                        @if(isset($nonInteractSt))
+                            <span class="btn-danger">Number of student without tutor {{$nonInteractSt}}</span>
+                        @endif
+                    </form>
                 </div>
-                <!-- /.card -->
+
+                @if(isset($nonTutorStudent))
+                    <span class="btn-danger">{{$nonTutorStudent}}</span>
+                @endif
+                <div class="col-md-3">
+
+
+                </div>
             </div>
-            <!-- /.col -->
+
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>820</h3>
+
+                            <p>Number of tutees</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="/assignedstudent" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>0</h3>
+
+                            <p>Number of unreplied request</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="/allrequests" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>18</h3>
+
+                            <p>Number of unseen message</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>0</h3>
+
+                            <p>number of handle message</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>0</h3>
+
+                            <p>Total allocations</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>65</h3>
+
+                            <p>Total allocated tutor</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>65</h3>
+
+                            <p>Tatal allcated tutee</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+            <div class="container">
+
+
+                <div id="chartContainer" style="height: 370px; width: 100%;"><div class="canvasjs-chart-container" style="position: relative; text-align: left; cursor: auto;"><canvas class="canvasjs-chart-canvas" width="1125" height="370" style="position: absolute; user-select: none;"></canvas><canvas class="canvasjs-chart-canvas" width="1125" height="370" style="position: absolute; -webkit-tap-highlight-color: transparent; user-select: none; cursor: default;"></canvas><div class="canvasjs-chart-toolbar" style="position: absolute; right: 1px; top: 1px; border: 1px solid transparent;"></div><div class="canvasjs-chart-tooltip" style="position: absolute; height: auto; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 2px; z-index: 1000; pointer-events: none; display: none; border-radius: 5px;"><div style=" width: auto;height: auto;min-width: 50px;line-height: auto;margin: 0px 0px 0px 0px;padding: 5px;font-family: Calibri, Arial, Georgia, serif;font-weight: normal;font-style: italic;font-size: 14px;color: #000000;text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);text-align: left;border: 2px solid gray;background: rgba(255,255,255,.9);text-indent: 0px;white-space: nowrap;border-radius: 5px;-moz-user-select:none;-khtml-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;} "> Sample Tooltip</div></div><a class="canvasjs-chart-credit" title="JavaScript Charts" style="outline:none;margin:0px;position:absolute;right:2px;top:356px;color:dimgrey;text-decoration:none;font-size:11px;font-family: Calibri, Lucida Grande, Lucida Sans Unicode, Arial, sans-serif" tabindex="-1" target="_blank" href="https://canvasjs.com/">CanvasJS.com</a></div></div>
+
+            </div>
+
         </div>
+
+        <!-- /.col -->
+
         <!-- /.row -->
-        <button id="count">count</button>
+
 
     </section>
 @endsection

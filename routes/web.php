@@ -174,9 +174,15 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 
     Route::get('msgChart', 'DashboardController@messageChart');
     Route::post('postChart', 'DashboardController@messageChart');
+
     Route::get('yourdocument', 'DocumentController@GetAllDocument');
     Route::get('newdocument', 'DocumentController@UploadDocument');
     Route::post('uploadfile', 'DocumentController@DoUploadFile');
+    Route::get('ShareDoc/{id}', 'DocumentController@ShareDocument');
+    Route::post('doShareDoc', 'DocumentController@DoShare');
+    Route::get('sharedDocument', 'DocumentController@getSharedFile');
+
+
 
 
 //    report
