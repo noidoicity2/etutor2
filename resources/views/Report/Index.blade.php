@@ -40,63 +40,56 @@
                         <input id="dateTo" type="hidden" name="dateTo">
 
                         <a style="margin-left: 15px" href="" id="searchBtn" class="btn btn-secondary">Search </a>
-                        @if(isset($nonTutorStCount))
-                            <span class="btn-danger">Number of student without tutor {{$nonTutorStCount}}</span>
-                        @endif
-                        @if(isset($nonInteractSt))
-                            <span class="btn-danger">Number of student without tutor {{$nonInteractSt}}</span>
-                        @endif
+
                     </form>
                 </div>
 
-                @if(isset($nonTutorStudent))
-                    <span class="btn-danger">{{$nonTutorStudent}}</span>
-                @endif
-                <div class="col-md-3">
 
-
-                </div>
             </div>
 
             <!-- Small boxes (Stat box) -->
+            @if(isset($FromDate))
+                <h1 class="btn-primary">Report From {{$FromDate->toDateString()}}  to {{$ToDate->toDateString()}}</h1>
+            @endif
+            <h2>Statistic Report</h2>
+
             <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h3>820</h3>
-
-                            <p>Number of tutees</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-bag"></i>
-                        </div>
-                        <a href="/assignedstudent" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <h3>0</h3>
-
-                            <p>Number of unreplied request</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
-                        </div>
-                        <a href="/allrequests" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>18</h3>
+                            <h3>{{$stdCount}}</h3>
 
-                            <p>Number of unseen message</p>
+                            <p>Total Student</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>{{$tutorCount}}</h3>
+
+                            <p>Total Tutor</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>{{$tutorMsgCount}}</h3>
+
+                            <p>Number of tutor 's message</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
@@ -107,11 +100,11 @@
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-danger">
+                    <div class="small-box bg-secondary">
                         <div class="inner">
-                            <h3>0</h3>
+                            <h3>{{$tuteeMsgCount}}</h3>
 
-                            <p>number of handle message</p>
+                            <p>number of student 's message</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
@@ -121,9 +114,25 @@
                 </div>
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-danger">
+                    <div class="small-box bg-gradient-cyan">
                         <div class="inner">
-                            <h3>0</h3>
+                            <h3>{{$AvgMsg}}</h3>
+
+                            <p>Average message for each personal tutor</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-primary">
+                        <div class="inner">
+                            <h3>{{$RegCount}}</h3>
 
                             <p>Total allocations</p>
                         </div>
@@ -135,9 +144,9 @@
                 </div>
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-danger">
+                    <div class="small-box bg-fuchsia">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3>{{$AllocatedTutor}}</h3>
 
                             <p>Total allocated tutor</p>
                         </div>
@@ -149,11 +158,11 @@
                 </div>
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-danger">
+                    <div class="small-box bg-gradient-indigo">
                         <div class="inner">
                             <h3>65</h3>
 
-                            <p>Tatal allcated tutee</p>
+                            <p>Total allcated tutee</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
@@ -162,12 +171,59 @@
                     </div>
                 </div>
                 <!-- ./col -->
+
+
             </div>
             <!-- /.row -->
+            <h2>Exceptional Report</h2>
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-gradient-danger">
+                        <div class="inner">
+                            <h3>{{$noInteractSt}}</h3>
+
+                            <p>Number of student with no interaction</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-gradient-danger">
+                        <div class="inner">
+                            <h3>{{$nonTutorStudent}}</h3>
+
+                            <p>Number of student without a personal tutor</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-gradient-danger">
+                        <div class="inner">
+                            <h3>{{$TutorWithoutTutee}}</h3>
+
+                            <p>Number of Tutor without Tutee</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
             <div class="container">
 
 
-                <div id="chartContainer" style="height: 370px; width: 100%;"><div class="canvasjs-chart-container" style="position: relative; text-align: left; cursor: auto;"><canvas class="canvasjs-chart-canvas" width="1125" height="370" style="position: absolute; user-select: none;"></canvas><canvas class="canvasjs-chart-canvas" width="1125" height="370" style="position: absolute; -webkit-tap-highlight-color: transparent; user-select: none; cursor: default;"></canvas><div class="canvasjs-chart-toolbar" style="position: absolute; right: 1px; top: 1px; border: 1px solid transparent;"></div><div class="canvasjs-chart-tooltip" style="position: absolute; height: auto; box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 2px; z-index: 1000; pointer-events: none; display: none; border-radius: 5px;"><div style=" width: auto;height: auto;min-width: 50px;line-height: auto;margin: 0px 0px 0px 0px;padding: 5px;font-family: Calibri, Arial, Georgia, serif;font-weight: normal;font-style: italic;font-size: 14px;color: #000000;text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);text-align: left;border: 2px solid gray;background: rgba(255,255,255,.9);text-indent: 0px;white-space: nowrap;border-radius: 5px;-moz-user-select:none;-khtml-user-select: none;-webkit-user-select: none;-ms-user-select: none;user-select: none;} "> Sample Tooltip</div></div><a class="canvasjs-chart-credit" title="JavaScript Charts" style="outline:none;margin:0px;position:absolute;right:2px;top:356px;color:dimgrey;text-decoration:none;font-size:11px;font-family: Calibri, Lucida Grande, Lucida Sans Unicode, Arial, sans-serif" tabindex="-1" target="_blank" href="https://canvasjs.com/">CanvasJS.com</a></div></div>
 
             </div>
 

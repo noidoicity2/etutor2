@@ -181,6 +181,9 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('ShareDoc/{id}', 'DocumentController@ShareDocument');
     Route::post('doShareDoc', 'DocumentController@DoShare');
     Route::get('sharedDocument', 'DocumentController@getSharedFile');
+    Route::get('viewfile/{id}', 'DocumentController@Details');
+    Route::post('comment', 'DocumentController@Comment');
+    Route::post('doShareDoc', 'DocumentController@DoShare');
 
 
 
@@ -191,6 +194,13 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('getRp', 'ReportController@getRp');
 
     Route::post('postReport', 'ReportController@index');
+
+
+//    profile
+    Route::get('viewProfile', function () {
+        return view('User.ViewProfile');
+    });
+
 
 
 

@@ -79,4 +79,28 @@ class TutorRegistrationController extends Controller
 
         return json_encode(['success' => true, 'msg' => 'allocate ' . count($arr) . '  student successfully successfully']);
     }
+
+    function cancelReg(Request $request)
+    {
+        $id = $request->id;
+        $reg = TutorRegistration::find($id);
+        $tutor_id = $reg->tutor_id;
+        $student_id = $reg->student_id;
+
+        $email = new Email();
+        $email2 = new Email();
+        //email to tutor
+        $email->title = 'A student has been removed from your allocation list';
+        $email->content = 'Student '.$student_id.'  has been removed from your allocation list';
+        $email->to_user = $tutor_id;
+//            emai to student
+        $email2->title = 'Your tutor has been removed';
+        $email2->content = 'Your tutor has been removed';
+        $email2->to_user = $student_id;
+
+        $email->save();
+        $email2->save();
+
+        return json_encode(['success' => true, 'messsage' => 'Remove allocation successfully']);
+    }
 }

@@ -65,6 +65,7 @@ class DocumentController extends Controller
     {
         $file = Document::find($id);
         $cmt = Comment::where('document_id', $id)->get();
+//        return $id;
         return view('Document.documentDetail', ['file' => $file , 'cmts'=>$cmt]);
 //        return $cmt;
 
