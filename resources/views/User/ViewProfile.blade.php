@@ -30,16 +30,16 @@
                             <img class="profile-user-img img-fluid img-circle" src="{{asset('dist/img/user4-128x128.jpg')}}" alt="User profile picture">
                         </div>
 
-                        <h3 class="profile-username text-center">Nina Mcintire</h3>
+                        <h3 class="profile-username text-center">{{$user->name}}</h3>
 
-                        <p class="text-muted text-center">Software Engineer</p>
+                        <p class="text-muted text-center">{{$user->email}}</p>
 
                         <ul class="list-group list-group-unbordered mb-3">
                             <li class="list-group-item">
-                                <b>Public Document</b> <a class="float-right">1,322</a>
+                                <b>Public Document</b> <a href="/viewPublicDoc/{{$user->id}}" class="float-right">{{$docCount}}</a>
                             </li>
                             <li class="list-group-item">
-                                <b>Shared Document</b> <a class="float-right">543</a>
+                                <b>Shared Document</b> <a href="/viewSharedDoc/{{$user->id}}" class="float-right">{{$shareCount}}</a>
                             </li>
 
                         </ul>

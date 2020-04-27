@@ -20,7 +20,6 @@ use App\Model\Message;
 */
 
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -52,7 +51,7 @@ Route::get('/dummy', function () {
 
     for ($i = 0; $i < 20000000; $i++) {
         $name = '2datdepza1aia2a ' . $i;
-        $email = 'anhtdadeozaiqua' . $i.'@gmail.com';
+        $email = 'anhtdadeozaiqua' . $i . '@gmail.com';
         $pass = bcrypt('dat');
         $user = new User();
         $user->name = $name;
@@ -72,7 +71,7 @@ Route::get('/dummy2', function () {
 
     for ($i = 0; $i < 20000000; $i++) {
         $name = '2datdepza1aia2a ' . $i;
-        $email = 'sMRsatDatamaaila' . $i.'@gmail.com';
+        $email = 'sMRsatDatamaaila' . $i . '@gmail.com';
         $pass = bcrypt('dat');
         $user = new User();
         $user->name = $name;
@@ -86,12 +85,12 @@ Route::get('allMessages', 'messageController@getAllMessage');
 Route::get('dumpMessage', function () {
     DB::disableQueryLog();
     ini_set('memory_limit', '-1');
-        $message = new Message();
-        $message->from_user = 21;
-        $message->to_user = 17;
-        $message->status_id = 1;
-        $message->chat_message = 'message a' ;
-        $message->save();
+    $message = new Message();
+    $message->from_user = 21;
+    $message->to_user = 17;
+    $message->status_id = 1;
+    $message->chat_message = 'message a';
+    $message->save();
     return json_encode(['success' => true, 'dm' => true]);
 });
 Route::get('dumpMessage2', function () {
@@ -101,12 +100,12 @@ Route::get('dumpMessage2', function () {
     $message->from_user = 17;
     $message->to_user = 21;
     $message->status_id = 1;
-    $message->chat_message = 'message rep' ;
+    $message->chat_message = 'message rep';
     $message->save();
     return json_encode(['success' => true, 'dm' => true]);
 });
 Route::get('delMessage', function () {
-    Message::where('id', '>' , '100000')->delete();
+    Message::where('id', '>', '100000')->delete();
 });
 Route::get('getmessage', 'messageController@getChatHistory');
 Route::get('login', 'UserController@login')->name('login');
@@ -126,11 +125,12 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 
     Route::get('/users', 'UserController@GetAllUser');
     Route::get('/tutors', 'UserController@GetAllTutors');
-    Route::get('/adduser',  'UserController@AddUser');
+    Route::get('/adduser', 'UserController@AddUser');
     Route::post('add', 'UserController@DoAddUser')->name('add');
     Route::get('allusers', 'UserController@GetAllUser')->name('allusers');
-    Route::get('nonstudenttutor',  'UserController@GetNontudentTutor');
-    Route::get('getFriendList',  'UserController@getFriendList');
+    Route::get('nonstudenttutor', 'UserController@GetNontudentTutor');
+    Route::get('getFriendList', 'UserController@getFriendList');
+
 
 
 
@@ -145,12 +145,12 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::post('getunseenmsg', 'messageController@numOfUnseenMessge');
     Route::post('updatemsgstatus', 'messageController@updateMessageStatus');
 
-    Route::get('assigntutor','TutorRegistrationController@getAssignTutor');
-    Route::get('testsk',function () {
-        event(new \App\Events\UpdateNotification(1,'2'));
+    Route::get('assigntutor', 'TutorRegistrationController@getAssignTutor');
+    Route::get('testsk', function () {
+        event(new \App\Events\UpdateNotification(1, '2'));
         return 'hi';
     });
-    Route::get('meeting', function(){
+    Route::get('meeting', function () {
         return view('Meeting.settingMetiings');
     });
 
@@ -175,6 +175,7 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('msgChart', 'DashboardController@messageChart');
     Route::post('postChart', 'DashboardController@messageChart');
 
+    //doc
     Route::get('yourdocument', 'DocumentController@GetAllDocument');
     Route::get('newdocument', 'DocumentController@UploadDocument');
     Route::post('uploadfile', 'DocumentController@DoUploadFile');
@@ -184,6 +185,11 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('viewfile/{id}', 'DocumentController@Details');
     Route::post('comment', 'DocumentController@Comment');
     Route::post('doShareDoc', 'DocumentController@DoShare');
+    Route::get('viewPublicDoc/{id}', 'DocumentController@getPublicDoc');
+    Route::get('viewSharedDoc/{id}', 'DocumentController@getPublicDoc');
+
+    Route::get('file/{id}', 'DocumentController@Download');
+
 
 
 
@@ -197,27 +203,22 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 
 
 //    profile
+
+    Route::get('profile/{id}', 'UserController@viewProFile');
     Route::get('viewProfile', function () {
         return view('User.ViewProfile');
     });
 
 
-
-
-
-
-
 //Meeting
-    Route::get('viewMeeting/student_id/{student_id}','MeetingController@renderViewMeetings');
-    Route::post('arangeGeeting','MeetingController@arangeGeeting')->name('arangeGeeting');
+    Route::get('viewMeeting/student_id/{student_id}', 'MeetingController@renderViewMeetings');
+    Route::post('arangeGeeting', 'MeetingController@arangeGeeting')->name('arangeGeeting');
 });
-
 
 
 //default page
 Route::get('/', 'DashboardController@index')->middleware('checkAdminLogin');
 Route::get('viewDashboard/{id}', 'DashboardController@viewDashBoard')->middleware('checkAdminLogin');
-
 
 
 Route::get('/testck', function () {

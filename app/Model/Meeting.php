@@ -21,7 +21,5 @@ class Meeting extends Model
     public function createdby() {
         return $this->belongsTo('App\Model\user', 'created_by','id');
     }
-    public function status() {
-        return $this->belongsTo('App\Model\status', 'status_id','id');
-    }
+
 }

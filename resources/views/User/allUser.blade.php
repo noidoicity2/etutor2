@@ -28,12 +28,12 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">DataTable with default features</h3>
+                        <h3 class="card-title">List users</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                            <a href="/adduser" class="btn btn-primary"> New User</a>
+{{--                            <a href="/adduser" class="btn btn-primary"> New User</a>--}}
                             <div class="row">
                                 <div class="col-sm-12">
                                     <table id="example1" class="table table-striped dataTable "
@@ -90,14 +90,16 @@
 {{--                                                <td>{{$user->email}}</td>--}}
                                                 <td>{{$user->role->name}}</td>
                                                 <td>{{$user->created_at}}</td>
-                                                @if(Auth::user()->role_id === 1 ||Auth::user()->role_id === 2 )
+
                                                     <td class="project-actions text-right">
+                                                        @if(Auth::user()->role_id === 1 ||Auth::user()->role_id === 2 )
                                                         <a class="btn btn-primary btn-sm" href="/viewDashboard/{{$user->id}}">
                                                             <i class="fas fa-tachometer-alt"></i>
                                                             DashBoard
 
                                                         </a>
-                                                        <a class="btn btn-primary btn-sm" href="/viewDashboard">
+                                                        @endif
+                                                        <a class="btn btn-primary btn-sm" href="/profile/{{$user->id}}">
                                                             <i class="fas fa-eye">
                                                             </i>
                                                           profile
@@ -111,7 +113,7 @@
 
 
                                                     </td>
-                                                @endif
+
 
 
 

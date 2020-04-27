@@ -83,6 +83,12 @@
 
                                                     </a>
 
+                                                    <a class="btn btn-info btn-sm" href="profile/{{$reg->student_id}}">
+                                                        <i class="fas fa-user">
+                                                        </i>
+
+                                                    </a>
+
 
                                                 </td>
                                             </tr>

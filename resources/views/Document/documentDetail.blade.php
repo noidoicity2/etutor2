@@ -36,13 +36,13 @@
                                            aria-describedby="exampleInputEmail1-error" aria-invalid="true" disabled>
                                     {{--                                    <span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>--}}
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Path</label>
-                                    <input type="email" name="email" class="form-control " disabled
-                                           id="email" placeholder="email" value="{{$file->link}}"
-                                           aria-describedby="exampleInputPassword1-error" aria-invalid="true">
-                                    <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
-                                </div>
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="exampleInputPassword1">Path</label>--}}
+{{--                                    <input type="email" name="email" class="form-control " disabled--}}
+{{--                                           id="email" placeholder="email" value="{{$file->link}}"--}}
+{{--                                           aria-describedby="exampleInputPassword1-error" aria-invalid="true">--}}
+{{--                                    <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>--}}
+{{--                                </div>--}}
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Created By</label>
                                     <input type="text" name="dob" class="form-control "
@@ -74,7 +74,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <a type="submit" class="btn btn-primary">Share</a>
+{{--                                <a type="submit" class="btn btn-primary">Share</a>--}}
                             </div>
                         </form>
                     </div>

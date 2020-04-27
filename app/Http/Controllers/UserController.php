@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Request\LoginRequest;
+use App\Model\Document;
+use App\Model\DocumentShare;
 use App\Model\role;
 use App\Model\User;
 
@@ -141,11 +143,17 @@ class UserController extends Controller
         return;
 
     }
-    function  viewProFile($id) {
+    function  viewProFile($id = null) {
+
         $user = User::find($id);
-        return view();
+
+        $docCount = Document::where('created_by',$id)->where('isPublic', '=', 0)->count();
+        $shareCount = DocumentShare::where('user_id', $id)->count();
+
+        return view('User.ViewProfile', [ 'user'=>$user , 'docCount'=>$docCount , 'shareCount'=>$shareCount]);
 
     }
+
 
 
 }

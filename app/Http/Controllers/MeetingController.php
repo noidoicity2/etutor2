@@ -18,7 +18,7 @@ class MeetingController extends Controller
         $meeting->student_id = $request->student_id;
         $meeting->name = $request->name;
         $meeting->tutor_id = $tutor_id;
-        
+
         $meeting->save();
         return back()->with('arangeGeeting', 'add successfully');
     }
@@ -27,6 +27,12 @@ class MeetingController extends Controller
     {
         $user = User::find($student_id);
 
-        return view('Meeting.settingMetiings', ['user'=>$user]);
+        return view('Meeting.settingMetiings', ['user' => $user]);
+    }
+
+    public function TutorMeeting()
+    {
+        $id = Auth::id();
+
     }
 }

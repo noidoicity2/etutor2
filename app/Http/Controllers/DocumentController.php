@@ -66,7 +66,7 @@ class DocumentController extends Controller
         $file = Document::find($id);
         $cmt = Comment::where('document_id', $id)->get();
 //        return $id;
-        return view('Document.documentDetail', ['file' => $file , 'cmts'=>$cmt]);
+        return view('Document.documentDetail', ['file' => $file, 'cmts' => $cmt]);
 //        return $cmt;
 
     }
@@ -95,7 +95,7 @@ class DocumentController extends Controller
     public function ShareDocument($id)
     {
         $doc = Document::find($id);
-        if(Auth::user()->role_id == 3) {
+        if (Auth::user()->role_id == 3) {
 
         }
 
@@ -144,22 +144,41 @@ class DocumentController extends Controller
 
     }
 
-    public function  getSharedFile() {
+    public function getSharedFile()
+    {
         $id = Auth::id();
-        $doc  =  DocumentShare::where('user_id', $id)->paginate(25);
-        return view('Document.SharedDocument' , ['documents'=>$doc]);
+        $doc = DocumentShare::where('user_id', $id)->paginate(25);
+        return view('Document.SharedDocument', ['documents' => $doc]);
     }
-    public function  Comment(Request $request) {
+
+    public function Comment(Request $request)
+    {
         $id = Auth::id();
         $cmt = new Comment();
 
-        $cmt->user_id =  $id;
+        $cmt->user_id = $id;
         $cmt->comment = $request->comment;
-        $cmt->document_id  = $request->document_id;
+        $cmt->document_id = $request->document_id;
 
         $cmt->save();
-        return json_encode(['success'=>true]);
+        return json_encode(['success' => true]);
 
+
+    }
+
+    public function getPublicDoc($id)
+    {
+        $doc = Document::where('created_by',$id)->where('isPublic', '=',1)->paginate(25);
+
+        return view ('Document.viewPublicDoc', ['documents'=>$doc]);
+
+
+    }
+    public function getSharedDoc($id)
+    {
+        $doc = DocumentShare::where('user_id',$id)->paginate(25);
+
+        return view ('Document.viewShareDoc', ['documents'=>$doc]);
 
 
     }
