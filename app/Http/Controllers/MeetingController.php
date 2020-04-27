@@ -33,6 +33,9 @@ class MeetingController extends Controller
     public function TutorMeeting()
     {
         $id = Auth::id();
+        $meeting = Meeting::where('tutor_id', $id)->orderBy('start_at','desc')->paginate(25);
+
+        return view('Meeting.allMeeting', ['meetings'=>$meeting ]);
 
     }
 }

@@ -9,7 +9,7 @@ class Meeting extends Model
     //
     protected $table = "meeting";
     protected $fillable = [
-    'name','tutor_id','student_id','link','start_at','created_by','created_at','status_id'
+    'name','tutor_id','student_id','link','start_at','created_by','created_at','status', 'document_id,'
     ];
     public $timestamps = false;
     public function tutor() {
@@ -20,6 +20,9 @@ class Meeting extends Model
     }
     public function createdby() {
         return $this->belongsTo('App\Model\user', 'created_by','id');
+    }
+    public function document() {
+        return $this->belongsTo('App\Model\Document', 'document_id','id');
     }
 
 }

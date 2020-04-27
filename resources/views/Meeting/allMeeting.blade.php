@@ -23,6 +23,7 @@
 @section('content')
     <section class="content">
         <div class="row">
+
             <div class="col-12">
 
 
@@ -30,20 +31,21 @@
 
                 <div class="card">
                     <div class="card-header">
+                        <h2>All Meeting</h2>
                         {{--                        <h2 class="card-title">Assign student for tutor {{$tutor->name}} (id:{{$tutor->id}})</h2> <br>--}}
                         {{--                        <h2 class="card-title">Total tutee {{$tutee_count}}</h2>--}}
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                            <a href="/newdocument" class="btn btn-success"> <i class="fas fa-upload">
-                                </i> Upload File </a>
-                            <a id="mark-all-as-read" href="/adduser" class="btn btn-primary"> <i
-                                    class="fas fa-pencil-alt">
-                                </i>Mask all as read </a>
+{{--                            <a href="/newdocument" class="btn btn-success"> <i class="fas fa-upload">--}}
+{{--                                </i> Upload File </a>--}}
+{{--                            <a id="mark-all-as-read" href="/adduser" class="btn btn-primary"> <i--}}
+{{--                                    class="fas fa-pencil-alt">--}}
+{{--                                </i>Mask all as read </a>--}}
 
-                            <a href="/adduser" class="btn btn-warning" id="clear-select"> <i class="fas fa-pencil-alt">
-                                </i> clear selection </a>
+{{--                            <a href="/adduser" class="btn btn-warning" id="clear-select"> <i class="fas fa-pencil-alt">--}}
+{{--                                </i> clear selection </a>--}}
                             <div class="row">
 
                                 <div class="col-sm-12">
@@ -62,12 +64,12 @@
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Author
+                                                Student name
                                             </th>
                                             <th class="sorting  text-center" tabindex="0" aria-controls="example1"
                                                 rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Public
+                                                Start At
                                             </th>
                                             <th class="sorting  text-center" tabindex="0" aria-controls="example1"
                                                 rowspan="1"
@@ -78,34 +80,32 @@
                                         </thead>
                                         <tbody>
 
-                                        @foreach($documents as $document)
+                                        @foreach($meetings as $meeting)
                                             <tr role="row" class="">
-                                                <td>{{$document->id}}</td>
-                                                <td id="id" tabindex="0" class="sorting_1">{{$document->name}}</td>
-                                                <td>{{$document->tutor->name}}</td>
+                                                <td>{{$meeting->id}}</td>
+                                                <td id="id" tabindex="0" class="sorting_1">{{$meeting->name}}</td>
+                                                <td>{{$meeting->student->name}}</td>
                                                 <td>
-                                                    @if($document->isPublic===1)
-                                                        Public
-                                                    @else
-                                                        Private
-                                                @endif
+
+                                                </td>
+
                                                 <td>
-                                                    <a class="btn btn-primary btn-sm" href="/viewfile/{{$document->id}}">
+                                                    <a class="btn btn-primary btn-sm" href="">
                                                         <i class="fas fa-eye">
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-primary btn-sm" href="/ShareDoc/{{$document->id}}">
+                                                    <a class="btn btn-primary btn-sm" href="">
                                                         <i class="fas fa-share">
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-primary btn-sm" href="/file/{{$document->id}}">
+                                                    <a class="btn btn-primary btn-sm" href="">
                                                         <i class="fas fa-download">
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-danger btn-sm" href="/file/{{$document->id}}">
+                                                    <a class="btn btn-danger btn-sm" href="">
                                                         <i class="fas fa-trash">
 
                                                         </i>
@@ -123,7 +123,7 @@
 
                                     </table>
 
-                                    {{ $documents->links() }}
+                                    {{ $meetings->links() }}
 
 
                                 </div>
@@ -138,7 +138,7 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
-        <button id="count">count</button>
+
 
     </section>
 @endsection

@@ -1,16 +1,16 @@
 @extends('Layout.layout');
 @section('content')
     <section class="content">
-        <div class="container-fluid">
+        <div class="container">
             <br>
             <div class="row">
                 <!-- left column -->
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+
+                <div class="col-md-12">
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Arange Geeting <small></small></h3>
+                            <h3 class="card-title">Arange Meeting with student {{$user->name}} (id:{{$user->id}}) <small></small></h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -31,7 +31,7 @@
                                     {{--<span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>--}}
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Name</label>
+                                    <label for="exampleInputEmail1">Meeting Name</label>
                                     <input type="text" name="name" class='form-control'
                                            id="name" placeholder="Enter name"
 
@@ -39,9 +39,9 @@
                                     {{--<span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>--}}
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Meeting Name</label>
-                                    <input type="text" name="meetingName" class="form-control"
-                                           id="email" placeholder="email"
+                                    <label for="exampleInputPassword1">Start At</label>
+                                    <input type="datetime-local" name="start_at" class="form-control"
+                                           id="start_at" placeholder="email"
                                            aria-describedby="exampleInputEmail1-error" aria-invalid="true">
                                     <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
                                 </div>
