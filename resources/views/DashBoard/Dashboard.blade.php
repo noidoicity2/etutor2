@@ -23,37 +23,57 @@
 @section('content')
     <section class="content">
         <div class="container-fluid">
+            <h1>Dashboard</h1>
             <!-- Small boxes (Stat box) -->
             <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h3>{{$tuteeNo}}</h3>
+                @if(Auth::user()->role_id==3)
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>{{$tuteeNo}}</h3>
 
-                            <p>Number of tutees</p>
+                                <p>Number of tutees</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                            <a href="/assignedstudent" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="ion ion-bag"></i>
-                        </div>
-                        <a href="/assignedstudent" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <h3>{{$noReq}}</h3>
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-success">
+                            <div class="inner">
+                                <h3>{{$noReq}}</h3>
 
-                            <p>Number of unreplied request</p>
+                                <p>Number of unreplied request</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="/allrequests" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
-                        </div>
-                        <a href="/allrequests" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3>{{$handleReq}}</h3>
+
+                                <p>number of handle message</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+
+            @endif
+            <!-- ./col -->
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
@@ -69,21 +89,10 @@
                         <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
+{{--                    unseen msg--}}
                 <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3>{{$handleReq}}</h3>
 
-                            <p>number of handle message</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
+
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <div class="small-box bg-danger">
@@ -98,6 +107,7 @@
                         <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
+{{--                    total allocation--}}
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <div class="small-box bg-danger">
@@ -164,10 +174,8 @@
     <script>
 
 
-
-
         $(document).ready(function () {
-{{--            {{json_encode($chartData)}}--}}
+                {{--            {{json_encode($chartData)}}--}}
             var dataPoints = @json($chartData);
             // $.ajax({
             //     url: '/postChart',
@@ -208,17 +216,13 @@
 
                     }
                 ],
-                axisX:{
-                    labelFontSize: 20,
+                axisX: {
+                    labelFontSize: 15,
                 },
-
 
 
             };
             $("#chartContainer").CanvasJSChart(options);
-
-
-
 
 
             $("#example1").removeAttr('width').DataTable({

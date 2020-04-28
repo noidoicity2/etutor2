@@ -38,7 +38,7 @@ class DashboardController extends Controller
     public function viewDashBoard($id)
     {
         if (Auth::user()->role_id != 1) {
-            return 'Unauthorized';
+            return abort(401, 'Unauthorized action.');
         } else {
             $tuteeNo = $this->getNmberOfTutee($id);
             $noReq = $this->getNmberOfunreplyRequest($id);

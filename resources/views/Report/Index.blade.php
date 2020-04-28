@@ -49,10 +49,12 @@
 
             <!-- Small boxes (Stat box) -->
             @if(isset($FromDate))
+
                 <h1 class="btn-primary">Report From {{$FromDate->toDateString()}}  to {{$ToDate->toDateString()}}</h1>
+
             @endif
             <h2>Statistic Report</h2>
-
+            @if(Auth::user()->role_id==1)
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
@@ -175,6 +177,8 @@
 
             </div>
             <!-- /.row -->
+            @endif
+            @if(Auth::user()->role_id==1)
             <h2>Exceptional Report</h2>
             <div class="row">
                 <div class="col-lg-3 col-6">
@@ -221,6 +225,7 @@
                     </div>
                 </div>
             </div>
+            @endif
             <div class="container">
 
 

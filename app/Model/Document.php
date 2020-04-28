@@ -36,10 +36,12 @@ class Document extends Model
     //
     protected $table = "documents";
     protected $fillable = [
-        'name'	,'link'	,'created_by',	'created_at'	,'updated_by',	'updated_at'	, 'isPublic'	,'status_id'
+        'name', 'link', 'created_by', 'created_at', 'updated_by', 'updated_at', 'isPublic',
     ];
     public $timestamps = false;
-    public function tutor() {
-        return $this->belongsTo('App\Model\user', 'created_by','id');
+
+    public function tutor()
+    {
+        return $this->belongsTo('App\Model\user', 'created_by', 'id');
     }
 }
