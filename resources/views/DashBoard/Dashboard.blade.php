@@ -72,7 +72,7 @@
                         </div>
                     </div>
 
-            @endif
+                @endif
             <!-- ./col -->
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
@@ -89,54 +89,29 @@
                         <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-{{--                    unseen msg--}}
-                <!-- ./col -->
+                {{--                    unseen msg--}}
+            <!-- ./col -->
 
+                @if(Auth::user()->role_id==1)
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3>{{$noReg}}</h3>
 
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3>{{$noReg}}</h3>
-
-                            <p>Total allocations</p>
+                                <p>Total allocations</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                </div>
-{{--                    total allocation--}}
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3>65</h3>
+                {{--                    total allocation--}}
+                @endif
 
-                            <p>Total allocated tutor</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <h3>65</h3>
 
-                            <p>Tatal allcated tutee</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
+            <!-- ./col -->
             </div>
             <!-- /.row -->
             <div class="container">

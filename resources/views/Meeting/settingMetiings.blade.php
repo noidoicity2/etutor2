@@ -14,6 +14,15 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                        @if(session('arangeGeeting'))
                             <div class="alert alert-warning" role="alert">
                                {{session('arangeGeeting')}}
@@ -44,6 +53,14 @@
                                            id="start_at" placeholder="email"
                                            aria-describedby="exampleInputEmail1-error" aria-invalid="true">
                                     <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Place</label>
+                                    <input type="text" name="place" class='form-control'
+                                           id="place" placeholder="Enter Place"
+
+                                           aria-describedby="exampleInputEmail1-error" aria-invalid="true">
+                                    {{--<span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>--}}
                                 </div>
                                 <!-- <div class="form-group">
                                     <label for="exampleInputPassword1">Date</label>

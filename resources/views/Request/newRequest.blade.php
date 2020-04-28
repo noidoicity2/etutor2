@@ -71,7 +71,7 @@
 {{--                            </button>--}}
                             <button id="send-req"  class="btn btn-primary"><i class="far fa-envelope"></i> Send</button>
                         </div>
-                        <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> Discard</button>
+{{--                        <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> Discard</button>--}}
                     </div>
                     <!-- /.card-footer -->
                 </div>
@@ -79,7 +79,7 @@
             </div>
         </div>
         <!-- /.row -->
-        <button onclick="show()">dsad</button>
+{{--        <button onclick="show()">dsad</button>--}}
 
     </section>
 @endsection

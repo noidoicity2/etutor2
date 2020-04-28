@@ -75,8 +75,16 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
 {{--                                <a type="submit" class="btn btn-primary">Share</a>--}}
+                                <a class="btn btn-primary btn-lg" href="/file/{{$file->id}}">
+                                    <i class="fas fa-download"> Download
+                                    </i>
+
+                                </a>
+
                             </div>
+
                         </form>
+
                     </div>
                     <!-- /.card -->
                 </div>

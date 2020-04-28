@@ -64,6 +64,13 @@ class DocumentController extends Controller
     public function Details($id)
     {
         $file = Document::find($id);
+        if($file==null) return abort(404);
+        if($file->isPublic==0){
+            if(Auth::id()!= $file->created_by) {
+                $f = DocumentShare::where('document_id',$id)->where('user_id','=', Auth::id())->get();
+                if($f->count()==0) return abort(401,'unauthorized') ;
+            }
+        }
         $cmt = Comment::where('document_id', $id)->get();
 //        return $id;
         return view('Document.documentDetail', ['file' => $file, 'cmts' => $cmt]);

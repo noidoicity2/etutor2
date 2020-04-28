@@ -147,7 +147,7 @@ class UserController extends Controller
 
         $user = User::find($id);
 
-        $docCount = Document::where('created_by',$id)->where('isPublic', '=', 0)->count();
+        $docCount = Document::where('created_by',$id)->where('isPublic', '=', 1)->count();
         $shareCount = DocumentShare::where('user_id', $id)->count();
 
         return view('User.ViewProfile', [ 'user'=>$user , 'docCount'=>$docCount , 'shareCount'=>$shareCount]);

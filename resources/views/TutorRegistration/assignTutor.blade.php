@@ -23,7 +23,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">All registration</h3>
+                        <h1 class="card-title">Your tutor</h1>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -89,11 +89,11 @@
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-danger btn-sm" href="#">
-                                                        <i class="fas fa-trash">
-                                                        </i>
-                                                        Delete
-                                                    </a>
+{{--                                                    <a class="btn btn-danger btn-sm" href="#">--}}
+{{--                                                        <i class="fas fa-trash">--}}
+{{--                                                        </i>--}}
+{{--                                                        Delete--}}
+{{--                                                    </a>--}}
 
                                                 </td>
                                             </tr>
