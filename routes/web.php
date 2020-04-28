@@ -49,14 +49,15 @@ Route::get('/dummy', function () {
     ini_set('memory_limit', '-1');
     DB::disableQueryLog();
 
-    for ($i = 0; $i < 20000000; $i++) {
-        $name = '2datdepza1aia2a ' . $i;
-        $email = 'anhtdadeozaiqua' . $i . '@gmail.com';
-        $pass = bcrypt('dat');
+    for ($i = 0; $i < 10; $i++) {
+        $name = 'John which staff  ' . $i;
+        $email = 'staff' . $i . '@gmail.com';
+        $pass = bcrypt('123456');
         $user = new User();
         $user->name = $name;
         $user->password = $pass;
         $user->email = $email;
+        $user->role_id = 1;
 
         $user->save();
     }

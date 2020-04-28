@@ -6,7 +6,7 @@
     <section class="content">
         <div class="card card-blue cardutline direct-chat direct-chat-success">
             <div class="card-header">
-                <h3 class="card-title">Direct Chat</h3>
+                <h3 class="card-title">{{$receiver->name}}</h3>
 
                 <div class="card-tools">
                     <span data-toggle="tooltip" title="3 New Messages" class="badge bg-success">3</span>

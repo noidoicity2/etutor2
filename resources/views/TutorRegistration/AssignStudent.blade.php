@@ -200,6 +200,11 @@
                        location.reload();
 
                     },
+                    error: function () {
+                        alert('students have already allocated');
+                        location.reload();
+
+                    }
                 });
 
 

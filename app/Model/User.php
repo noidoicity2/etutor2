@@ -71,6 +71,7 @@ class User extends Authenticatable
     protected $appends = ['Count_Send_Msg' , 'Avg_Msg_7_Day'];
 
     protected $table = 'users';
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -78,7 +79,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'gender', 'dob', 'email', 'password', 'image', 'created_by', 'created_at', 'updated_by', 'updated_at', 'password', 'status_id', 'active', 'role_id', 'remember_token', 'last_activity'
+        'name', 'gender', 'dob', 'email', 'password', 'image', 'created_at',  'password', 'role_id',
     ];
 
     /**

@@ -111,7 +111,7 @@ class UserController extends Controller
         if (Auth::attempt($login)) {
             return redirect('dashboard');
         } else {
-            return redirect()->back()->with('status', 'Email hoặc Password không chính xác');
+            return redirect()->back()->with('status', 'Invalid Email or Password');
         }
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\UpdateChat;
 use App\Events\UpdateNotification;
 use App\Model\Message;
+use App\Model\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,12 +20,13 @@ class messageController extends Controller
     {
         $from_user = Auth::id();
         $to_user = $id;
+        $receiver = User::find($id);
 
         $message = Message::where([['from_user', $from_user], ['to_user', $to_user]])
             ->orWhere([['from_user', $to_user], ['to_user', $from_user]])
             ->orderBy('created_at', 'asc')->get();
 
-        return view('Message.getMessge', ['messages' => $message, 'from_user' => $from_user, 'to_user' => $to_user]);
+        return view('Message.getMessge', ['messages' => $message, 'from_user' => $from_user, 'to_user' => $to_user ,'receiver'=>$receiver]);
     }
 
     public function sendMessage(Request $request)

@@ -43,6 +43,6 @@ class Message extends Model
         return $this->belongsTo('App\Model\User','from_user','id');
     }
     public function receiver() {
-        return $this->belongsTo('App\Model\User','toUser','id');
+        return $this->belongsTo('App\Model\User','to_user','id');
     }
 }
