@@ -68,7 +68,7 @@ class DashboardController extends Controller
         $day = date('d');
         $year = date('Y');
         $date_array = array();
-        for ($i = 0; $i < $days - 1; $i++) {
+        for ($i = -1; $i < $days - 1; $i++) {
             $date_array[] = date($format, mktime(0, 0, 0, $month, ($day - $i), $year));
         }
 //         rsort($date_array);
