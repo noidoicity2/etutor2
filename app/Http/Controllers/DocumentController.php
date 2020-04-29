@@ -102,9 +102,7 @@ class DocumentController extends Controller
     public function ShareDocument($id)
     {
         $doc = Document::find($id);
-        if (Auth::user()->role_id == 3) {
-
-        }
+        if (Auth::user()->role_id != 3) return abort('403','unauthorized');
 
         $tutees = TutorRegistration::where('tutor_id', Auth::id())->withCount('SharedDocument')->whereDoesntHave('SharedDocument', function (Builder $query) use ($id) {
             $query->where('document_id', '=', $id);

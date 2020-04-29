@@ -64,12 +64,22 @@
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Student name
+                                                Meet With
                                             </th>
-                                            <th class="sorting  text-center" tabindex="0" aria-controls="example1"
+                                            <th class="sorting" tabindex="0" aria-controls="example1"
                                                 rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 Start At
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example1"
+                                                rowspan="1"
+                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                                                Meeting Doucment
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example1"
+                                                rowspan="1"
+                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                                                Place
                                             </th>
                                             <th class="sorting  text-center" tabindex="0" aria-controls="example1"
                                                 rowspan="1"
@@ -85,27 +95,43 @@
                                                 <td>{{$meeting->id}}</td>
                                                 <td id="id" tabindex="0" class="sorting_1">{{$meeting->name}}</td>
                                                 <td>{{$meeting->student->name}}</td>
-                                                <td>
-
+                                                <td>{{$meeting->start_at}}
                                                 </td>
 
                                                 <td>
-                                                    <a class="btn btn-primary btn-sm" href="">
-                                                        <i class="fas fa-eye">
+                                                    @if($meeting->document_id==null)
+                                                        No Upload
+                                                    @else
+                                                   <span class="btn-success">Uploaded</span>
+                                                    @endif
+                                                </td>
+                                                <td>{{$meeting->place}}
+                                                </td>
+
+                                                <td>
+                                                    <a class="btn btn-primary btn-sm" href="/editmeeting/{{$meeting->id}}">
+                                                        <i class="fas fa-edit">
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-primary btn-sm" href="">
-                                                        <i class="fas fa-share">
+{{--                                                    <a class="btn btn-primary btn-sm" href="">--}}
+{{--                                                        <i class="fas fa-share">--}}
+{{--                                                        </i>--}}
+
+{{--                                                    </a>--}}
+{{--                                                    <a class="btn btn-primary btn-sm" href="">--}}
+{{--                                                        <i class="fas fa-download">--}}
+{{--                                                        </i>--}}
+
+{{--                                                    </a>--}}
+
+                                                    <a class="btn btn-success btn-sm" href="/uploadmeetingdoc/{{$meeting->id}}">
+                                                        <i class="fas fa-upload">
+
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-primary btn-sm" href="">
-                                                        <i class="fas fa-download">
-                                                        </i>
-
-                                                    </a>
-                                                    <a class="btn btn-danger btn-sm" href="">
+                                                    <a class="btn btn-danger btn-sm" id="Cancel-btn" meeting_id ="{{$meeting->id}}">
                                                         <i class="fas fa-trash">
 
                                                         </i>
@@ -189,23 +215,15 @@
 
             });
 
-            $('#mark-as-read').click(function (e) {
+            $('#Cancel-btn').click(function (e) {
                 e.preventDefault();
-                var table = $('#example1').DataTable();
-                var selectedRows = table.rows('.selected').data();
-                // var values='';
-                var values = [];
-                // lay
-                $.each(selectedRows, function (index, value) {
-                    values.push(value[0]);
-                }); // value[0] is first column
-
+                var m_id =  $( "#Cancel-btn" ).attr( "meeting_id" );
                 $.ajax({
-                    url: '/markasread',
+                    url: '/CancelMeeting',
                     type: 'post',
                     data: {
-                        id: '{{Auth::user()->id}}',
-                        arr: values,
+                        meeting_id: m_id,
+                        // arr: values,
                         _token: CSRF_TOKEN,
                     },
                     dataType: 'JSON',
@@ -219,35 +237,6 @@
 
             });
 
-            $('#mark-all-as-read').click(function (e) {
-                e.preventDefault();
-                var table = $('#example1').DataTable();
-                var selectedRows = table.rows('.selected').data();
-                // var values='';
-                var values = [];
-                // lay
-                $.each(selectedRows, function (index, value) {
-                    values.push(value[0]);
-                }); // value[0] is first column
-
-                $.ajax({
-                    url: '/markallasread',
-                    type: 'post',
-                    data: {
-                        id: '{{Auth::user()->id}}',
-
-                        _token: CSRF_TOKEN,
-                    },
-                    dataType: 'JSON',
-                    success: function (data) {
-                        alert(JSON.stringify(data.msg));
-                        location.reload();
-
-                    },
-                });
-
-
-            });
             $('#select-all').click(function (e) {
                 e.preventDefault();
                 var table = $('#example1').DataTable();

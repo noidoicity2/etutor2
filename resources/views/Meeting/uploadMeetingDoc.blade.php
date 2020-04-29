@@ -11,7 +11,7 @@
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Upload document <small></small></h3>
+                            <h3 class="card-title">Upload Meeting document <small></small></h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -23,21 +23,22 @@
                         @endif
 
 
-                        <form enctype="multipart/form-data" action="/uploadfile" role="form" method="post"
+                        <form enctype="multipart/form-data" action="/DoUploadMeetingDoc" role="form" method="post"
                               id="quickForm" novalidate="novalidate">
                             @csrf
 
                             <div class="card-body">
+                                <input name="meeting_id" value="{{$meeting->id}}" type="hidden" class="form-control-file" id="exampleFormControlFile1">
 
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Example file input</label>
                                     <input name="file" type="file" class="form-control-file" id="exampleFormControlFile1">
                                 </div>
 
-{{--                                <div class="form-group">--}}
-{{--                                    <label for="formGroupExampleInput">Link</label>--}}
-{{--                                    <input name="link" type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter link if the file is on the internet">--}}
-{{--                                </div>--}}
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Link</label>
+                                    <input name="link" type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter link if the file is on the internet">
+                                </div>
 
 
                                 <div class="form-group">
@@ -51,14 +52,6 @@
                                     </select>
                                 </div>
 
-{{--                                <div class="form-group mb-0">--}}
-{{--                                    <div class="custom-control custom-checkbox">--}}
-{{--                                        <input type="checkbox" name="terms" class="custom-control-input"--}}
-{{--                                               id="exampleCheck1">--}}
-{{--                                        <label class="custom-control-label" for="exampleCheck1">I agree to the <a--}}
-{{--                                                href="#">terms of service</a>.</label>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
@@ -84,5 +77,6 @@
 
 
 {{--@endsection--}}
+
 
 

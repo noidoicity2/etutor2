@@ -214,8 +214,17 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 //Meeting
     Route::get('viewMeeting/student_id/{student_id}', 'MeetingController@renderViewMeetings');
     Route::get('tutorMeetings', 'MeetingController@TutorMeeting');
+    Route::get('todayMeeting', 'MeetingController@getTodayMeeting');
 
+    Route::get('editmeeting/{id}', 'MeetingController@editMeeting');
+    Route::post('doEditMeeting', 'MeetingController@doUpDateMeeting');
     Route::post('arangeGeeting', 'MeetingController@arangeGeeting')->name('arangeGeeting');
+    Route::get('uploadmeetingdoc/{id}', 'MeetingController@UploadMeetingDoc');
+    Route::post('DoUploadMeetingDoc', 'MeetingController@DoUploadMeetingDoc');
+    Route::post('CancelMeeting', 'MeetingController@CancelMeeting');
+
+
+
 });
 
 

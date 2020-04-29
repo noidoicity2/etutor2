@@ -99,15 +99,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/mailbox/mailbox.html" class="nav-link">
+                            <a href="/tutorMeetings" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>your meeting</p>
+                                <p>All meeting</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/mailbox/compose.html" class="nav-link">
+                            <a href="/todayMeeting" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>add a meeting</p>
+                                <p>Today Meeting</p>
                             </a>
                         </li>
                         <li class="nav-item">
