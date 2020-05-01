@@ -133,11 +133,14 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('getFriendList', 'UserController@getFriendList');
 
 
-
+//reg
 
     Route::get('allReg', 'TutorRegistrationController@GetAllRegistration');
     Route::get('assignstudent/{id}', 'TutorRegistrationController@AssignStudent');
     Route::post('RegStudents', 'TutorRegistrationController@RegStudents');
+    Route::get('reallocateStudent/{id}', 'TutorRegistrationController@ReallocatedTutor');
+    Route::post('DoReallocate', 'TutorRegistrationController@DoReallocate');
+
 
 //    message
     Route::get('getmessage/id/{id}', 'messageController@getChatHistory');

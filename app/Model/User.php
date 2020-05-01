@@ -101,6 +101,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Model\TutorRegistration', 'tutor_id', 'id');
     }
+    public function tutorRegistrationCreated()
+    {
+        return $this->hasMany('App\Model\TutorRegistration', 'created_by', 'id');
+    }
 
     public function tutorRegistrationByStudent()
     {

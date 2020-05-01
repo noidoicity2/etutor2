@@ -91,7 +91,7 @@ class TutorRegistrationController extends Controller
         $email2 = new Email();
         //email to tutor
         $email->title = 'A student has been removed from your allocation list';
-        $email->content = 'Student '.$student_id.'  has been removed from your allocation list';
+        $email->content = 'Student ' . $student_id . '  has been removed from your allocation list';
         $email->to_user = $tutor_id;
 //            emai to student
         $email2->title = 'Your tutor has been removed';
@@ -102,5 +102,35 @@ class TutorRegistrationController extends Controller
         $email2->save();
 
         return json_encode(['success' => true, 'messsage' => 'Remove allocation successfully']);
+    }
+
+    function ReallocatedTutor($id)
+    {
+
+        $tutor = User::where('role_id', 3)->withCount('tutorRegistrationByTutor')->paginate(25);
+        $reg = TutorRegistration::find($id);
+        if ($reg == null) return abort(404);
+
+//return $tutor;
+
+        return view('TutorRegistration.Reallocated', ['reg' => $reg, 'tutors' => $tutor]);
+
+
+    }
+
+    function DoReallocate(Request $request)
+    {
+        $id =  $request->reg_id;
+        $Reg =  TutorRegistration::find($id);
+        $tutor_id = $request->tutor_id;
+        $Reg->tutor_id =  $tutor_id;
+        $Reg->save();
+
+        return json_encode(['success' =>true, 'msg'=>'Reallocate Student successfully']);
+
+
+
+
+
     }
 }

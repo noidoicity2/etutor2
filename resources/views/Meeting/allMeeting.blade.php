@@ -189,10 +189,10 @@
     <!-- page script -->
     <script>
         $(document).ready(function () {
-            $("#example1").removeAttr('width').DataTable({
+            $("#example1").DataTable({
 
                 "responsive": true,
-                "autoWidth": false,
+                // "autoWidth": true,
                 "searching": true,
                 "paging": false,
                 "lengthChange": true,

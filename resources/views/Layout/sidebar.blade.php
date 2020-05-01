@@ -45,47 +45,91 @@
                     </ul>
                 </li>
                 @if(Auth::user()->role_id ===1)
-                <li class="nav-item has-treeview ">
-                    <a href="#" class="nav-link ">
-                        <i class="nav-icon fas fa-user-md"></i>
-                        <p>
-                            Allocation
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/dashboard" class="nav-link {{Request::is('dashboard') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/allReg" class="nav-link {{Request::is('allReg') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All Allocation</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/users" class="nav-link {{Request::is('users') ? 'active' : '' }} ">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All user</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/tutors" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All tutor</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/nonstudenttutor" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>tutor without tutee</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                    <li class="nav-item has-treeview ">
+                        <a href="#" class="nav-link ">
+                            <i class="nav-icon fas fa-user-md"></i>
+                            <p>
+                                User
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+
+
+                            <li class="nav-item">
+                                <a href="/users" class="nav-link {{Request::is('users') ? 'active' : '' }} ">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All user</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/tutors" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All tutor</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/nonstudenttutor" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>tutor without tutee</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/nonstudenttutor" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Student</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/nonstudenttutor" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Staff</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview ">
+                        <a href="#" class="nav-link ">
+                            <i class="nav-icon fas fa-user-md"></i>
+                            <p>
+                                Allocation
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/dashboard" class="nav-link {{Request::is('dashboard') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Dashboard</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/allReg" class="nav-link {{Request::is('allReg') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All Allocation</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/users" class="nav-link {{Request::is('users') ? 'active' : '' }} ">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All user</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/tutors" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All tutor</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/nonstudenttutor" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>tutor without tutee</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                 @endif
 
 
@@ -119,25 +163,25 @@
                     </ul>
                 </li>
                 @if(Auth::user()->role_id ===3)
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-user"></i>
-                        <p>
-                            Your student
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/assignedstudent" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>student list</p>
-                            </a>
-                        </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon far fa-user"></i>
+                            <p>
+                                Your student
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/assignedstudent" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>student list</p>
+                                </a>
+                            </li>
 
 
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
                 @endif
                 @if(Auth::user()->role_id ===4)
                     <li class="nav-item has-treeview">
@@ -195,33 +239,33 @@
                     </a>
                     <ul class="nav nav-treeview">
                         @if(Auth::user()->role_id ===3)
-                        <li class="nav-item">
-                            <a href="/allrequests" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>All request</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/mailbox/compose.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>done request</p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="/allrequests" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>All request</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/mailbox/compose.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>done request</p>
+                                </a>
+                            </li>
                         @endif
-                            @if(Auth::user()->role_id ===4)
-                        <li class="nav-item">
-                            <a href="/myrequest" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Your request</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/newrequest" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>new request</p>
-                            </a>
-                        </li>
-                                @endif
+                        @if(Auth::user()->role_id ===4)
+                            <li class="nav-item">
+                                <a href="/myrequest" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Your request</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/newrequest" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>new request</p>
+                                </a>
+                            </li>
+                        @endif
 
                     </ul>
                 </li>
@@ -285,11 +329,12 @@
 
                     </ul>
                 </li>
+                @if(\Auth::user()->role_id ==4)
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user-friends"></i>
                         <p>
-                            Friend List
+                            All student
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -303,6 +348,7 @@
 
                     </ul>
                 </li>
+                @endif
 
             </ul>
         </nav>

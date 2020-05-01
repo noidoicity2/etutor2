@@ -29,70 +29,70 @@
 
                 <div class="card">
                     <div class="card-header">
-{{--                        <h2 class="card-title">Assign student for tutor {{$tutor->name}} (id:{{$tutor->id}})</h2> <br>--}}
+                        <h2 class="card-title">Reallocate tutor for student id #{{$reg->student_id}} </h2> <br>
 {{--                        <h2 class="card-title">Total tutee {{$tutee_count}}</h2>--}}
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                            <a id="mark-as-read" href="/markasread" class="btn btn-success">  <i class="fas fa-pencil-alt">
-                                </i> Mark as read </a>
-                            <a id="mark-all-as-read" href="/adduser" class="btn btn-primary">   <i class="fas fa-pencil-alt">
-                                </i>Mask all as read </a>
-
-                            <a href="/adduser" class="btn btn-warning" id="clear-select">   <i class="fas fa-pencil-alt">
-                                </i>     clear selection </a>
+{{--                            <a id="reg-student" href="/RegStudents" class="btn btn-success">  <i class="fas fa-pencil-alt">--}}
+{{--                                </i> assign selected</a>--}}
+{{--                            <a id="select-all" href="/adduser" class="btn btn-primary">   <i class="fas fa-pencil-alt">--}}
+{{--                                </i>select All</a>--}}
+{{--                            --}}{{--                            <a href="/adduser" class="btn btn-warning">  <i class="fas fa-pencil-alt">--}}
+{{--                            --}}{{--                                </i>     assign randon</a>--}}
+{{--                            <a href="/adduser" class="btn btn-warning" id="clear-select">   <i class="fas fa-pencil-alt">--}}
+{{--                                </i>     clear selection </a>--}}
                             <div class="row">
 
                                 <div class="col-sm-12">
-                                    <table id="example1" class="table dataTable "
+                                    <table id="example1" class="table table-striped dataTable "
                                            role="grid" aria-describedby="example1_info">
                                         <thead>
                                         <tr role="row">
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="Browser: activate to sort column ascending">
+                                            <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                                colspan="1" aria-sort="ascending"
+                                                aria-label="Rendering engine: activate to sort column descending">
                                                 ID
                                             </th>
-
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="Browser: activate to sort column ascending">
-                                                Title
+                                                Name
                                             </th>
 
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1"
-                                                aria-label="Engine version: activate to sort column ascending">content
+                                                aria-label="Engine version: activate to sort column ascending">
+                                                Tutee count
 
                                             </th>
 
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Created at
-                                            </th>
+
                                             <th class="sorting  text-center" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Status
+                                                action
                                             </th>
                                         </tr>
                                         </thead>
                                         <tbody>
 
-                                        @foreach($emails as $email)
-                                            <tr role="row" class="">
-                                                <td>{{$email->id}}</td>
-                                                <td id="id" tabindex="0" class="sorting_1">{{$email->title}}</td>
+                                        @foreach( $tutors as $tutor)
+                                            <tr role="row" class="odd">
+                                                <td id="id" tabindex="0" class="sorting_1">{{$tutor->id}}</td>
+                                                <td>{{$tutor->name}}</td>
 
+                                                <td>{{$tutor->tutor_registration_by_tutor_count}}</td>
 
+{{--                                                <td>{{$user->role->name}}</td>--}}
 
+                                                    <td class="project-actions text-right">
+                                                        <a  tutor_id="{{$tutor->id}}" class="btn btn-primary btn-sm reallocate" href="#" >
+                                                            <i class="fa fa-user">
+                                                            </i>
+                                                            Assign
+                                                        </a>
+                                                    </td>
 
-                                                <td>{{$email->content}}</td>
-                                                <td>{{$email->created_at}}</td>
-                                                @if($email->status === 1 )
-                                                    <td> read </td>
-
-                                                @else
-                                                    <td> unread </td>
-                                                @endif
 
 
                                             </tr>
@@ -102,7 +102,7 @@
 
                                     </table>
 
-                                    {{ $emails->links() }}
+                                    {{ $tutors->links() }}
 
 
                                 </div>
@@ -149,76 +149,55 @@
                 "searching": true,
                 "paging": false,
                 "lengthChange": true,
-                "select": {
-                    "style": "multi"
-                },
-                createdRow: function (row, data, index) {
-                    //
-                    // if the second column cell is blank apply special formatting
-                    //
-                    if (data[4] === "read") {
-                        console.log(data[4]);
+                select: {
+                    style: 'single'
+                }
+                // "select": {
+                //     "style": "multi"
+                // }
 
-                        $(row).addClass("bg-success");
+
+            });
+
+            // $('#example1 tbody').on( 'click', 'tr', function () {
+            //     if ( $(this).hasClass('selected') ) {
+            //         $(this).removeClass('selected');
+            //     }
+            //     else {
+            //         table.$('tr.selected').removeClass('selected');
+            //         $(this).addClass('selected');
+            //     }
+            // } );
+
+
+
+            $('.reallocate').click(function (e) {
+                e.preventDefault();
+                var tutorId = $(this).attr('tutor_id');
+                // var table = $('#example1').DataTable();
+
+                // var data=table.rows( { selected: true }).data();
+                console.log(tutorId);
+                $.ajax({
+                    url: '/DoReallocate',
+                    type: 'post',
+                    data: {
+                        reg_id: '{{$reg->id}}',
+                        tutor_id:tutorId,
+                        // arr: values,
+                        _token: CSRF_TOKEN,
+                    },
+                    dataType: 'JSON',
+                    success: function (data) {
+                        alert(JSON.stringify(data.msg));
+                        location.reload();
+
+                    },
+                    error: function () {
+                        alert('Error , please try again');
+                        location.reload();
 
                     }
-
-                }
-
-
-            });
-
-            $('#mark-as-read').click(function (e) {
-                e.preventDefault();
-                var table = $('#example1').DataTable();
-                var selectedRows = table.rows('.selected').data();
-                // var values='';
-                var values=[];
-                // lay
-                $.each(selectedRows, function(index, value) {values.push( value[0]) ;}); // value[0] is first column
-
-                $.ajax({
-                    url: '/markasread',
-                    type: 'post',
-                    data: {
-                        id: '{{Auth::user()->id}}',
-                        arr: values,
-                        _token: CSRF_TOKEN,
-                    },
-                    dataType: 'JSON',
-                    success: function (data) {
-                        alert(JSON.stringify(data.msg));
-                        location.reload();
-
-                    },
-                });
-
-
-            });
-
-            $('#mark-all-as-read').click(function (e) {
-                e.preventDefault();
-                var table = $('#example1').DataTable();
-                var selectedRows = table.rows('.selected').data();
-                // var values='';
-                var values=[];
-                // lay
-                $.each(selectedRows, function(index, value) {values.push( value[0]) ;}); // value[0] is first column
-
-                $.ajax({
-                    url: '/markallasread',
-                    type: 'post',
-                    data: {
-                        id: '{{Auth::user()->id}}',
-
-                        _token: CSRF_TOKEN,
-                    },
-                    dataType: 'JSON',
-                    success: function (data) {
-                        alert(JSON.stringify(data.msg));
-                        location.reload();
-
-                    },
                 });
 
 
@@ -252,4 +231,3 @@
         });
     </script>
 @endsection
-
