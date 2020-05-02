@@ -24,7 +24,7 @@ class ReportController extends Controller
         $Tutor_count = User::where('role_id', 3)->count();
         $TutorWithoutTutee = User::whereDoesntHave('tutorRegistrationByTutor')->whereHas('tutorRegistrationByTutor', function (Builder $query) use ($FromDate, $ToDate) {
             $query->whereBetween('created_at', [$FromDate, $ToDate]);
-        }, '=',0)->where('role_id', 3)->withCount('tutorRegistrationByStudent')->count();
+        }, '=', 0)->where('role_id', 3)->withCount('tutorRegistrationByStudent')->count();
         $TutorWithTutee = User::whereHas('tutorRegistrationByTutor', function (Builder $query) use ($FromDate, $ToDate) {
             $query->whereBetween('created_at', [$FromDate, $ToDate]);
         })->where('role_id', 3)->withCount('tutorRegistrationByStudent')->count();
@@ -57,10 +57,11 @@ class ReportController extends Controller
         $fileUploadCount = Document::whereBetween('created_at', [$FromDate, $ToDate])->count();
         $AllocatedTutor = TutorRegistration::whereBetween('created_at', [$FromDate, $ToDate])->distinct('tutor_id')->count();
 //        $AllocatedTutor =  TutorRegistration::whereBetween('created_at', [$FromDate, $ToDate])->select('tutor_id')->distinct()->count();
-
-
+        $RequestCount = \App\Model\Request::whereBetween('created_at', [$FromDate, $ToDate])->where('to_user','=',Auth::id())->count();
+        $SentMsgCount = Message::where('from_user', Auth::id())->whereBetween('created_at', [$FromDate, $ToDate])->count();
         $AvgMsg = round($AllSentMsg / $Tutor_count, 10);
         return view('Report.Index', [
+//            data for Staff
             'nonTutorStudent' => $nonTutorStudent,
             'noInteractSt' => $noInteractSt,
             'stdCount' => $stdCount,
@@ -73,8 +74,13 @@ class ReportController extends Controller
             'TutorWithoutTutee' => $TutorWithoutTutee,
             'TutorWithTutee' => $TutorWithTutee,
             'AvgMsg' => $AvgMsg,
-            'FromDate'=>$FromDate,
-            'ToDate'=>$ToDate
+            'FromDate' => $FromDate,
+            'ToDate' => $ToDate,
+
+//            for tutor
+            'RequestCount'=>$RequestCount,
+            'SentMsg' =>$SentMsgCount,
+
 
         ]);
 

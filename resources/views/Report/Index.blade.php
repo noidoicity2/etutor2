@@ -50,10 +50,44 @@
             <!-- Small boxes (Stat box) -->
             @if(isset($FromDate))
 
-                <h1 class="btn-primary">Report From {{$FromDate->toDateString()}}  to {{$ToDate->toDateString()}}</h1>
+                <h2 class="text-info">Report From {{$FromDate->toDateString()}}  to {{$ToDate->toDateString()}}</h2>
 
             @endif
             <h2>Statistic Report</h2>
+            @if(Auth::user()->role_id ==3)
+                <div class="row">
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-warning">
+                            <div class="inner">
+                                <h3>{{$RequestCount}}</h3>
+
+                                <p>Total Request</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-gradient-indigo">
+                            <div class="inner">
+                                <h3>{{$SentMsg}}</h3>
+
+                                <p>Sent message</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+            @endif
             @if(Auth::user()->role_id==1)
             <div class="row">
                 <div class="col-lg-3 col-6">
