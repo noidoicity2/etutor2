@@ -14,14 +14,15 @@
 @endsection
 @section('content')
     <section class="content">
-        <div class="container-fluid">
+        <div class="container">
 
         </div>
+        <h1> Create New Request to tutor #{{$tutor->tutor_id}}</h1>
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Create New Request to tutor #{{$tutor->tutor_id}}</h3>
+                        <h3 class="card-title"></h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">

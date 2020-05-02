@@ -16,6 +16,13 @@ class EmailController extends Controller
 
 
     }
+    public function unseenMail() {
+        $id =  Auth::id();
+        $emails = Email::where('to_user', $id)->where('status','=',0)->orderBy('created_at','asc')->paginate(25);
+        return view('Email.AllEmail', ['emails'=> $emails]);
+
+
+    }
     function markAsRead(Request $request)
     {
         $id = $request->id;

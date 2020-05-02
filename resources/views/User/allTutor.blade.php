@@ -15,18 +15,19 @@
 @section('content')
     <section class="content">
         <div class="row">
-            <div class="col-12">
 
+            <div class="col-12">
+{{--                <h2>All Tutor</h2>--}}
                 <!-- /.card -->
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">DataTable with default features</h3>
+                        <h1 class="">All Tutor</h1>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                            <a href="/adduser" class="btn btn-primary"> New User</a>
+{{--                            <a href="/adduser" class="btn btn-primary"> New User</a>--}}
                             <div class="row">
                                 <div class="col-sm-12">
                                     <table id="example1" class="table table-bordered table-striped dataTable dtr-inline"
@@ -88,10 +89,16 @@
                                                 <td>{{$user->tutor_registration_by_tutor_count}}</td>
                                                 <td>{{$user->created_at}}</td>
                                                 <td class="project-actions text-right">
-                                                    <a class="btn btn-primary btn-sm" href="#">
-                                                        <i class="fas fa-folder">
+
+                                                    <a class="btn btn-primary btn-sm" href="/profile/{{$user->id}}">
+                                                        <i class="fas fa-eye">
                                                         </i>
-                                                        View
+                                                        profile
+                                                    </a>
+                                                    <a class="btn btn-primary btn-sm" href="/viewDashboard/{{$user->id}}">
+                                                        <i class="fas fa-tachometer-alt"></i>
+                                                        DashBoard
+
                                                     </a>
                                                     <a class="btn btn-info btn-sm" href="/assignstudent/{{$user->id}}">
                                                         <i class="fas fa-pencil-alt">

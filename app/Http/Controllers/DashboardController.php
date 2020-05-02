@@ -228,5 +228,9 @@ class DashboardController extends Controller
         return round(($user->tutorRegistrationCreated()->whereDate('created_at', '>=', $last7day)->count()) / 7, 2);
     }
 
+    public  function UnseenMail($id) {
+
+    }
+
 
 }

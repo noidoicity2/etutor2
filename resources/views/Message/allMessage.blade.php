@@ -33,6 +33,7 @@
                             <img class="direct-chat-img" src="../dist/img/user1-128x128.jpg" alt="Message User Image">
                             <!-- /.direct-chat-img -->
                             <div class="direct-chat-text">
+{{--                                {{filter_var($message->chat_message, FILTER_SANITIZE_STRING)}}--}}
                                 {{$message->chat_message}}
                             </div>
                             <!-- /.direct-chat-text -->

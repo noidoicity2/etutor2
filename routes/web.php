@@ -49,15 +49,15 @@ Route::get('/dummy', function () {
     ini_set('memory_limit', '-1');
     DB::disableQueryLog();
 
-    for ($i = 0; $i < 10; $i++) {
-        $name = 'John which staff  ' . $i;
-        $email = 'staff' . $i . '@gmail.com';
+    for ($i = 20; $i < 100; $i++) {
+        $name = 'Anna Bell  ' . $i;
+        $email = 'student' . $i . '@hotmail.com';
         $pass = bcrypt('123456');
         $user = new User();
         $user->name = $name;
         $user->password = $pass;
         $user->email = $email;
-        $user->role_id = 1;
+        $user->role_id = 4;
 
         $user->save();
     }
@@ -161,6 +161,9 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('allEmail', 'EmailController@getEmail');
     Route::post('markasread', 'EmailController@markAsRead');
     Route::post('markallasread', 'EmailController@markAllAsRead');
+    Route::get('unseenMail', 'EmailController@unseenMail');
+
+
 
 //request
     Route::get('allrequests', 'RequestController@AllRequest');
@@ -217,6 +220,8 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 //Meeting
     Route::get('viewMeeting/student_id/{student_id}', 'MeetingController@renderViewMeetings');
     Route::get('tutorMeetings', 'MeetingController@TutorMeeting');
+    Route::get('StudentMeetings', 'MeetingController@TuteeMeeting');
+
     Route::get('todayMeeting', 'MeetingController@getTodayMeeting');
 
     Route::get('editmeeting/{id}', 'MeetingController@editMeeting');

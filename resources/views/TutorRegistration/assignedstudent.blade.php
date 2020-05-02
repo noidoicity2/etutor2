@@ -152,7 +152,8 @@
 
             var table = $('#example1').DataTable( {
                 orderCellsTop: true,
-                fixedHeader: true
+                fixedHeader: true,
+                responsive:  true,
             } );
         } );
     </script>

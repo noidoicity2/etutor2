@@ -63,6 +63,15 @@ class MeetingController extends Controller
         return view('Meeting.allMeeting', ['meetings' => $meeting]);
 
     }
+    public function TuteeMeeting()
+    {
+        if(Auth::user()->role_id !=4) return abort('404');
+        $id = Auth::id();
+        $meeting = Meeting::where('student_id', $id)->orderBy('start_at', 'desc')->paginate(25);
+
+        return view('Meeting.allMeeting', ['meetings' => $meeting]);
+
+    }
 
     public function editMeeting($id)
     {

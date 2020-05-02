@@ -16,12 +16,12 @@
     <section class="content">
         <div class="row">
             <div class="col-12">
-
+<h1> View All help request</h1>
                 <!-- /.card -->
 
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">All request</h3>
+{{--                        <h3 class="card-title">All request</h3>--}}
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">

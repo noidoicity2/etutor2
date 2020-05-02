@@ -184,9 +184,11 @@
                     <div class="col-12">
                         <hr>
                     </div>
+                    @if(Auth::user()->role_id == 1)
                     <div class="col-sm-12">
                         <div id="RegChartContainer" style="height: 370px; width: 100%;"></div>
                     </div>
+                    @endif
                 </div>
 
 
@@ -239,7 +241,7 @@
                     }
                 ],
                 axisX: {
-                    labelFontSize: 15,
+                    labelFontSize: 20,
                 },
 
 
@@ -263,7 +265,7 @@
                     }
                 ],
                 axisX: {
-                    labelFontSize: 15,
+                    labelFontSize: 20,
                 },
 
 

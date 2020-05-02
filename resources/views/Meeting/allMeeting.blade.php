@@ -62,10 +62,12 @@
                                                 colspan="1" aria-label="Browser: activate to sort column ascending">
                                                 Name
                                             </th>
+                                            @if(Auth::user()->role_id==3)
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
                                                 Meet With
                                             </th>
+                                            @endif
                                             <th class="sorting" tabindex="0" aria-controls="example1"
                                                 rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
@@ -94,7 +96,9 @@
                                             <tr role="row" class="">
                                                 <td>{{$meeting->id}}</td>
                                                 <td id="id" tabindex="0" class="sorting_1">{{$meeting->name}}</td>
+                                                @if(Auth::user()->role_id==3)
                                                 <td>{{$meeting->student->name}}</td>
+                                                @endif
                                                 <td>{{$meeting->start_at}}
                                                 </td>
 
@@ -191,14 +195,15 @@
         $(document).ready(function () {
             $("#example1").DataTable({
 
-                "responsive": true,
+
                 // "autoWidth": true,
-                "searching": true,
-                "paging": false,
-                "lengthChange": true,
-                "select": {
+                searching: true,
+                paging: false,
+                // "lengthChange": true,
+                select: {
                     "style": "multi"
                 },
+                responsive:  true,
                 createdRow: function (row, data, index) {
                     //
                     // if the second column cell is blank apply special formatting

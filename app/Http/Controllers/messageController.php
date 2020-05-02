@@ -42,7 +42,7 @@ class messageController extends Controller
         $message = new Message();
         $message->from_user = $from_user;
         $message->to_user = $to_user;
-        $message->chat_message = $chat_message;
+        $message->chat_message =  filter_var($chat_message, FILTER_SANITIZE_STRING);;
         $message->status_id = 4;
 
         $message->save();

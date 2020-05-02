@@ -52,7 +52,8 @@
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Status
+                                                Unseen msg
+
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
@@ -71,18 +72,18 @@
                                                 </td>
 
                                                 <td>{{$reg->created_at}}</td>
-                                                <td>{{$reg->status_id}}</td>
+                                                <td>{{\App\Model\Message::where('to_user', Auth::id())->where('status_id','=',4)->where('from_user','=',$reg->tutor_id )->count()}}</td>
                                                 <td class="project-actions text-right">
                                                     <a class="btn btn-primary btn-sm" href="/getmessage/id/{{$reg->tutor_id}}">
                                                         <i class="fas fa-mail-bulk">
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-info btn-sm" href="#">
-                                                        <i class="fas fa-calendar">
-                                                        </i>
+{{--                                                    <a class="btn btn-info btn-sm" href="#">--}}
+{{--                                                        <i class="fas fa-calendar">--}}
+{{--                                                        </i>--}}
 
-                                                    </a>
+{{--                                                    </a>--}}
                                                     <a class="btn btn-info btn-sm" href="/newrequest">
                                                         <i class="fa fa-address-book">
                                                             send request
