@@ -8,6 +8,8 @@ use App\Model\Email;
 use Illuminate\Http\Request;
 use App\Model\TutorRegistration;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 
 class RequestController extends Controller
 {
@@ -27,6 +29,16 @@ class RequestController extends Controller
 
     }
     public function doCreateRequest(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:6|max:50',
+            'content'=>'required'
+        ]);
+        if ($validator->fails()) {
+            $errorString = implode(",",$validator->messages()->all());
+
+            return json_encode(['success'=>true, 'msg'=> $errorString]);
+        }
+
        $req = new \App\Model\Request();
        $req->name = $request->get('name');
        $req->content = $request->get('content');

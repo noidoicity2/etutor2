@@ -244,3 +244,7 @@ Route::get('viewDashboard/{id}', 'DashboardController@viewDashBoard')->middlewar
 Route::get('/testck', function () {
     return view('CKFinder.index');
 });
+Route::get('/testEloquent', function () {
+    $Allocation_count = \App\Model\TutorRegistration::where('created_by', 100)->toSql();
+    return $Allocation_count;
+});

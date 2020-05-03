@@ -127,46 +127,47 @@
 
                 @endif
 
-
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-user"></i>
-                        <p>
-                            Meeting
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        @if(Auth::user()->role_id==3)
+                @if(Auth::user()->role_id!= 1)
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon far fa-user"></i>
+                            <p>
+                                Meeting
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            @if(Auth::user()->role_id==3)
+                                <li class="nav-item">
+                                    <a href="/tutorMeetings" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>All meeting</p>
+                                    </a>
+                                </li>
+                            @endif
+                            @if(Auth::user()->role_id==4)
+                                <li class="nav-item">
+                                    <a href="/StudentMeetings" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>All meeting</p>
+                                    </a>
+                                </li>
+                            @endif
                             <li class="nav-item">
-                                <a href="/tutorMeetings" class="nav-link">
+                                <a href="/todayMeeting" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>All meeting</p>
+                                    <p>Today Meeting</p>
                                 </a>
                             </li>
-                        @endif
-                        @if(Auth::user()->role_id==4)
                             <li class="nav-item">
-                                <a href="/StudentMeetings" class="nav-link">
+                                <a href="pages/mailbox/read-mail.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>All meeting</p>
+                                    <p>Read</p>
                                 </a>
                             </li>
-                        @endif
-                        <li class="nav-item">
-                            <a href="/todayMeeting" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Today Meeting</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/mailbox/read-mail.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Read</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
+                @endif
                 @if(Auth::user()->role_id ===3)
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
@@ -234,76 +235,79 @@
 
                     </ul>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon  fas fa-bullhorn"></i>
-                        <p>
-                            Request
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        @if(Auth::user()->role_id ===3)
-                            <li class="nav-item">
-                                <a href="/allrequests" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>All request</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/compose.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>done request</p>
-                                </a>
-                            </li>
-                        @endif
-                        @if(Auth::user()->role_id ===4)
-                            <li class="nav-item">
-                                <a href="/myrequest" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Your request</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/newrequest" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>new request</p>
-                                </a>
-                            </li>
-                        @endif
+                @if(Auth::user()->role_id ==3 || Auth::user()->role_id ==4 )
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon  fas fa-bullhorn"></i>
+                            <p>
+                                Request
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            @if(Auth::user()->role_id ===3)
+                                <li class="nav-item">
+                                    <a href="/allrequests" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>All request</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/mailbox/compose.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>done request</p>
+                                    </a>
+                                </li>
+                            @endif
+                            @if(Auth::user()->role_id ===4)
+                                <li class="nav-item">
+                                    <a href="/myrequest" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Your request</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/newrequest" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>new request</p>
+                                    </a>
+                                </li>
+                            @endif
 
-                    </ul>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-file"></i>
-                        <p>
-                            Document
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/newdocument" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Upload document</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/yourdocument" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Your document</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/sharedDocument" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Shared with you</p>
-                            </a>
-                        </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon far fa-file"></i>
+                            <p>
+                                Document
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/newdocument" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Upload document</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/yourdocument" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Your document</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/sharedDocument" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Shared with you</p>
+                                </a>
+                            </li>
 
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
+                @endif
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-file"></i>
@@ -316,21 +320,10 @@
                         <li class="nav-item">
                             <a href="/getReport" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Statistic</p>
+                                <p>View Report</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/yourdocument" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Your document</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/sharedDocument" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Shared with you</p>
-                            </a>
-                        </li>
+
 
                     </ul>
                 </li>

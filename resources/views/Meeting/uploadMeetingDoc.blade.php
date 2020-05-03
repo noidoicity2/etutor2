@@ -11,10 +11,19 @@
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Upload Meeting document <small></small></h3>
+                            <h3 class="card-title">Upload  document for meeting ID#{{$meeting->id}} <small></small></h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         @if(session('status'))
                             <div class="alert alert-warning" role="alert">
                                 {{session('status')}}
@@ -31,7 +40,7 @@
                                 <input name="meeting_id" value="{{$meeting->id}}" type="hidden" class="form-control-file" id="exampleFormControlFile1">
 
                                 <div class="form-group">
-                                    <label for="exampleFormControlFile1">Example file input</label>
+                                    <label for="exampleFormControlFile1"> file </label>
                                     <input name="file" type="file" class="form-control-file" id="exampleFormControlFile1">
                                 </div>
 

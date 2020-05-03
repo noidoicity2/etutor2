@@ -38,14 +38,14 @@
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-{{--                            <a href="/newdocument" class="btn btn-success"> <i class="fas fa-upload">--}}
-{{--                                </i> Upload File </a>--}}
-{{--                            <a id="mark-all-as-read" href="/adduser" class="btn btn-primary"> <i--}}
-{{--                                    class="fas fa-pencil-alt">--}}
-{{--                                </i>Mask all as read </a>--}}
+                            {{--                            <a href="/newdocument" class="btn btn-success"> <i class="fas fa-upload">--}}
+                            {{--                                </i> Upload File </a>--}}
+                            {{--                            <a id="mark-all-as-read" href="/adduser" class="btn btn-primary"> <i--}}
+                            {{--                                    class="fas fa-pencil-alt">--}}
+                            {{--                                </i>Mask all as read </a>--}}
 
-{{--                            <a href="/adduser" class="btn btn-warning" id="clear-select"> <i class="fas fa-pencil-alt">--}}
-{{--                                </i> clear selection </a>--}}
+                            {{--                            <a href="/adduser" class="btn btn-warning" id="clear-select"> <i class="fas fa-pencil-alt">--}}
+                            {{--                                </i> clear selection </a>--}}
                             <div class="row">
 
                                 <div class="col-sm-12">
@@ -63,10 +63,11 @@
                                                 Name
                                             </th>
                                             @if(Auth::user()->role_id==3)
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                                                Meet With
-                                            </th>
+                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                                    colspan="1"
+                                                    aria-label="CSS grade: activate to sort column ascending">
+                                                    Meet With
+                                                </th>
                                             @endif
                                             <th class="sorting" tabindex="0" aria-controls="example1"
                                                 rowspan="1"
@@ -97,7 +98,7 @@
                                                 <td>{{$meeting->id}}</td>
                                                 <td id="id" tabindex="0" class="sorting_1">{{$meeting->name}}</td>
                                                 @if(Auth::user()->role_id==3)
-                                                <td>{{$meeting->student->name}}</td>
+                                                    <td>{{$meeting->student->name}}</td>
                                                 @endif
                                                 <td>{{$meeting->start_at}}
                                                 </td>
@@ -106,43 +107,53 @@
                                                     @if($meeting->document_id==null)
                                                         No Upload
                                                     @else
-                                                   <span class="btn-success">Uploaded</span>
+                                                        <span class="btn-success">Uploaded</span>
                                                     @endif
                                                 </td>
                                                 <td>{{$meeting->place}}
                                                 </td>
 
                                                 <td>
-                                                    <a class="btn btn-primary btn-sm" href="/editmeeting/{{$meeting->id}}">
-                                                        <i class="fas fa-edit">
-                                                        </i>
 
-                                                    </a>
-{{--                                                    <a class="btn btn-primary btn-sm" href="">--}}
-{{--                                                        <i class="fas fa-share">--}}
-{{--                                                        </i>--}}
+                                                    {{--                                                    <a class="btn btn-primary btn-sm" href="">--}}
+                                                    {{--                                                        <i class="fas fa-share">--}}
+                                                    {{--                                                        </i>--}}
 
-{{--                                                    </a>--}}
-{{--                                                    <a class="btn btn-primary btn-sm" href="">--}}
-{{--                                                        <i class="fas fa-download">--}}
-{{--                                                        </i>--}}
+                                                    {{--                                                    </a>--}}
+                                                    {{--                                                    @if(Auth::user()->role_id ==4)--}}
+                                                    @if($meeting->document_id != null)
+                                                        <a class="btn btn-primary btn-sm"
+                                                           href="file/{{$meeting->document_id}}">
+                                                            <i class="fas fa-download">
+                                                            </i>
 
-{{--                                                    </a>--}}
+                                                        </a>
+                                                    @endif
+                                                    {{--                                                    @endif--}}
+                                                    @if(Auth::user()->role_id ==3)
 
-                                                    <a class="btn btn-success btn-sm" href="/uploadmeetingdoc/{{$meeting->id}}">
-                                                        <i class="fas fa-upload">
+                                                        <a class="btn btn-primary btn-sm"
+                                                           href="/editmeeting/{{$meeting->id}}">
+                                                            <i class="fas fa-edit">
+                                                            </i>
 
-                                                        </i>
+                                                        </a>
+                                                        <a class="btn btn-success btn-sm"
+                                                           href="/uploadmeetingdoc/{{$meeting->id}}">
+                                                            <i class="fas fa-upload">
 
-                                                    </a>
-                                                    <a class="btn btn-danger btn-sm" id="Cancel-btn" meeting_id ="{{$meeting->id}}">
-                                                        <i class="fas fa-trash">
+                                                            </i>
 
-                                                        </i>
+                                                        </a>
+                                                        <a class="btn btn-danger btn-sm" id="Cancel-btn"
+                                                           meeting_id="{{$meeting->id}}">
+                                                            <i class="fas fa-trash">
 
-                                                    </a>
+                                                            </i>
+
+                                                        </a>
+                                                    @endif
                                                 </td>
-
 
 
                                             </tr>
@@ -203,7 +214,7 @@
                 select: {
                     "style": "multi"
                 },
-                responsive:  true,
+                responsive: true,
                 createdRow: function (row, data, index) {
                     //
                     // if the second column cell is blank apply special formatting
@@ -222,7 +233,7 @@
 
             $('#Cancel-btn').click(function (e) {
                 e.preventDefault();
-                var m_id =  $( "#Cancel-btn" ).attr( "meeting_id" );
+                var m_id = $("#Cancel-btn").attr("meeting_id");
                 $.ajax({
                     url: '/CancelMeeting',
                     type: 'post',

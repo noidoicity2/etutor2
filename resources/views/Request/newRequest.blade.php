@@ -140,7 +140,7 @@
                     dataType: 'JSON',
                     success: function (data) {
                        alert(JSON.stringify(data.msg));
-                       window.location = '/myrequest';
+                       window.location = '/newrequest';
 
 
                     },

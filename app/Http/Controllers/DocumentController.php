@@ -12,7 +12,9 @@ use Illuminate\Database\Eloquent\Builder;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class DocumentController extends Controller
 {
@@ -34,6 +36,13 @@ class DocumentController extends Controller
 
     public function DoUploadFile(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'file' => 'max:200000|mimes:doc,docx,xml,xls,jpg,jpeg,pdf|required',
+            'status'=>'required'
+        ]);
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
         $file = $request->file('file');
         $doc = new Document();
         $doc->name = $file->getClientOriginalName();

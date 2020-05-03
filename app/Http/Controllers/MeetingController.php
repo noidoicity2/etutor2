@@ -121,6 +121,12 @@ class MeetingController extends Controller
 
     public function DoUploadMeetingDoc(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'file' => 'max:200000|mimes:doc,docx,xml,xls,jpg,jpeg,pdf|required',
+        ]);
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator);
+        }
 //        return $request;
         $meeting_id = $request->meeting_id;
         $meeting = Meeting::find($meeting_id);

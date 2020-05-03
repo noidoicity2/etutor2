@@ -62,22 +62,9 @@
                                            aria-describedby="exampleInputEmail1-error" aria-invalid="true">
                                     {{--<span id="exampleInputEmail1-error" class="error invalid-feedback">Please enter a vaild email address</span>--}}
                                 </div>
-                                <!-- <div class="form-group">
-                                    <label for="exampleInputPassword1">Date</label>
-                                    <input type="date" name="date" class="form-control "
-                                           id="email" placeholder="email"
-                                           aria-describedby="exampleInputEmail1-error" aria-invalid="true">
-                                    <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
-                                </div> -->
-                                <!-- <div class="form-group">
-                                    <label for="exampleInputPassword1">Document</label>
-                                    <input type="file" name="image" class=" btn-file "
-                                           id="email" placehder="image"
-                                           aria-describedby="exampleInputPassword1-error" aria-invalid="true">
-                                    <span id="exampleInputPassword1-error" class="error invalid-feedback">Your password must be at least 5 characters long</span>
-                                </div> -->
+
                             </div>
-                            <!-- /.card-body -->
+
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>

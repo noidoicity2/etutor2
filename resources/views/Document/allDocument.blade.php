@@ -105,12 +105,12 @@
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-danger btn-sm" href="/file/{{$document->id}}">
-                                                        <i class="fas fa-trash">
+{{--                                                    <a class="btn btn-danger btn-sm" href="/file/{{$document->id}}">--}}
+{{--                                                        <i class="fas fa-trash">--}}
 
-                                                        </i>
+{{--                                                        </i>--}}
 
-                                                    </a>
+{{--                                                    </a>--}}
                                                 </td>
 
 
