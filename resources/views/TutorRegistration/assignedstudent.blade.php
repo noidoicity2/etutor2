@@ -46,6 +46,10 @@
                                                 colspan="1" aria-label="Platform(s): activate to sort column ascending">
                                                 Student
                                             </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
+                                                colspan="1" aria-label="Platform(s): activate to sort column ascending">
+                                                unseen message
+                                            </th>
 
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="CSS grade: activate to sort column ascending">
@@ -66,6 +70,9 @@
 
                                                 <td>
                                                  {{ $reg->student->name}}
+                                                </td>
+                                                <td>
+                                                    {{ $reg->UnseenMessageOfStudent->count()}}
                                                 </td>
 
                                                 <td>{{$reg->created_at}}</td>

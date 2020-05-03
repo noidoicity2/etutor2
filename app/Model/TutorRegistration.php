@@ -55,6 +55,11 @@ class TutorRegistration extends Model
         return $this->hasMany('App\Model\DocumentShare', 'user_id', 'student_id');
 
     }
+    public function UnseenMessageOfStudent() {
+        return $this->hasMany('App\Model\Message', 'from_user', 'student_id')
+            ->where('status_id','=',4)->where('to_user','=', \Auth::id()) ;
+
+    }
 
 
 }
