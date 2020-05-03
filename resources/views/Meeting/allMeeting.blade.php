@@ -5,16 +5,8 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- DataTables -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
-
-    <link rel="stylesheet" type="text/css"
-          href=" https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
-
-
-
-    {{--    <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">--}}
-    {{--    <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
     <!-- Google Font: Source Sans Pro -->
@@ -38,35 +30,27 @@
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                            {{--                            <a href="/newdocument" class="btn btn-success"> <i class="fas fa-upload">--}}
-                            {{--                                </i> Upload File </a>--}}
-                            {{--                            <a id="mark-all-as-read" href="/adduser" class="btn btn-primary"> <i--}}
-                            {{--                                    class="fas fa-pencil-alt">--}}
-                            {{--                                </i>Mask all as read </a>--}}
 
-                            {{--                            <a href="/adduser" class="btn btn-warning" id="clear-select"> <i class="fas fa-pencil-alt">--}}
-                            {{--                                </i> clear selection </a>--}}
                             <div class="row">
 
                                 <div class="col-sm-12">
-                                    <table id="example1" class="table dataTable "
+                                    <table id="example1" class="table table-bordered table-striped dataTable dtr-inline"
                                            role="grid" aria-describedby="example1_info">
                                         <thead>
                                         <tr role="row">
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="Browser: activate to sort column ascending">
+                                            <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1"
+                                                colspan="1" aria-sort="ascending"
+                                                aria-label="Rendering engine: activate to sort column descending">
                                                 ID
                                             </th>
-
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="Browser: activate to sort column ascending">
                                                 Name
                                             </th>
                                             @if(Auth::user()->role_id==3)
                                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                    colspan="1"
-                                                    aria-label="CSS grade: activate to sort column ascending">
-                                                    Meet With
+                                                    colspan="1" aria-label="Platform(s): activate to sort column ascending">
+                                                    Meet with
                                                 </th>
                                             @endif
                                             <th class="sorting" tabindex="0" aria-controls="example1"
@@ -115,12 +99,7 @@
 
                                                 <td>
 
-                                                    {{--                                                    <a class="btn btn-primary btn-sm" href="">--}}
-                                                    {{--                                                        <i class="fas fa-share">--}}
-                                                    {{--                                                        </i>--}}
 
-                                                    {{--                                                    </a>--}}
-                                                    {{--                                                    @if(Auth::user()->role_id ==4)--}}
                                                     @if($meeting->document_id != null)
                                                         <a class="btn btn-primary btn-sm"
                                                            href="file/{{$meeting->document_id}}">
@@ -189,22 +168,17 @@
     <!-- Bootstrap 4 -->
     <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- DataTables -->
-
-
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
-    {{--    <script src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>--}}
-    {{--    <script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>--}}
-    {{--    <script src="{{asset('plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>--}}
-    {{--    <script src="{{asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>--}}
+    <script src="{{asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dist/js/demo.js')}}"></script>
-    <!-- page script -->
     <script>
         $(document).ready(function () {
-            $("#example1").DataTable({
+            $("#example1").removeAttr('width').DataTable({
 
 
                 // "autoWidth": true,
