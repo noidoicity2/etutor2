@@ -180,15 +180,14 @@
         $(document).ready(function () {
             $("#example1").removeAttr('width').DataTable({
 
+                "responsive": true,
+                "autoWidth": false,
+                "paging": false,
 
-                // "autoWidth": true,
-                searching: true,
-                paging: false,
-                // "lengthChange": true,
                 select: {
                     "style": "multi"
                 },
-                responsive: true,
+
                 createdRow: function (row, data, index) {
                     //
                     // if the second column cell is blank apply special formatting
