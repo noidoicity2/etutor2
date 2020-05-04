@@ -42,6 +42,6 @@ class Document extends Model
 
     public function tutor()
     {
-        return $this->belongsTo('App\Model\user', 'created_by', 'id');
+        return $this->belongsTo('App\Model\User', 'created_by', 'id');
     }
 }

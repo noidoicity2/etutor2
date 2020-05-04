@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException;
 
 class DocumentController extends Controller
 {
@@ -89,12 +90,19 @@ class DocumentController extends Controller
 
     public function Download($id)
     {
-        $query = Document::find($id);
+        try{
+            $query = Document::find($id);
 //        $contents = Storage::get($query->link);
-        $file = public_path() . $query->link;
+            $file = public_path() . $query->link;
 
 
-        return response()->download($file);
+            return response()->download($file);
+        }
+        catch (FileNotFoundException $exception) {
+            return abort(404);
+
+        }
+
 
     }
 
@@ -171,7 +179,8 @@ class DocumentController extends Controller
         $cmt = new Comment();
 
         $cmt->user_id = $id;
-        $cmt->comment = $request->comment;
+        $cmt->comment =filter_var($request->comment, FILTER_SANITIZE_STRING) ;
+
         $cmt->document_id = $request->document_id;
 
         $cmt->save();

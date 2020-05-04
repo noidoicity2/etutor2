@@ -107,12 +107,12 @@
                                                         </i>
 
                                                     </a>
-                                                    <a class="btn btn-danger btn-sm" href="/file/{{$document->document->id}}">
-                                                        <i class="fas fa-trash">
+{{--                                                    <a class="btn btn-danger btn-sm" href="/file/{{$document->document->id}}">--}}
+{{--                                                        <i class="fas fa-trash">--}}
 
-                                                        </i>
+{{--                                                        </i>--}}
 
-                                                    </a>
+{{--                                                    </a>--}}
                                                 </td>
 
 
@@ -140,7 +140,7 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
-        <button id="count">count</button>
+{{--        <button id="count">count</button>--}}
 
     </section>
 @endsection

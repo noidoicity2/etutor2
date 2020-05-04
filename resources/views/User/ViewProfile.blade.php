@@ -44,7 +44,7 @@
 
                         </ul>
 
-                        <a href="#" class="btn btn-primary btn-block"><b>Chat</b></a>
+                        <a href="/getmessage/id/{{$user->id}}" class="btn btn-primary btn-block"><b>Chat</b></a>
                     </div>
                     <!-- /.card-body -->
                 </div>

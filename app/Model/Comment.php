@@ -32,6 +32,6 @@ class Comment extends Model
     ];
     public $timestamps = false;
     public function user() {
-        return $this->belongsTo('App\Model\user', 'user_id','id');
+        return $this->belongsTo('App\Model\User', 'user_id','id');
     }
 }

@@ -13,13 +13,13 @@ class Meeting extends Model
     ];
     public $timestamps = false;
     public function tutor() {
-        return $this->belongsTo('App\Model\user', 'tutor_id','id');
+        return $this->belongsTo('App\Model\User', 'tutor_id','id');
     }
     public function student() {
-        return $this->belongsTo('App\Model\user', 'student_id','id');
+        return $this->belongsTo('App\Model\User', 'student_id','id');
     }
     public function createdby() {
-        return $this->belongsTo('App\Model\user', 'created_by','id');
+        return $this->belongsTo('App\Model\User', 'created_by','id');
     }
     public function document() {
         return $this->belongsTo('App\Model\Document', 'document_id','id');

@@ -193,7 +193,7 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::post('comment', 'DocumentController@Comment');
     Route::post('doShareDoc', 'DocumentController@DoShare');
     Route::get('viewPublicDoc/{id}', 'DocumentController@getPublicDoc');
-    Route::get('viewSharedDoc/{id}', 'DocumentController@getPublicDoc');
+    Route::get('viewSharedDoc/{id}', 'DocumentController@getSharedDoc');
 
     Route::get('file/{id}', 'DocumentController@Download');
 

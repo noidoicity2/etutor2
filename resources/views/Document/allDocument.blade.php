@@ -18,16 +18,15 @@
 
             <div class="col-12">
                 <h1>All document</h1>
-          <center>
-              <a href="/newdocument" class="btn btn-success"> <i class="fas fa-upload">
-                  </i> Upload File </a>
-              <a id="mark-all-as-read" href="/adduser" class="btn btn-primary"> <i
-                      class="fas fa-pencil-alt">
-                  </i>Mask all as read </a>
 
-              <a href="/adduser" class="btn btn-warning" id="clear-select"> <i class="fas fa-pencil-alt">
-                  </i> clear selection </a>
-          </center>
+
+{{--              <a id="mark-all-as-read" href="/adduser" class="btn btn-primary"> <i--}}
+{{--                      class="fas fa-pencil-alt">--}}
+{{--                  </i>Mask all as read </a>--}}
+
+{{--              <a href="/adduser" class="btn btn-warning" id="clear-select"> <i class="fas fa-pencil-alt">--}}
+{{--                  </i> clear selection </a>--}}
+
 
 
 
@@ -36,7 +35,10 @@
                 <div class="card">
 
                     <div class="card-header">
-
+                        <a href="/newdocument" class="btn btn-success"> <i class="fas fa-upload">
+                            </i> Upload File </a>
+                        <a href="/sharedDocument" class="btn btn-primary"> <i class="fa fa-file">
+                            </i> Shared  Documents </a>
                     </div>
                     <!-- /.card-header -->
 
@@ -97,11 +99,13 @@
                                                         </i>
 
                                                     </a>
+                                                    @if(Auth::user()->role_id ==3)
                                                     <a class="btn btn-primary btn-sm" href="/ShareDoc/{{$document->id}}">
                                                         <i class="fas fa-share">
                                                         </i>
 
                                                     </a>
+                                                    @endif
                                                     <a class="btn btn-primary btn-sm" href="/file/{{$document->id}}">
                                                         <i class="fas fa-download">
                                                         </i>
