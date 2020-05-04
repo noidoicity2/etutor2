@@ -217,9 +217,10 @@
                         <p>
                             Email
                             @if(\App\Model\Email::where('to_user' ,Auth::id())->where('status','=',0)->count() > 0 )
-                                (<span class="text-info">{{\App\Model\Email::where('to_user' ,Auth::id())->where('status','=',0)->count() }}</span>)
+                                (<span
+                                    class="text-info">{{\App\Model\Email::where('to_user' ,Auth::id())->where('status','=',0)->count() }}</span>
+                                )
                             @endif
-
 
 
                             <i class="fas fa-angle-left right"></i>
@@ -313,26 +314,27 @@
                         </ul>
                     </li>
                 @endif
+                @if(\Auth::user()->role_id ==1)
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon far fa-file"></i>
+                            <p>
+                                Report
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/getReport" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>View Report</p>
+                                </a>
+                            </li>
 
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-file"></i>
-                        <p>
-                            Report
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/getReport" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>View Report</p>
-                            </a>
-                        </li>
 
-
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
+                @endif
                 @if(\Auth::user()->role_id ==4)
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">

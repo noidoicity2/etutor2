@@ -43,13 +43,13 @@ class TutorRegistration extends Model
     'tutor_id','student_id','created_by','updated_by','updated_at',
     ];
     public function tutor() {
-        return $this->belongsTo('App\Model\user', 'tutor_id','id');
+        return $this->belongsTo('App\Model\User', 'tutor_id','id');
     }
     public function student() {
-        return $this->belongsTo('App\Model\user', 'student_id','id');
+        return $this->belongsTo('App\Model\User', 'student_id','id');
     }
     public function createdby() {
-        return $this->belongsTo('App\Model\user', 'created_by','id');
+        return $this->belongsTo('App\Model\User', 'created_by','id');
     }
     public function SharedDocument() {
         return $this->hasMany('App\Model\DocumentShare', 'user_id', 'student_id');
