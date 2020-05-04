@@ -139,7 +139,7 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
-        <button id="count">count</button>
+
 
     </section>
 @endsection

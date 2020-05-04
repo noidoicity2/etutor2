@@ -159,12 +159,7 @@
                                     <p>Today Meeting</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="pages/mailbox/read-mail.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Read</p>
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
                 @endif

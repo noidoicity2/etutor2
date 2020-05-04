@@ -19,6 +19,7 @@ class TutorRegistrationController extends Controller
 
     function getAssignedStudent()
     {
+        if(Auth::user()->role_id != 3)  return abort(401);
         $id = Auth::id();
         $regs = TutorRegistration::where('tutor_id', $id)->with(['student','UnseenMessageOfStudent'])->get();
 //return $regs;
