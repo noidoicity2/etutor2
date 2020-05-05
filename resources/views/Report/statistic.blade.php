@@ -12,14 +12,19 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css" rel="stylesheet">
-
+   <style>
+       .dt-button buttons-print {
+           background-color: red;
+           color: white;
+       }
+   </style>
 
 @endsection
 @section('content')
     <section class="content">
         <div class="row">
             <div class="col-12">
-                <h1>Exceptional Report</h1>
+                <h1>Statistic Report</h1>
                 <!-- /.card -->
 
                 <div class="card">
@@ -29,29 +34,12 @@
                 <!-- /.card-header -->
                     <div class="card-body">
                         <div class="col-6">
-                            <form class="form-inline" action="">
-                                {{--                                <div class="form-group">--}}
-                                {{--                                    <label for="exampleInputEmail1">Email address</label>--}}
-                                {{--                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">--}}
-                                {{--                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>--}}
-                                {{--                                </div>--}}
-                                <select class="custom-select" name="day">
-                                    <option  value="7" selected>Please select Date</option>
-                                    <option @if($days==7) selected @endif value="7">Last 7 day</option>
-                                    <option @if($days==28) selected @endif  value="28">Last 28 day</option>
-                                    <option @if($days==30) selected @endif value="30">Last 30 Day</option>
-                                    <option @if($days==360) selected @endif  value="360">Last year</option>
-                                </select>
-                                {{--                                {{ Request::get('a')}}--}}
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                                {{--                                <button class="btn-primary" type="submit">View report</button>--}}
-                            </form>
 
 
                         </div>
 
                         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-{{--                            <h2>get</h2>--}}
+                            {{--                            <h2>get</h2>--}}
                             <div class="row">
                                 <div class="col-sm-12">
                                     <table id="example1" class="table table-striped dataTable "
@@ -65,28 +53,26 @@
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="Browser: activate to sort column ascending">
-                                                total
+                                                Value
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="Platform(s): activate to sort column ascending">
+                                            {{--                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"--}}
+                                            {{--                                                colspan="1" aria-label="Platform(s): activate to sort column ascending">--}}
 
-                                            </th>
+                                            {{--                                            </th>--}}
 
                                         </tr>
                                         </thead>
                                         <tbody>
 
-
                                         @foreach($items as $item)
                                             <tr role="row" class="odd">
                                                 <td>{{$item[0]}}</td>
                                                 <td>{{$item[1]}}</td>
-                                                <td>{{$item[1]}}</td>
+
 
                                             </tr>
 
                                         @endforeach
-
 
                                         </tbody>
 
@@ -119,13 +105,15 @@
     <script src="{{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
     <script src="{{asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+
+
     <!-- AdminLTE App -->
     <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('dist/js/demo.js')}}"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
-
     <script>
         $(document).ready(function () {
             $("#example1").removeAttr('width').DataTable({
@@ -145,7 +133,7 @@
                     }
 
 
-                ],
+        ],
 
                 "responsive": true,
                 "autoWidth": false,
@@ -166,18 +154,12 @@
             });
 
 
-            //
-            // $('#example1 tbody').on( 'click', 'tr', function () {
-            //     if ( $(this).hasClass('selected') ) {
-            //         $(this).removeClass('selected');
-            //     }
-            //     else {
-            //         table.$('tr.selected').removeClass('selected');
-            //         $(this).addClass('selected');
-            //     }
-            // } );
 
+            $('.buttons-print').each(function() {
+                $(this).addClass('btn-success')
+            })
 
         });
     </script>
 @endsection
+

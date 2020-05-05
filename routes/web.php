@@ -164,7 +164,6 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('unseenMail', 'EmailController@unseenMail');
 
 
-
 //request
     Route::get('allrequests', 'RequestController@AllRequest');
     Route::get('newrequest', 'RequestController@newRequest');
@@ -198,13 +197,13 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('file/{id}', 'DocumentController@Download');
 
 
-
-
-
 //    report
+
     Route::get('getNonInteractStudent', 'ReportController@getNonInteractStudent');
     Route::get('getReport/{fromdate?}/{todate?}', 'ReportController@index');
-    Route::get('report/exception/{day?}', 'ReportController@exceptionalReport');
+    Route::get('report/exception', 'ReportController@exceptionalReport');
+    Route::get('report/statistic', 'ReportController@statisticReport');
+
 
 //    Route::get('getReport/{fromdate?}/{todate?}', function ($fromdate=null,$todate=null) {
 //        return $todate;
@@ -236,7 +235,6 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('uploadmeetingdoc/{id}', 'MeetingController@UploadMeetingDoc');
     Route::post('DoUploadMeetingDoc', 'MeetingController@DoUploadMeetingDoc');
     Route::post('CancelMeeting', 'MeetingController@CancelMeeting');
-
 
 
 });

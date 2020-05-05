@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Document;
+use App\Model\Meeting;
 use App\Model\Message;
 use App\Model\TutorRegistration;
 use App\Model\User;
@@ -17,14 +18,13 @@ class ReportController extends Controller
     //
     public function index($fromdate = null, $todate = null)
     {
-        if ($fromdate != null ) {
+        if ($fromdate != null) {
             $FromDate = Carbon::parse($fromdate);
             $ToDate = Carbon::parse($todate);
 
             $days = $ToDate->diffInDays($fromdate);
             if ($days == 0) $days = 1;
-        }
-        else{
+        } else {
             $FromDate = null;
 
             $ToDate = null;
@@ -38,7 +38,7 @@ class ReportController extends Controller
         $TutorWithTutee = User::whereHas('tutorRegistrationByTutor', function (Builder $query) use ($FromDate, $ToDate) {
             $query->whereBetween('created_at', [$FromDate, $ToDate]);
         })->where('role_id', 3)->withCount('tutorRegistrationByStudent')->count();
-        $nonTutorStudent =  User::whereDoesntHave('tutorRegistrationByStudent', function (Builder $query) use ($FromDate, $ToDate) {
+        $nonTutorStudent = User::whereDoesntHave('tutorRegistrationByStudent', function (Builder $query) use ($FromDate, $ToDate) {
             $query->whereBetween('created_at', [$FromDate, $ToDate]);
         })->where('role_id', 4)->get();
 //        return $nonTutorStudent;
@@ -98,27 +98,80 @@ class ReportController extends Controller
 
 //
     }
-    public  function exceptionalReport($day =7) {
+
+    public function exceptionalReport(Request $request)
+    {
+        $day = (int)$request->input('day');
+
         $dt = Carbon::now('Asia/Ho_Chi_Minh')->addDays(1)->toDateString();
         $todayDate = Carbon::now('Asia/Ho_Chi_Minh');
-        $NonTutorStudent=  User::whereDoesntHave('tutorRegistrationByStudent')->get();
+        $NonTutorStudent = User::whereDoesntHave('tutorRegistrationByStudent')->count();
         $lastDays = $todayDate->subDays($day)->toDateString();
-
-
-
         $noInteractSt = User::whereHas('request', function (Builder $query) use ($lastDays) {
-            $query->whereDate('created_at', '>=',$lastDays);
-        },'=',0)->whereHas('sentMessages', function (Builder $query) use ($lastDays) {
-            $query->whereDate('created_at', '>=',$lastDays);
-        },'=',0)->where('role_id', 4)->withCount('request')->count();
+            $query->whereDate('created_at', '>=', $lastDays);
+        }, '=', 0)->whereHas('sentMessages', function (Builder $query) use ($lastDays) {
+            $query->whereDate('created_at', '>=', $lastDays);
+        }, '=', 0)->where('role_id', 4)->withCount('request')->count();
+
+        $tutorWithoutTutee = User::whereDoesntHave('tutorRegistrationByTutor')->where('role_id', '=', 3)->count();
+//        $studentWithoutTutor = User::whereDoesntHave('')
+
+        return view('Report.exception',
+            ['items' =>
+                [
+                    ['Student without tutor', $NonTutorStudent],
+                    ['Student without Interaction', $noInteractSt],
+                    ['Tutor without Student', $tutorWithoutTutee],
 
 
-        $tutorWithoutTutee = User::whereDoesntHave('tutorRegistrationByTutor')->where('role_id', '=',3)->count();
-//        $tutorWithoutTutee->setPageName('nonstudent_tutor');
-//        return [$lastDays,$dt, $noInteractSt , $tutorWithoutTutee];
+                ],
+                'days'=>$day
+
+            ]);
+
+    }
+
+    public function statisticReport(Request $request)
+    {
+        $day = (int)$request->input('day');
+        $tutorSentMsgCount = Message::whereHas('sender', function (Builder $query) {
+            $query->where('role_id', 3);
+        })->count();
+        $StudentSentMsgCount = Message::whereHas('sender', function (Builder $query) {
+            $query->where('role_id', 4);
+        })->count();
+        $stdCount = User::where('role_id', 4)->count();
+        $tutorCount = User::where('role_id', 3)->count();
+        $staffCount = User::where('role_id', 1)->count();
+        $meetingCount = Meeting::count();
+        $requestCount = \App\Model\Request::count();
 
 
-        return view('Report.exception', ['users'=>$noInteractSt ,'tutors'=>$tutorWithoutTutee , 'days' =>$day]);
+        $AvgMsgTutor = round($tutorCount / $tutorCount, 10);
+        $AvgMsgStudent = round($stdCount / $stdCount, 10);
+
+        $allocationCount = TutorRegistration::count();
+        $AvgAllocation = round($allocationCount / $staffCount, 10);
+        $AvgRequest = round($requestCount / $stdCount, 10);
+
+
+//        $tutorWithoutTutee = User::whereDoesntHave('tutorRegistrationByTutor')->where('role_id', '=',3)->count();
+
+
+        return view('Report.statistic',
+            ['items' =>
+                [
+                    ['Student Count', $stdCount],
+                    ['Tutor Count', $tutorCount],
+                    ['Staff Count', $staffCount],
+                    ['Meeting Count', $meetingCount],
+                    ['Request Count', $requestCount],
+
+                    ['Average message per student', $AvgMsgStudent],
+                    ['Average message per tutor', $AvgMsgTutor],
+                    ['Average allocation per Staff', $AvgAllocation],
+                    ['Average request per student', $AvgRequest],
+                ]]);
 
     }
 
