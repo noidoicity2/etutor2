@@ -105,7 +105,7 @@ class ReportController extends Controller
 
         $dt = Carbon::now('Asia/Ho_Chi_Minh')->addDays(1)->toDateString();
         $todayDate = Carbon::now('Asia/Ho_Chi_Minh');
-        $NonTutorStudent = User::whereDoesntHave('tutorRegistrationByStudent')->count();
+        $NonTutorStudent = User::whereDoesntHave('tutorRegistrationByStudent')->where('role_id','=',4)->count();
         $lastDays = $todayDate->subDays($day)->toDateString();
         $noInteractSt = User::whereHas('request', function (Builder $query) use ($lastDays) {
             $query->whereDate('created_at', '>=', $lastDays);
@@ -199,9 +199,9 @@ class ReportController extends Controller
         $dt = Carbon::now('Asia/Ho_Chi_Minh')->addDays(1)->toDateString();
         $todayDate = Carbon::now('Asia/Ho_Chi_Minh');
         $lastDays = $todayDate->subDays($day)->toDateString();
-        $NonTutorStudent = User::whereDoesntHave('tutorRegistrationByStudent')->paginate(20);
+        $NonTutorStudent = User::doesntHave('tutorRegistrationByStudent')->where('role_id','=',4)->paginate(20);
 
-        return view('User.noInteractStudent' , ['users'=>$NonTutorStudent , 'days'=>$day ]);
+        return view('User.StudentWithoutTutor' , ['users'=>$NonTutorStudent , 'days'=>$day ]);
 
     }
 
