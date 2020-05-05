@@ -39,7 +39,7 @@
                         <input id="dateFrom" type="hidden" name="dateFrom">
                         <input id="dateTo" type="hidden" name="dateTo">
 
-                        <a style="margin-left: 15px" href="" id="searchBtn" class="btn btn-secondary">Search </a>
+                        <a style="margin-left: 15px" href="" id="searchBtn" class="btn btn-secondary">View report </a>
 
                     </form>
                 </div>
@@ -48,223 +48,226 @@
             </div>
 
             <!-- Small boxes (Stat box) -->
-            @if(isset($FromDate))
+            @if($FromDate!= null)
 
                 <h2 class="text-info">Report From {{$FromDate->toDateString()}}  to {{$ToDate->toDateString()}}</h2>
+                <h2>Statistic Report</h2>
+                @if(Auth::user()->role_id ==3)
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>{{$RequestCount}}</h3>
 
-            @endif
-            <h2>Statistic Report</h2>
-            @if(Auth::user()->role_id ==3)
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-warning">
-                            <div class="inner">
-                                <h3>{{$RequestCount}}</h3>
-
-                                <p>Total Request</p>
+                                    <p>Total Request</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
-                            <div class="icon">
-                                <i class="ion ion-person-add"></i>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-gradient-indigo">
+                                <div class="inner">
+                                    <h3>{{$SentMsg}}</h3>
+
+                                    <p>Sent message</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
-                            <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-gradient-indigo">
-                            <div class="inner">
-                                <h3>{{$SentMsg}}</h3>
 
-                                <p>Sent message</p>
+
+                @endif
+                @if(Auth::user()->role_id==1)
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>{{$stdCount}}</h3>
+
+                                    <p>Total Student</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
-                            <div class="icon">
-                                <i class="ion ion-person-add"></i>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>{{$tutorCount}}</h3>
+
+                                    <p>Total Tutor</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
-                            <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>{{$tutorMsgCount}}</h3>
+
+                                    <p>Number of tutor 's message</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-secondary">
+                                <div class="inner">
+                                    <h3>{{$tuteeMsgCount}}</h3>
+
+                                    <p>number of student 's message</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-gradient-cyan">
+                                <div class="inner">
+                                    <h3>{{$AvgMsg}}</h3>
+
+                                    <p>Average message for each personal tutor</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-primary">
+                                <div class="inner">
+                                    <h3>{{$RegCount}}</h3>
+
+                                    <p>Total allocations</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-fuchsia">
+                                <div class="inner">
+                                    <h3>{{$AllocatedTutor}}</h3>
+
+                                    <p>Total allocated tutor</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-gradient-indigo">
+                                <div class="inner">
+                                    <h3>65</h3>
+
+                                    <p>Total allcated tutee</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+
+
                     </div>
-                </div>
+                    <!-- /.row -->
+                @endif
+                @if(Auth::user()->role_id==1)
+                    <h2>Exceptional Report</h2>
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-gradient-danger">
+                                <div class="inner">
+                                    <h3>{{$noInteractSt}}</h3>
 
+                                    <p>Number of student with no interaction</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-gradient-danger">
+                                <div class="inner">
+                                    <h3>{{$nonTutorStudent}}</h3>
 
+                                    <p>Number of student without a personal tutor</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-gradient-danger">
+                                <div class="inner">
+                                    <h3>{{$TutorWithoutTutee}}</h3>
+
+                                    <p>Number of Tutor without Tutee</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                @endif
+                <a id="print-rp" href="#" class="btn btn-success">  <i class="fas fa-print">
+                    </i> Print this report</a>
+
+            @else
+                <h2>Please select date range to view report</h2>
             @endif
-            @if(Auth::user()->role_id==1)
-            <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            <h3>{{$stdCount}}</h3>
-
-                            <p>Total Student</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            <h3>{{$tutorCount}}</h3>
-
-                            <p>Total Tutor</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            <h3>{{$tutorMsgCount}}</h3>
-
-                            <p>Number of tutor 's message</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-secondary">
-                        <div class="inner">
-                            <h3>{{$tuteeMsgCount}}</h3>
-
-                            <p>number of student 's message</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-gradient-cyan">
-                        <div class="inner">
-                            <h3>{{$AvgMsg}}</h3>
-
-                            <p>Average message for each personal tutor</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-primary">
-                        <div class="inner">
-                            <h3>{{$RegCount}}</h3>
-
-                            <p>Total allocations</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-fuchsia">
-                        <div class="inner">
-                            <h3>{{$AllocatedTutor}}</h3>
-
-                            <p>Total allocated tutor</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-gradient-indigo">
-                        <div class="inner">
-                            <h3>65</h3>
-
-                            <p>Total allcated tutee</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-
-
-            </div>
-            <!-- /.row -->
-            @endif
-            @if(Auth::user()->role_id==1)
-            <h2>Exceptional Report</h2>
-            <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-gradient-danger">
-                        <div class="inner">
-                            <h3>{{$noInteractSt}}</h3>
-
-                            <p>Number of student with no interaction</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-gradient-danger">
-                        <div class="inner">
-                            <h3>{{$nonTutorStudent}}</h3>
-
-                            <p>Number of student without a personal tutor</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-gradient-danger">
-                        <div class="inner">
-                            <h3>{{$TutorWithoutTutee}}</h3>
-
-                            <p>Number of Tutor without Tutee</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            @endif
-            <div class="container">
 
 
 
-            </div>
 
         </div>
 
@@ -301,19 +304,7 @@
     <!-- page script -->
     <script>
         $(document).ready(function () {
-            $("#example1").removeAttr('width').DataTable({
 
-                "responsive": true,
-                "autoWidth": false,
-                "searching": true,
-                "paging": false,
-                "lengthChange": true,
-                "select": {
-                    "style": "multi"
-                }
-
-
-            });
 
 
         });
@@ -357,6 +348,12 @@
         //
         //
         // });
+        $('#print-rp').click(function(e){
+            e.preventDefault();
+            window.print();
+            return false;
+        });
+
 
     </script>
 @endsection

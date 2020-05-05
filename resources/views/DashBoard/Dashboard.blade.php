@@ -178,17 +178,20 @@
             <!-- /.row -->
             <div class="container">
                 <div class="row">
+                    @if(Auth::user()->role_id == 1)
+                        <div class="col-sm-12">
+                            <div id="RegChartContainer" style="height: 370px; width: 100%;"></div>
+                        </div>
+                    @endif
+                        <div class="col-12">
+                            <hr>
+                        </div>
                     <div class="col-sm-12">
                         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                     </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                    @if(Auth::user()->role_id == 1)
-                    <div class="col-sm-12">
-                        <div id="RegChartContainer" style="height: 370px; width: 100%;"></div>
-                    </div>
-                    @endif
+
+
+
                 </div>
 
 

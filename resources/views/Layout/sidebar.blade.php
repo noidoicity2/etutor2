@@ -322,9 +322,16 @@
                             <li class="nav-item">
                                 <a href="/getReport" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>View Report</p>
+                                    <p>Statistic Report</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/getReport" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Exceptional Report</p>
+                                </a>
+                            </li>
+
 
 
                         </ul>

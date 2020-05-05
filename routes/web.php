@@ -204,6 +204,12 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 //    report
     Route::get('getNonInteractStudent', 'ReportController@getNonInteractStudent');
     Route::get('getReport/{fromdate?}/{todate?}', 'ReportController@index');
+    Route::get('report/exception/{day?}', 'ReportController@exceptionalReport');
+
+//    Route::get('getReport/{fromdate?}/{todate?}', function ($fromdate=null,$todate=null) {
+//        return $todate;
+//    });
+
     Route::get('getRp', 'ReportController@getRp');
 
     Route::post('postReport', 'ReportController@index');
