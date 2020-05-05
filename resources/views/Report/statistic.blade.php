@@ -122,7 +122,7 @@
                     {
                         extend: 'print',
                         text: 'Print this report',
-                        title: 'Etutor Statistic report',
+                        title: 'Etutor Statistic report {{$today}}',
                         customize: function ( win ) {
 
 

@@ -15,13 +15,15 @@
 @section('content')
     <section class="content">
         <div class="row">
-            <div class="col-12">
 
+            <div class="col-12">
+                <h1 >All registration</h1>
                 <!-- /.card -->
 
                 <div class="card">
+
                     <div class="card-header">
-                        <h3 class="card-title">All registration</h3>
+
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">

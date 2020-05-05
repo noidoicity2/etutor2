@@ -203,6 +203,8 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
     Route::get('getReport/{fromdate?}/{todate?}', 'ReportController@index');
     Route::get('report/exception', 'ReportController@exceptionalReport');
     Route::get('report/statistic', 'ReportController@statisticReport');
+    Route::get('report/studentWithoutInteraction', 'ReportController@studentWithoutInteraction');
+    Route::get('report/studentWithoutTutor', 'ReportController@studentWithoutTutor');
 
 
 //    Route::get('getReport/{fromdate?}/{todate?}', function ($fromdate=null,$todate=null) {

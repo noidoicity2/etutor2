@@ -119,13 +119,14 @@ class ReportController extends Controller
         return view('Report.exception',
             ['items' =>
                 [
-                    ['Student without tutor', $NonTutorStudent],
-                    ['Student without Interaction', $noInteractSt],
-                    ['Tutor without Student', $tutorWithoutTutee],
+                    ['Student without tutor', $NonTutorStudent,'/report/studentWithoutTutor'],
+                    ['Student without Interaction', $noInteractSt,'/report/studentWithoutInteraction'],
+                    ['Tutor without Student', $tutorWithoutTutee,''],
 
 
                 ],
-                'days'=>$day
+                'days'=>$day,
+                'today'=>$dt
 
             ]);
 
@@ -134,6 +135,7 @@ class ReportController extends Controller
     public function statisticReport(Request $request)
     {
         $day = (int)$request->input('day');
+        $dt = Carbon::now('Asia/Ho_Chi_Minh')->addDays(1)->toDateString();
         $tutorSentMsgCount = Message::whereHas('sender', function (Builder $query) {
             $query->where('role_id', 3);
         })->count();
@@ -171,7 +173,35 @@ class ReportController extends Controller
                     ['Average message per tutor', $AvgMsgTutor],
                     ['Average allocation per Staff', $AvgAllocation],
                     ['Average request per student', $AvgRequest],
-                ]]);
+                ],
+                'today'=>$dt
+            ]);
+
+    }
+    public function studentWithoutInteraction(Request $request) {
+        $day = (int)$request->input('day');
+
+        $dt = Carbon::now('Asia/Ho_Chi_Minh')->addDays(1)->toDateString();
+        $todayDate = Carbon::now('Asia/Ho_Chi_Minh');
+        $lastDays = $todayDate->subDays($day)->toDateString();
+//        $NonTutorStudent = User::whereDoesntHave('tutorRegistrationByStudent')->count();
+        $noInteractSt = User::whereHas('request', function (Builder $query) use ($lastDays) {
+            $query->whereDate('created_at', '>=', $lastDays);
+        }, '=', 0)->whereHas('sentMessages', function (Builder $query) use ($lastDays) {
+            $query->whereDate('created_at', '>=', $lastDays);
+        }, '=', 0)->where('role_id', 4)->withCount('request')->paginate(20);
+        return view('User.noInteractStudent' , ['users'=>$noInteractSt , 'days'=>$day ]);
+
+    }
+    public function studentWithoutTutor(Request $request) {
+        $day = (int)$request->input('day');
+
+        $dt = Carbon::now('Asia/Ho_Chi_Minh')->addDays(1)->toDateString();
+        $todayDate = Carbon::now('Asia/Ho_Chi_Minh');
+        $lastDays = $todayDate->subDays($day)->toDateString();
+        $NonTutorStudent = User::whereDoesntHave('tutorRegistrationByStudent')->paginate(20);
+
+        return view('User.noInteractStudent' , ['users'=>$NonTutorStudent , 'days'=>$day ]);
 
     }
 

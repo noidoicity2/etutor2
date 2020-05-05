@@ -212,8 +212,8 @@
                         <p>
                             Email
                             @if(\App\Model\Email::where('to_user' ,Auth::id())->where('status','=',0)->count() > 0 )
-                                (<span
-                                    class="text-info">{{\App\Model\Email::where('to_user' ,Auth::id())->where('status','=',0)->count() }}</span>
+                                (
+                                   {{\App\Model\Email::where('to_user' ,Auth::id())->where('status','=',0)->count() }}
                                 )
                             @endif
 
