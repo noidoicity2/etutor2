@@ -17,7 +17,7 @@
         <div class="row">
 
             <div class="col-12">
-                <h1 >All registration</h1>
+                <h1 >{{$title}}</h1>
                 <!-- /.card -->
 
                 <div class="card">

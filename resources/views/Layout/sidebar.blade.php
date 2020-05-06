@@ -104,6 +104,12 @@
                                     <p>All Allocation</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/yourAllocation" class="nav-link {{Request::is('yourAllocation') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Your Allocation</p>
+                                </a>
+                            </li>
                             {{--                            <li class="nav-item">--}}
                             {{--                                <a href="/users" class="nav-link {{Request::is('users') ? 'active' : '' }} ">--}}
                             {{--                                    <i class="far fa-circle nav-icon"></i>--}}

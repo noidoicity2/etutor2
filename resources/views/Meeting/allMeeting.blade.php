@@ -23,7 +23,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <h2>All Meeting</h2>
+                        <h2>{{$title}}</h2>
                         {{--                        <h2 class="card-title">Assign student for tutor {{$tutor->name}} (id:{{$tutor->id}})</h2> <br>--}}
                         {{--                        <h2 class="card-title">Total tutee {{$tutee_count}}</h2>--}}
                     </div>

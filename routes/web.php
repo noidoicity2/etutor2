@@ -136,6 +136,8 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 //reg
 
     Route::get('allReg', 'TutorRegistrationController@GetAllRegistration');
+    Route::get('yourAllocation', 'TutorRegistrationController@yourAllocation');
+
     Route::get('assignstudent/{id}', 'TutorRegistrationController@AssignStudent');
     Route::post('RegStudents', 'TutorRegistrationController@RegStudents');
     Route::get('reallocateStudent/{id}', 'TutorRegistrationController@ReallocatedTutor');

@@ -13,8 +13,15 @@ class TutorRegistrationController extends Controller
     //
     public function GetAllRegistration()
     {
+        if(Auth::user()->role_id!= 1) return abort(401);
         $regs = TutorRegistration::with(['tutor', 'student'])->paginate(25);
-        return view('TutorRegistration.allregs', ['regs' => $regs]);
+        return view('TutorRegistration.allregs', ['regs' => $regs ,'title'=>'All Allocations']);
+    }
+    public  function  yourAllocation() {
+        if(Auth::user()->role_id!= 1) return abort(401);
+
+        $regs = TutorRegistration::with(['tutor', 'student'])->where('created_by','=',Auth::id())->paginate(25);
+        return view('TutorRegistration.allregs', ['regs' => $regs , 'title'=>'Your Allocations']);
     }
 
     function getAssignedStudent()
@@ -126,12 +133,7 @@ class TutorRegistrationController extends Controller
         $tutor_id = $request->tutor_id;
         $Reg->tutor_id =  $tutor_id;
         $Reg->save();
-
         return json_encode(['success' =>true, 'msg'=>'Reallocate Student successfully']);
-
-
-
-
 
     }
 }

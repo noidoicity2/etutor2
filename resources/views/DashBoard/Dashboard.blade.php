@@ -27,22 +27,38 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
 
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h3>{{$AvgMsg}}</h3>
-
-                            <p>Average sent Messages last 7 Days</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-bag"></i>
-                        </div>
-                        <a href="/assignedstudent" class="small-box-footer">More info <i
-                                class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
                 @if(Auth::user()->role_id==3)
+
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>{{$AvgMsg}}</h3>
+
+                                <p>Average sent Messages last 7 Days</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                            <a href="/assignedstudent" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-warning">
+                            <div class="inner">
+                                <h3>{{$unseenMsg}}</h3>
+
+                                <p>Number of unseen message</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="/assignedstudent" class="small-box-footer"> info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
                         <div class="small-box bg-info">
@@ -79,7 +95,21 @@
                             <div class="inner">
                                 <h3>{{$handleReq}}</h3>
 
-                                <p>number of handle message</p>
+                                <p>number of handled request</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-gradient-fuchsia">
+                            <div class="inner">
+                                <h3>{{$totalMeeting}}</h3>
+
+                                <p>Total Meeting</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
@@ -89,22 +119,42 @@
                     </div>
 
                 @endif
-            <!-- ./col -->
-                <!-- ./col -->
+                @if(Auth::user()->role_id==4)
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3>{{$sentRequest}}</h3>
+
+                                    <p>Sent Request</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                    <a href="/myrequest" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                @endif
+
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-warning">
+                    <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>{{$unseenMsg}}</h3>
+                            <h3>{{$AvgMsg}}</h3>
 
-                            <p>Number of unseen message</p>
+                            <p>Average sent Messages last 7 Days</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-person-add"></i>
+                            <i class="ion ion-bag"></i>
                         </div>
-                        <a href="#" class="small-box-footer"> info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/assignedstudent" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
+                <!-- ./col -->
+                <!-- ./col -->
+
                 {{--                    unseen msg--}}
             <!-- ./col -->
 
@@ -121,7 +171,8 @@
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="/allReg" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6">
@@ -136,7 +187,8 @@
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="/allReg" class="small-box-footer">More info <i
+                                    class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
 
@@ -155,21 +207,8 @@
                             <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-danger">
-                            <div class="inner">
-                                <h3>{{$noReg}}</h3>
 
-                                <p>Total allocations</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                {{--                    total allocation--}}
+
             @endif
 
 
@@ -178,23 +217,22 @@
             <!-- /.row -->
             <div class="container">
                 <div class="row">
-                    @if(Auth::user()->role_id == 1)
+                    @if(\Auth::user()->role_id == 1)
                         <div class="col-sm-12">
                             <div id="RegChartContainer" style="height: 370px; width: 100%;"></div>
                         </div>
                     @endif
-                        <div class="col-12">
-                            <hr>
-                        </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
                     <div class="col-sm-12">
+
                         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+
                     </div>
 
 
-
                 </div>
-
-
 
 
             </div>

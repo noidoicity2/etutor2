@@ -60,7 +60,7 @@ class MeetingController extends Controller
         $id = Auth::id();
         $meeting = Meeting::where('tutor_id', $id)->orderBy('start_at', 'desc')->paginate(25);
 
-        return view('Meeting.allMeeting', ['meetings' => $meeting]);
+        return view('Meeting.allMeeting', ['meetings' => $meeting , 'title'=>'All Meeting']);
 
     }
     public function TuteeMeeting()
@@ -69,7 +69,7 @@ class MeetingController extends Controller
         $id = Auth::id();
         $meeting = Meeting::where('student_id', $id)->orderBy('start_at', 'desc')->paginate(25);
 
-        return view('Meeting.allMeeting', ['meetings' => $meeting]);
+        return view('Meeting.allMeeting', ['meetings' => $meeting , 'title'=>'All meeting']);
 
     }
 
@@ -177,7 +177,7 @@ class MeetingController extends Controller
         else return abort(401, 'Unathorized');
 
 
-        return view('Meeting.allMeeting', ['meetings' => $meeting]);
+        return view('Meeting.allMeeting', ['meetings' => $meeting ,'title'=>'Your meeting today']);
 
 
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Utility\Chart;
+use App\Model\Meeting;
 use App\Model\Message;
 use App\Model\TutorRegistration;
 use App\Model\User;
@@ -27,6 +28,10 @@ class DashboardController extends Controller
         $AvgALlocation = $this->AvgAllocationIn7Day($id);
         $yourAllcation = $this->yourAllocation($id);
         $todayAllocation = $this->ToDayAllocation($id);
+        $totalMeeting = $this->TotalMeeting($id);
+
+        $SentRequest = $this->SentRequest($id);
+
 
         return view('DashBoard.Dashboard',
             [
@@ -41,6 +46,10 @@ class DashboardController extends Controller
                 'AvgRegs' => $AvgALlocation,
                 'YourAllocation' => $yourAllcation,
                 'toDayAllocation' => $todayAllocation,
+                'totalMeeting'=>$totalMeeting,
+
+                'sentRequest'=>$SentRequest,
+
 
             ]);
 
@@ -62,7 +71,11 @@ class DashboardController extends Controller
             $AvgALlocation = $this->AvgAllocationIn7Day($id);
             $yourAllcation = $this->yourAllocation($id);
             $todayAllocation = $this->ToDayAllocation($id);
-            return view('DashBoard.Dashboard',
+
+            $totalMeeting = $this->TotalMeeting($id);
+
+            $SentRequest = $this->SentRequest($id);
+            return view('DashBoard.ViewDashBoard',
                 [
                     'tuteeNo' => $tuteeNo,
                     'noReq' => $noReq,
@@ -75,6 +88,10 @@ class DashboardController extends Controller
                     'AvgRegs' => $AvgALlocation,
                     'YourAllocation' => $yourAllcation,
                     'toDayAllocation' => $todayAllocation,
+
+                    'totalMeeting'=>$totalMeeting,
+
+                    'sentRequest'=>$SentRequest,
 
                 ]);
         }
@@ -226,6 +243,15 @@ class DashboardController extends Controller
         $last7day = $currDate->subDay(7);
 //        return $this->sentMessages()->count();
         return round(($user->tutorRegistrationCreated()->whereDate('created_at', '>=', $last7day)->count()) / 7, 2);
+    }
+    public function TotalMeeting($id) {
+        $meeting = Meeting::where('tutor_id',$id)->count();
+        return $meeting;
+
+    }
+    public function SentRequest($id) {
+        $rq = \App\Model\Request::where('from_user',$id)->count();
+        return $rq;
     }
 
     public  function UnseenMail($id) {

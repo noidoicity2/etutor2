@@ -144,7 +144,7 @@
             var table = $('#example1').DataTable( {
                 "responsive": true,
                 "autoWidth": false,
-                "paging": false,
+                "paging": true,
 
                 // "orderCellsTop": true,
                 // "fixedHeader": true,
