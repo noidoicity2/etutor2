@@ -175,14 +175,14 @@ class DashboardController extends Controller
 
     private function getNumberOfSentMsg($id)
     {
-        $msg = Message::where('from_user', Auth::id())->count();
+        $msg = Message::where('from_user', $id)->count();
         return $msg;
 
     }
 
     private function yourAllocation($id)
     {
-        $regs = TutorRegistration::where('created_by', Auth::id())->count();
+        $regs = TutorRegistration::where('created_by', $id)->count();
         return $regs;
 
     }
@@ -198,7 +198,7 @@ class DashboardController extends Controller
     {
 //        $dt = Carbon::now('Asia/Ho_Chi_Minh')->toDateString();
         $yesterday = Carbon::yesterday()->toDateString();
-        $regs = TutorRegistration::where('created_by', Auth::id())->whereDate('created_at', $yesterday)->count();
+        $regs = TutorRegistration::where('created_by', $id)->whereDate('created_at', $yesterday)->count();
 
     }
 

@@ -166,7 +166,7 @@
                             <div class="inner">
                                 <h3>{{$YourAllocation}}</h3>
 
-                                <p>Your allocation</p>
+                                <p>Total allocation</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
