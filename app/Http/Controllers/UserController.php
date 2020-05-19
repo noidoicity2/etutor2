@@ -33,7 +33,11 @@ class UserController extends Controller
     {
         $user = User::with(['role'])->paginate(25);
 //        $user = User::all();
-        return view('User.allUser', ['users' => $user]);
+        return view('User.allUser', ['users' => $user , 'title'=>'All Users'] );
+    }
+    function AllStaff() {
+        $user = User::where('role_id', 1)->with(['role'])->paginate(25);
+        return view('User.allUser', ['users' => $user ,'title'=>'All Staff']);
     }
 
     function GetAllTutors(Request $request)
@@ -44,24 +48,15 @@ class UserController extends Controller
 
     function GetNontudentTutor(Request $request)
     {
-//        $user = User::where('role_id', 3)->with(['tutorRegistrationByStudent' => function ($query) {
-//            $query->where(null);
-//        }])->get();
-//        $user = User::where('role_id',3)->with(['tutorRegistrationByTutor' =>function($query) {
-//            $query->where('tutor_id',null);
-//        }] )->get();
-//        $user = User::where('role_id',3);
-//            ->leftJoin('tutor_registrations','users.id' ,'=','tutor_registrations.tutor_id')
-//            ->where('student_id','=',null)->get();
-//        $user = $user->where('tut orRegistrationByTutor',null);
+
         $user = User::doesntHave('tutorRegistrationByTutor')->where('role_id', 3)->paginate(25);
-        return view('User.allUser', ['users' => $user]);
+        return view('User.allUser', ['users' => $user ,'title'=>'Tutor without student']);
     }
 
     function GetAllStudent(Request $request)
     {
         $user = User::where('role_id', 4)->get();
-        return view('User.allUser', ['users' => $user]);
+        return view('User.allUser', ['users' => $user , 'title'=>'All Student']);
     }
 
     function DoAddUser(Request $request)
@@ -128,7 +123,7 @@ class UserController extends Controller
     {
         $id = Auth::id();
         $user = User::where([['role_id', '=', 4], ['id', '!=', $id]])->paginate(25);
-        return view('User.allUser', ['users' => $user]);
+        return view('User.allUser', ['users' => $user , 'title'=>'Friend List']);
 
     }
 

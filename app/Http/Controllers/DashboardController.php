@@ -28,7 +28,9 @@ class DashboardController extends Controller
         $AvgALlocation = $this->AvgAllocationIn7Day($id);
         $yourAllcation = $this->yourAllocation($id);
         $todayAllocation = $this->ToDayAllocation($id);
+
         $totalMeeting = $this->TotalMeeting($id);
+        $todayMeeting = $this->toDayMeeting($id);
 
         $SentRequest = $this->SentRequest($id);
 
@@ -47,6 +49,7 @@ class DashboardController extends Controller
                 'YourAllocation' => $yourAllcation,
                 'toDayAllocation' => $todayAllocation,
                 'totalMeeting'=>$totalMeeting,
+                'todayMeeting'=>$todayMeeting,
 
                 'sentRequest'=>$SentRequest,
 
@@ -73,6 +76,7 @@ class DashboardController extends Controller
             $todayAllocation = $this->ToDayAllocation($id);
 
             $totalMeeting = $this->TotalMeeting($id);
+            $todayMeeting = $this->toDayMeeting($id);
 
             $SentRequest = $this->SentRequest($id);
             return view('DashBoard.ViewDashBoard',
@@ -90,7 +94,7 @@ class DashboardController extends Controller
                     'toDayAllocation' => $todayAllocation,
 
                     'totalMeeting'=>$totalMeeting,
-
+                    'todayMeeting'=>$todayMeeting,
                     'sentRequest'=>$SentRequest,
 
                 ]);
@@ -247,6 +251,23 @@ class DashboardController extends Controller
     public function TotalMeeting($id) {
         $meeting = Meeting::where('tutor_id',$id)->count();
         return $meeting;
+
+    }
+    public function toDayMeeting($id) {
+        $user = User::find($id);
+        $currDate = Carbon::now('Asia/Ho_Chi_Minh')->toDateString();
+        $role = $user->role_id;
+        $meeting = 0;
+
+        if($role==3) {
+            $meeting = Meeting::where('tutor_id',$id)->whereDate('start_at','=',$currDate)->count();
+        }
+        elseif ($role==4){
+            $meeting = Meeting::where('student_id',$id)->whereDate('start_at','=',$currDate)->count();
+
+        }
+        return $meeting;
+
 
     }
     public function SentRequest($id) {

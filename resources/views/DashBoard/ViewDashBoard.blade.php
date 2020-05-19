@@ -122,7 +122,7 @@
 
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <div class="small-box bg-info">
+                        <div class="small-box bg-gradient-olive">
                             <div class="inner">
                                 <h3>{{$sentRequest}}</h3>
 
@@ -162,7 +162,7 @@
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
 
-                        <div class="small-box bg-danger">
+                        <div class="small-box bg-gradient-blue">
                             <div class="inner">
                                 <h3>{{$YourAllocation}}</h3>
 
@@ -178,7 +178,7 @@
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
 
-                        <div class="small-box bg-danger">
+                        <div class="small-box bg-gradient-green">
                             <div class="inner">
                                 <h3>{{$toDayAllocation}}</h3>
 

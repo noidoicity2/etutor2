@@ -126,6 +126,7 @@ Route::group(['middleware' => ['checkAdminLogin']], function () {
 
     Route::get('/users', 'UserController@GetAllUser');
     Route::get('/tutors', 'UserController@GetAllTutors');
+    Route::get('/staffs', 'UserController@AllStaff');
     Route::get('/adduser', 'UserController@AddUser');
     Route::post('add', 'UserController@DoAddUser')->name('add');
     Route::get('allusers', 'UserController@GetAllUser')->name('allusers');

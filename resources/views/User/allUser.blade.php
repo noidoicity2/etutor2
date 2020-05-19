@@ -20,10 +20,10 @@
             <div class="col-12">
 
                 <!-- /.card -->
-
+<h1>{{$title}}</h1>
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title"> users</h3>
+{{--                        <h3 class="card-title"> users</h3>--}}
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
