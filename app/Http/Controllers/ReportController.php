@@ -121,7 +121,7 @@ class ReportController extends Controller
                 [
                     ['Student without tutor', $NonTutorStudent,'/report/studentWithoutTutor'],
                     ['Student without Interaction', $noInteractSt,'/report/studentWithoutInteraction'],
-                    ['Tutor without Student', $tutorWithoutTutee,''],
+                    ['Tutor without Student', $tutorWithoutTutee,'/nonstudenttutor'],
 
 
                 ],

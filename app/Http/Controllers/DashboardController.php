@@ -190,7 +190,7 @@ class DashboardController extends Controller
     private function ToDayAllocation($id)
     {
         $dt = Carbon::now('Asia/Ho_Chi_Minh')->toDateString();
-        $regs = TutorRegistration::where('created_by', Auth::id())->whereDate('created_at', $dt)->count();
+        $regs = TutorRegistration::where('created_by', $id)->whereDate('created_at', $dt)->count();
         return $regs;
     }
 
